@@ -4,14 +4,17 @@ import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -29,6 +32,8 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
 
         Register = (Button)findViewById(R.id.buttonRegister);
 
@@ -188,6 +193,12 @@ public class RegisterActivity extends AppCompatActivity {
 
         F_Result = "Not_Found" ;
 
+        //Animation
+        ConstraintLayout container = (ConstraintLayout) findViewById(R.id.activity_register);
+        AnimationDrawable anim = (AnimationDrawable) container.getBackground();
+        anim.setEnterFadeDuration(5000);
+        anim.setExitFadeDuration(2000);
+        anim.start();
     }
 
 }

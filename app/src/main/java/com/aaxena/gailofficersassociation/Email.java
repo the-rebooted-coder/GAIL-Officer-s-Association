@@ -36,6 +36,9 @@ public class Email extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
 
+        Vibrator v8 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        v8.vibrate(26);
+
         LogInButton = (Button)findViewById(R.id.buttonLogin);
 
         RegisterButton = (Button)findViewById(R.id.buttonRegister);
@@ -68,6 +71,7 @@ public class Email extends AppCompatActivity {
                 // Opening new user registration activity using intent on button click.
                 Intent intent = new Intent(Email.this, RegisterActivity.class);
                 startActivity(intent);
+                finish();
 
             }
         });
@@ -144,10 +148,9 @@ public class Email extends AppCompatActivity {
             // Going to Dashboard activity after login success message.
             Intent intent = new Intent(Email.this, Dashboard.class);
 
-            // Sending Email to Dashboard Activity using intent.
-            intent.putExtra(UserEmail, EmailHolder);
 
             startActivity(intent);
+            finish();
 
 
         }

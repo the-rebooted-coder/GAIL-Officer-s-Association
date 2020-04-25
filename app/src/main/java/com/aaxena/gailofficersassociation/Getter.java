@@ -47,7 +47,6 @@ public class Getter extends AppCompatActivity {
                             saveData();
                         Intent i = new Intent(Getter.this, Email.class);
                         startActivity(i);
-                        finish();
                         }
                     }, timeout);
                 }

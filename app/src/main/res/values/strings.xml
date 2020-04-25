@@ -47,6 +47,7 @@
     <string name="enter_your_gail_email">Enter Your GAIL Email</string>
     <string name="enter_a_password">Enter a Password</string>
     <string name="register">Register</string>
+    <string name="logout">Logout</string>
 
 
     <!--Array for About Us Category-->
