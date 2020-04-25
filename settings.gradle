@@ -1,0 +1,2 @@
+rootProject.name='GAIL Officers Association'
+include ':app'

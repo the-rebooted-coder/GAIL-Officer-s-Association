@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">GAIL Officers Association</string>
+    <string name="first">GAIL Officer\'s Association</string>
+    <string name="logo">logo</string>
+    <string name="about_us">About Us</string>
+    <string name="about_us_txt">GOA (GAIL Officers Association):\n\nA collective forum to protect the rights and interest of executives registered under Societies Act on 13th Feb’ 1987.\n\nFrom more than last three decades GOA had been working with the primary objectives of securing the welfare, rights and monetary benefits for the members.\nAs to the welfare of the officers, GOA had been actively pursuing all the welfare matters in consultation with the Management, many good welfare initiatives were taken, which have proved benevolent for the entire officer community.\n\nGOA’s role in the pay revision, which is hailed to be one of the best in the PSUs, is widely acclaimed by the officers’ community.\n\nIn the organizational matters and business arena, GOA had been playing a very active role by giving very useful feed backs to the Management and many times such inputs were appreciated and executed which resulted in huge saving for the company.\n\nGOA is proud of representing such fine people as members and office bearers, all over the country.</string>
+    <string name="con_img">con_img</string>
+    <string name="view_preamble">View Preamble</string>
+    <string name="pdf_view">PDF View</string>
+    <string name="view_pdf">View PDF</string>
+    <string name="image_tellin_gscoll_down">image telling to scroll down</string>
+    <string name="sports">Sport Coordinator CPF</string>
+    <string name="committees">Committies Link</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="hi">Hi!</string>
+    <string name="before_we_begin_let_s_complete_the_setup">Before We Begin, Let\'s Complete The Setup!</string>
+    <string name="start">Start!</string>
+    <string name="enter_a_few_details">Enter Your Name</string>
+    <string name="we_hate_paperwork_too">We hate paperwork too!</string>
+    <string name="name">Full Name</string>
+    <string name="begin">NEXT</string>
+    <string name="hello">Hello</string>
+    <string name="navigate_to">Navigate To:</string>
+    <string name="morning">Good Morning!</string>
+    <string name="afternoon">Good Afternoon!</string>
+    <string name="evening">Good Evening!</string>
+    <string name="night">Sleep Well!</string>
+    <string name="news">News</string>
+    <string name="services">services</string>
+    <string name="griviances">Grievances</string>
+    <string name="what_if_something_went_wrong_we_are_always_there_for_you">What if Something Went Wrong? We are Always There for You!</string>
+    <string name="dev_email">connectwithspandan@gmail.com</string>
+    <string name="sub">Enter The Subject</string>
+    <string name="send">send</string>
+    <string name="enter_your_message">Enter your Message</string>
+    <string name="cpf_number">CPF Number</string>
+    <string name="gail_email">GAIL Email</string>
+    <string name="enter_your_gail_registred_email">Enter your GAIL Registered Email</string>
+    <string name="gail_email_id">GAIL Email ID</string>
+    <string name="members">anshu gulaati</string>
+    <string name="sqlite_user_login_screen">Now Enter Your GAIL Email</string>
+    <string name="log_in">Log IN</string>
+    <string name="not_log_in_register_from_here">New To This App ? Register From Here</string>
+    <string name="enter_email">Enter Your GAIL Officer\'s Association Email</string>
+    <string name="enter_password">Enter Your Password</string>
+    <string name="new_user_registration">New User Registration</string>
+    <string name="enter_your_gail_email">Enter Your GAIL Email</string>
+    <string name="enter_a_password">Enter a Password</string>
+    <string name="register">Register</string>
+
+
+    <!--Array for About Us Category-->
+    <string-array name="about_us_array">
+        <item>About Us</item>
+        <item>Executive Body-PATA</item>
+        <item>Committees</item>
+        <item>Sports Coordinators</item>
+        <item>Our Preamble</item>
+    </string-array>
+
+</resources>
