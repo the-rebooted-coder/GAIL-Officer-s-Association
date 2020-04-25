@@ -15,6 +15,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import static com.aaxena.gailofficersassociation.Email.EMAIL;
 import static com.aaxena.gailofficersassociation.Getter.SHARED_PREFS;
 import static com.aaxena.gailofficersassociation.Getter.TEXT;
 
@@ -22,15 +23,18 @@ public class Dashboard extends AppCompatActivity {
     private String hello;
     TextView namehello;
     Button LogOUT ;
+    private String emaillo;
+    TextView emailhello;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_dashboard);
-
+        emailhello = findViewById(R.id.emailhello);
         namehello = findViewById(R.id.namehello);
         loadData();
-        namehello.setText("Hello "+hello);
+        namehello.setText(" Officer's Name: "+hello);
+        emailhello.setText("Email: "+emaillo);
 
 
         Button services = findViewById(R.id.services);
@@ -39,7 +43,7 @@ public class Dashboard extends AppCompatActivity {
             public void onClick(View v) {
                 Vibrator v8 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                 v8.vibrate(27);
-                Toast.makeText(Dashboard.this, "Navigating to Services", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Dashboard.this, "Navigating to Activities", Toast.LENGTH_SHORT).show();
                 Intent i=new Intent(Dashboard.this,Services.class);
                 startActivity(i);
             }
@@ -99,10 +103,11 @@ public class Dashboard extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                //Finishing current DashBoard activity on button click.
-                finish();
-
-                Toast.makeText(Dashboard.this,"Logged Out Successfully", Toast.LENGTH_LONG).show();
+                Vibrator v8 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                v8.vibrate(27);
+                Toast.makeText(Dashboard.this, "Opening Preferences", Toast.LENGTH_SHORT).show();
+                Intent i=new Intent(Dashboard.this,Settings.class);
+                startActivity(i);
 
             }
         });
@@ -110,5 +115,6 @@ public class Dashboard extends AppCompatActivity {
     public void loadData(){
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         hello = sharedPreferences.getString(TEXT,"");
+        emaillo = sharedPreferences.getString(EMAIL,"");
     }
 }

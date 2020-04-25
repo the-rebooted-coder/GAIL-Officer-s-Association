@@ -32,6 +32,7 @@ dependencies {
     implementation 'com.airbnb.android:lottie:3.4.0'
     //PDF Viewer
     implementation 'com.github.barteksc:android-pdf-viewer:2.0.3'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'

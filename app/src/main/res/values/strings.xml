@@ -26,7 +26,7 @@
     <string name="evening">Good Evening!</string>
     <string name="night">Sleep Well!</string>
     <string name="news">News</string>
-    <string name="services">services</string>
+    <string name="services">activities</string>
     <string name="griviances">Grievances</string>
     <string name="what_if_something_went_wrong_we_are_always_there_for_you">What if Something Went Wrong? We are Always There for You!</string>
     <string name="dev_email">connectwithspandan@gmail.com</string>
@@ -48,6 +48,11 @@
     <string name="enter_a_password">Enter a Password</string>
     <string name="register">Register</string>
     <string name="logout">Logout</string>
+    <string name="prefrences">Prefrences</string>
+    <string name="chnage_my_name">Chnage My Name</string>
+    <string name="change_my_email">Change My Email</string>
+    <string name="contact_us">GAIL Officers\' Association-Pata\n\n Address : Estate Office, GAIL Gaon Dibiyapur,\n Uttar Pradesh-206244\n\n Email :goa.pataoffice@gmail.com\n\n HVJ : 35040 (office)</string>
+    <string name="_2020_c_gail_officer_s_association">2020 © GAIL Officer\'s Association</string>
 
 
     <!--Array for About Us Category-->

@@ -2,6 +2,7 @@ package com.aaxena.gailofficersassociation;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.drawable.AnimationDrawable;
@@ -27,6 +28,8 @@ public class Email extends AppCompatActivity {
     SQLiteHelper sqLiteHelper;
     Cursor cursor;
     String TempPassword = "NOT_FOUND" ;
+    public static final String SHARED_PREFS = "sharedPrefs";
+    public static final String EMAIL = "email";
     public static final String UserEmail = "";
 
     @Override
@@ -142,7 +145,9 @@ public class Email extends AppCompatActivity {
 
         if(TempPassword.equalsIgnoreCase(PasswordHolder))
         {
-
+            Vibrator v0 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+            v0.vibrate(26);
+            saveData();
             Toast.makeText(Email.this,"Login Successfully",Toast.LENGTH_LONG).show();
 
             // Going to Dashboard activity after login success message.
@@ -169,6 +174,12 @@ public class Email extends AppCompatActivity {
         anim.setExitFadeDuration(2000);
         anim.start();
 
+    }
+    private void saveData() {
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(EMAIL,Email.getText().toString());
+        editor.commit();
     }
 
 }
