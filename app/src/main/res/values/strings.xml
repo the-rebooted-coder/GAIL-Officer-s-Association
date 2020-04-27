@@ -53,6 +53,11 @@
     <string name="change_my_email">Change My Email</string>
     <string name="contact_us">GAIL Officers\' Association-Pata\n\n Address : Estate Office, GAIL Gaon Dibiyapur,\n Uttar Pradesh-206244\n\n Email :goa.pataoffice@gmail.com\n\n HVJ : 35040 (office)</string>
     <string name="_2020_c_gail_officer_s_association">2020 © GAIL Officer\'s Association</string>
+    <string name="activities">Activities</string>
+    <string name="gbm_abt">GBM :General Body Meeting (GBM) of the units should be called by the Executive committee of that unit at least two times in a year and through it, Executive Body directly interacts with members.\nBriefs development on various issues and collect their suggestions and feedback.
+</string>
+    <string name="services_msin">Services</string>
+    <string name="blog">Blog</string>
 
 
     <!--Array for About Us Category-->
@@ -62,6 +67,19 @@
         <item>Committees</item>
         <item>Sports Coordinators</item>
         <item>Our Preamble</item>
+    </string-array>
+
+    <!--Array for Activities Category-->
+    <string-array name="activities_array">
+        <item>General Body Meeting</item>
+        <item>Meeting with Local Management</item>
+    </string-array>
+
+    <!--Array for Services Category-->
+    <string-array name="services_array">
+        <item>Executive Benefits</item>
+        <item>Important Contacts</item>
+        <item>Live Survey</item>
     </string-array>
 
 </resources>

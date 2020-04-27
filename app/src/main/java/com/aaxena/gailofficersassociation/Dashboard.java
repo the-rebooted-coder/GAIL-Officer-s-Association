@@ -25,6 +25,7 @@ public class Dashboard extends AppCompatActivity {
     Button LogOUT ;
     private String emaillo;
     TextView emailhello;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +50,18 @@ public class Dashboard extends AppCompatActivity {
             }
         });
 
+
+        Button main_services = findViewById(R.id.services_main);
+        main_services.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Vibrator v8 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                v8.vibrate(27);
+                Toast.makeText(Dashboard.this, "Navigating to Services", Toast.LENGTH_SHORT).show();
+                Intent i=new Intent(Dashboard.this,MainServices.class);
+                startActivity(i);
+            }
+        });
 
         Button grievances = findViewById(R.id.grievances);
         grievances.setOnClickListener(new View.OnClickListener() {

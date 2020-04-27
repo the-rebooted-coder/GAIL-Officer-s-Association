@@ -37,5 +37,6 @@ public class Activities extends AppCompatActivity {
     public void onBackPressed() {
         Intent i=new Intent(Activities.this, Dashboard.class);
         startActivity(i);
+        finish();
     }
 }

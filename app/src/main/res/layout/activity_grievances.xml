@@ -79,7 +79,7 @@
         android:fontFamily="serif-monospace"
         android:hint="@string/enter_your_message"
         android:importantForAutofill="no"
-        android:inputType="textPersonName"
+        android:inputType="textMultiLine"
         android:textColor="@color/intro_title_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -5,21 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/color1"
-    tools:context=".Services">
+    tools:context=".MainServices">
 
-    <TextView
-        android:id="@+id/textView13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/productsansbold"
-        android:text="@string/activities"
-        android:textColor="@color/intro_title_color"
-        android:textSize="29sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.060000002" />
     <Spinner
         android:id="@+id/spinAbout"
         android:layout_width="317dp"
@@ -40,8 +27,8 @@
 
     <ScrollView
         android:id="@+id/scrollView2"
-        android:layout_width="333dp"
-        android:layout_height="227dp"
+        android:layout_width="342dp"
+        android:layout_height="322dp"
         android:background="@drawable/box"
         android:paddingLeft="10dp"
         android:paddingTop="10dp"
@@ -58,7 +45,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/productsans"
-            android:text="@string/gbm_abt"
             android:textColor="@android:color/white"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -80,4 +66,20 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.120000005"
         app:srcCompat="@android:drawable/arrow_down_float" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/productsansbold"
+        android:shadowColor="@color/intro_title_color"
+        android:text="Services"
+        android:textColor="@color/intro_title_color"
+        android:textSize="29sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.060000002" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

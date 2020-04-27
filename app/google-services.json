@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1062608688710",
+    "firebase_url": "https://gail-officers-association.firebaseio.com",
+    "project_id": "gail-officers-association",
+    "storage_bucket": "gail-officers-association.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1062608688710:android:bab666bc298876aebc9c47",
+        "android_client_info": {
+          "package_name": "com.aaxena.gailofficersassociation"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1062608688710-v9l7sv2pq1qhec4m58207j0r4r296iep.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6EM5RQ8BbcCeHJja3S6nCgkLjFb28-WA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1062608688710-v9l7sv2pq1qhec4m58207j0r4r296iep.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

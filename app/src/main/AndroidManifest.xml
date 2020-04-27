@@ -12,7 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Settings"></activity>
+        <activity android:name=".MainServices"></activity>
+        <activity android:name=".GWeb" />
+        <activity android:name=".Settings" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".Email" />
         <activity android:name=".Grievances" />
