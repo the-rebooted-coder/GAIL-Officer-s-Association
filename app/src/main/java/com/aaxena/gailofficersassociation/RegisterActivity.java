@@ -33,7 +33,6 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
 
         Register = (Button)findViewById(R.id.buttonRegister);
 

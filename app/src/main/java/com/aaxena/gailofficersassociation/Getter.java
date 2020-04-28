@@ -28,7 +28,6 @@ public class Getter extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_getter);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
         donee = findViewById(R.id.animatored3);
 
 
