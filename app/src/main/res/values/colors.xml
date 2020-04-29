@@ -2,11 +2,13 @@
 <resources>
     <color name="colorPrimary">#F3B90E</color>
     <color name="colorPrimaryDark">#0682EF</color>
-    <color name="colorAccent">#EC47E3</color>
+    <color name="colorAccent">#FFFFFF</color>
     <color name="gradient_start_color">#4cb4ff</color>
     <color name="intro_title_color">#101820</color>
-    <color name="intro_description_color">#656565</color>
+    <color name="intro_description_color">#0336ff</color>
     <color name="purple">#9400D3</color>
     <color name="Yellow">#F0DD30</color>
+    <color name="theme_color">#FFEB3B</color>
+    <color name="texter">#FFDE03</color>
     <color name="back">#754CB4FF</color>
 </resources>

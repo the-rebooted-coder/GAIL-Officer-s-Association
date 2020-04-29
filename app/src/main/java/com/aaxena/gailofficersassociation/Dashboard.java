@@ -1,17 +1,24 @@
 package com.aaxena.gailofficersassociation;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.AnimationDrawable;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.Vibrator;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.ColorInt;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
@@ -24,7 +31,11 @@ public class Dashboard extends AppCompatActivity {
     TextView namehello;
     Button LogOUT ;
     private String emaillo;
+    TextView fader;
+    private TextView afterfade;
     TextView emailhello;
+    protected AlphaAnimation fadeIn = new AlphaAnimation(0.0f , 1.0f ) ;
+    protected AlphaAnimation fadeOut = new AlphaAnimation( 1.0f , 0.0f ) ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +48,64 @@ public class Dashboard extends AppCompatActivity {
         namehello.setText(" Officer's Name: "+hello);
         emailhello.setText("Email: "+emaillo);
 
+        fader = findViewById(R.id.textView6);
+        fader.startAnimation(fadeIn);
+        fader.startAnimation(fadeOut);
+        fadeIn.setDuration(1200);
+        fadeIn.setFillAfter(true);
+        fadeOut.setDuration(600);
+        fadeOut.setFillAfter(true);
+        fadeOut.setStartOffset(3200+fadeIn.getStartOffset());
+
+        afterfade = findViewById(R.id.afterfades);
+        int splash_screen_time_out = 4000;
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                afterfade.startAnimation(fadeIn);
+                afterfade.setText("Dashboard");
+            }
+        }, splash_screen_time_out);
+
+
+        Button blog = findViewById(R.id.blog);
+        blog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = getPackageManager().getLaunchIntentForPackage("com.google.firebase.codelab.friendlychat");
+                if (intent != null) {
+                    // We found the activity now start the activity
+                    Vibrator v11 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                    v11.vibrate(25);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intent);
+                } else {
+                    // Dialog Box
+                    new AlertDialog.Builder(Dashboard.this)
+                            .setTitle("Companion App Not Installed!")
+                            .setMessage(R.string.sensitive)
+                            .setPositiveButton("Get GAIL Chat", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                                    v.vibrate(35);
+                                    Uri uri = Uri.parse("https://drive.google.com/open?id=1MlyczdcSDiangY6LYhmJaMoSk46Ib9Uq");
+                                    Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                                    startActivity(intent);
+
+                                }
+                            })
+                            .setNegativeButton("Nope, I'm Fine", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                                    v.vibrate(25);
+                                }
+                            })
+                            .create().show();
+                }
+            }
+        });
 
         Button services = findViewById(R.id.services);
         services.setOnClickListener(new View.OnClickListener() {
@@ -102,12 +171,6 @@ public class Dashboard extends AppCompatActivity {
         Vibrator v6 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         v6.vibrate(20);
 
-        //Android Background Animation
-        ConstraintLayout container = (ConstraintLayout) findViewById(R.id.myflow);
-        AnimationDrawable anim = (AnimationDrawable) container.getBackground();
-        anim.setEnterFadeDuration(6000);
-        anim.setExitFadeDuration(2000);
-        anim.start();
 
         LogOUT = (Button)findViewById(R.id.button1);
 

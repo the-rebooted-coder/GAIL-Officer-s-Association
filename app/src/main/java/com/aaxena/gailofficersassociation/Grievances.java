@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import static com.aaxena.gailofficersassociation.Email.EMAIL;
 import static com.aaxena.gailofficersassociation.Getter.SHARED_PREFS;
 import static com.aaxena.gailofficersassociation.Getter.TEXT;
 
@@ -25,6 +26,7 @@ public class Grievances extends AppCompatActivity {
     private EditText mEditTextcpf;
     private EditText mEditTextFrom;
     private String name;
+    private String emaillo;
     private EditText namee;
 
     @Override
@@ -37,8 +39,9 @@ public class Grievances extends AppCompatActivity {
         mEditTextMessage = findViewById(R.id.edit_text_message);
         mEditTextcpf = findViewById(R.id.edit_text_cpf);
         mEditTextFrom = findViewById(R.id.edit_text_from);
-        namee = findViewById(R.id.edit_text_name);
         loadData();
+        mEditTextFrom.setText(emaillo);
+        namee = findViewById(R.id.edit_text_name);
         namee.setText(name);
 
         Button buttonSend = findViewById(R.id.button_send);
@@ -77,5 +80,6 @@ public class Grievances extends AppCompatActivity {
     public void loadData(){
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         name = sharedPreferences.getString(TEXT,"");
+        emaillo = sharedPreferences.getString(EMAIL,"");
     }
 }

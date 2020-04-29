@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/color5"
+    android:background="@drawable/color2"
     tools:context=".Grievances">
 
     <TextView
@@ -43,15 +43,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:fontFamily="monospace"
+        android:fontFamily="@font/productsans"
         android:hint="@string/sub"
         android:importantForAutofill="no"
-        android:inputType="textPersonName"
+        android:inputType="textEmailSubject"
         android:textColor="@color/intro_title_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.24000001" />
 
     <EditText
         android:id="@+id/edit_text_cpf"
@@ -60,7 +61,7 @@
         android:ems="10"
         android:focusable="auto"
         android:focusableInTouchMode="true"
-        android:fontFamily="monospace"
+        android:fontFamily="@font/productsans"
         android:hint="@string/cpf_number"
         android:importantForAutofill="no"
         android:inputType="number"
@@ -68,8 +69,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.24000001" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/edit_text_message"
@@ -107,7 +107,7 @@
         android:layout_height="41dp"
         android:autofillHints=""
         android:ems="10"
-        android:fontFamily="monospace"
+        android:fontFamily="@font/productsans"
         android:hint="@string/gail_email"
         android:inputType="textEmailAddress"
         android:textColor="@color/intro_title_color"
@@ -115,7 +115,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.32" />
+        app:layout_constraintVertical_bias="0.39" />
 
     <EditText
         android:id="@+id/edit_text_name"
@@ -126,12 +126,14 @@
         android:layout_marginEnd="104dp"
         android:layout_marginBottom="23dp"
         android:ems="10"
+        android:fontFamily="@font/productsans"
         android:hint="@string/name"
+        android:importantForAutofill="no"
         android:inputType="textPersonName"
         android:textColor="@color/intro_title_color"
         app:layout_constraintBottom_toTopOf="@+id/edit_text_subject"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_text_from"
-        android:importantForAutofill="no" />
+        app:layout_constraintVertical_bias="0.51" />
 </androidx.constraintlayout.widget.ConstraintLayout>
