@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/color1"
+    android:background="@drawable/color2"
     tools:context=".Services">
 
     <TextView
-        android:id="@+id/textView13"
+        android:id="@+id/act"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/productsansbold"
@@ -20,15 +20,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.060000002" />
+
     <Spinner
         android:id="@+id/spinAbout"
         android:layout_width="317dp"
         android:layout_height="37dp"
-        android:background="@drawable/heck"
+        android:background="@drawable/rounded_button"
         android:focusableInTouchMode="true"
         android:paddingStart="8dp"
         android:paddingEnd="8dp"
-        android:popupBackground="@color/intro_title_color"
+        android:popupBackground="@color/texter"
         android:scrollbars="none"
         android:spinnerMode="dropdown"
         android:textAlignment="center"
@@ -40,18 +41,17 @@
 
     <ScrollView
         android:id="@+id/scrollView2"
-        android:layout_width="333dp"
-        android:layout_height="227dp"
+        android:layout_width="331dp"
+        android:layout_height="314dp"
         android:background="@drawable/box"
         android:paddingLeft="10dp"
         android:paddingTop="10dp"
         android:paddingRight="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.374">
+        app:layout_constraintVertical_bias="0.436">
 
         <TextView
             android:id="@+id/infos"

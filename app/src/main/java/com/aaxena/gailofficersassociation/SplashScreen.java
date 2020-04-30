@@ -35,7 +35,7 @@ public class SplashScreen extends AppCompatActivity {
                 public void run() {
                     Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                     v.vibrate(35);
-                    Intent i=new Intent(SplashScreen.this,Dashboard.class);
+                    Intent i=new Intent(SplashScreen.this,Checker.class);
                     startActivity(i);
                     finish();
                 }

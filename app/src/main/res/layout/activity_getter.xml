@@ -15,6 +15,7 @@
         android:fontFamily="@font/light"
         android:text="@string/enter_a_few_details"
         android:textAlignment="center"
+        android:textColor="@color/colorAccent"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -37,13 +38,13 @@
         app:lottie_loop="false" />
 
 
-
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/productsansbold"
         android:text="@string/we_hate_paperwork_too"
+        android:textColor="@color/intro_title_color"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -60,7 +61,8 @@
         android:hint="@string/name"
         android:importantForAutofill="no"
         android:inputType="textPersonName"
-        android:textColor="@color/intro_title_color"
+        android:textColor="?attr/colorControlActivated"
+        android:textColorHint="@color/colorAccent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -71,10 +73,10 @@
         android:id="@+id/begin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/color5"
+        android:background="@drawable/color2"
         android:fontFamily="@font/productsans"
         android:text="@string/begin"
-        android:textColor="@color/intro_title_color"
+        android:textColor="@color/colorAccent"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

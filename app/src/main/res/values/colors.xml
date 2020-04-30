@@ -10,5 +10,6 @@
     <color name="Yellow">#F0DD30</color>
     <color name="theme_color">#FFEB3B</color>
     <color name="texter">#FFDE03</color>
+    <color name="textColor">#292929</color>
     <color name="back">#754CB4FF</color>
 </resources>

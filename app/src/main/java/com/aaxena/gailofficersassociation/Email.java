@@ -37,7 +37,6 @@ public class Email extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_email);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
 
         Vibrator v8 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         v8.vibrate(26);
@@ -151,7 +150,7 @@ public class Email extends AppCompatActivity {
             Toast.makeText(Email.this,"Login Successfully",Toast.LENGTH_LONG).show();
 
             // Going to Dashboard activity after login success message.
-            Intent intent = new Intent(Email.this, Dashboard.class);
+            Intent intent = new Intent(Email.this, MainActivity.class);
 
 
             startActivity(intent);

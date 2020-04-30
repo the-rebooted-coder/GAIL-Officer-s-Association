@@ -16,6 +16,8 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.airbnb.lottie.LottieAnimationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class Getter extends AppCompatActivity {
     LottieAnimationView donee;
@@ -23,12 +25,14 @@ public class Getter extends AppCompatActivity {
     EditText name;
     public static final String SHARED_PREFS = "sharedPrefs";
     public static final String TEXT = "text";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_getter);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         donee = findViewById(R.id.animatored3);
+
 
 
         Button begin = findViewById(R.id.begin);
@@ -46,6 +50,7 @@ public class Getter extends AppCompatActivity {
                             saveData();
                         Intent i = new Intent(Getter.this, Email.class);
                         startActivity(i);
+                        finish();
                         }
                     }, timeout);
                 }

@@ -8,9 +8,12 @@ import android.os.Vibrator;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 public class Settings extends AppCompatActivity {
     @Override
@@ -45,8 +48,10 @@ public class Settings extends AppCompatActivity {
         logg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
                 Vibrator v6 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-                v6.vibrate(31);
+                v6.vibrate(35);
+                Toast.makeText(Settings.this,"Sign Out Successful",Toast.LENGTH_SHORT).show();
                 Intent i=new Intent(Settings.this,Email.class);
                 startActivity(i);
             }

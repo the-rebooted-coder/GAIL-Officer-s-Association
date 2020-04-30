@@ -8,18 +8,32 @@ import android.os.Bundle;
 import android.os.Vibrator;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.animation.AlphaAnimation;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class Services extends AppCompatActivity {
+    protected AlphaAnimation fadeIn = new AlphaAnimation(0.0f , 1.0f ) ;
+    protected AlphaAnimation fadeOut = new AlphaAnimation( 1.0f , 0.0f ) ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_services);
+
+        TextView activities = findViewById(R.id.act);
+        activities.startAnimation(fadeIn);
+        activities.startAnimation(fadeOut);
+        fadeIn.setDuration(1200);
+        fadeIn.setFillAfter(true);
+        fadeOut.setDuration(600);
+        fadeOut.setFillAfter(true);
+        fadeOut.setStartOffset(3200+fadeIn.getStartOffset());
 
         //Spinner
         final Spinner spinAbout;

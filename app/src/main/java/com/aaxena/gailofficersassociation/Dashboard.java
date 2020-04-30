@@ -45,8 +45,11 @@ public class Dashboard extends AppCompatActivity {
         emailhello = findViewById(R.id.emailhello);
         namehello = findViewById(R.id.namehello);
         loadData();
-        namehello.setText(" Officer's Name: "+hello);
-        emailhello.setText("Email: "+emaillo);
+
+        emailhello.setText("Logged in as: "+emaillo);
+
+        emailhello.startAnimation(fadeIn);
+        emailhello.startAnimation(fadeOut);
 
         fader = findViewById(R.id.textView6);
         fader.startAnimation(fadeIn);
@@ -57,6 +60,7 @@ public class Dashboard extends AppCompatActivity {
         fadeOut.setFillAfter(true);
         fadeOut.setStartOffset(3200+fadeIn.getStartOffset());
 
+
         afterfade = findViewById(R.id.afterfades);
         int splash_screen_time_out = 4000;
         new Handler().postDelayed(new Runnable() {
@@ -64,6 +68,8 @@ public class Dashboard extends AppCompatActivity {
             public void run() {
                 afterfade.startAnimation(fadeIn);
                 afterfade.setText("Dashboard");
+                namehello.startAnimation(fadeIn);
+                namehello.setText("Hello "+hello+" !");
             }
         }, splash_screen_time_out);
 

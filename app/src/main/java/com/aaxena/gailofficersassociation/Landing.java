@@ -1,31 +1,38 @@
 package com.aaxena.gailofficersassociation;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.view.View;
 import android.view.WindowManager;
-import android.webkit.WebView;
+import android.view.animation.AlphaAnimation;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class Landing extends AppCompatActivity {
     private TextView infos;
+    private TextView about;
+    protected AlphaAnimation fadeIn = new AlphaAnimation(0.0f , 1.0f ) ;
+    protected AlphaAnimation fadeOut = new AlphaAnimation( 1.0f , 0.0f ) ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_landing);
-
+        about = findViewById(R.id.services);
+        about.startAnimation(fadeIn);
+        about.startAnimation(fadeOut);
+        fadeIn.setDuration(1200);
+        fadeIn.setFillAfter(true);
+        fadeOut.setDuration(600);
+        fadeOut.setFillAfter(true);
+        fadeOut.setStartOffset(3200+fadeIn.getStartOffset());
 
         //Spinner
         final Spinner spinAbout;

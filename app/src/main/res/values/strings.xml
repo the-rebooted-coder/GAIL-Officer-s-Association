@@ -58,7 +58,20 @@
 </string>
     <string name="services_msin">Services</string>
     <string name="blog">Blog</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="generate_otp">Generate OTP</string>
+    <string name="enter_otp">Enter OTP</string>
+    <string name="verify_sign_in">Verify and Sign In</string>
+    <string name="sign_out">sign out</string>
     <string name="sensitive">You Don\'t Have the Companion GAIL Chat App\n\nInstall to Continue</string>
+    <string name="now_enter_your_mobile_number">Now Enter Your Mobile Number</string>
+    <string name="floop">Continue</string>
+    <string name="enter_number_here">Enter Number Here</string>
+    <string name="verify_number">Verify Number</string>
+    <string name="waves_images">Waves Images</string>
+    <string name="enter_the_code_you_just_recieved">Enter the Code You Just Received!</string>
+    <string name="complete_sign_in">Complete Sign-In</string>
+    <string name="enter_verification_code">Enter Verification Code</string>
 
 
     <!--Array for About Us Category-->
@@ -78,9 +91,8 @@
 
     <!--Array for Services Category-->
     <string-array name="services_array">
-        <item>Executive Benefits</item>
         <item>Important Contacts</item>
-        <item>Live Survey</item>
+        <item>Executive Benefits</item>
     </string-array>
 
 </resources>

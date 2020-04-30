@@ -1,34 +1,42 @@
 {
   "project_info": {
-    "project_number": "1062608688710",
-    "firebase_url": "https://gail-officers-association.firebaseio.com",
-    "project_id": "gail-officers-association",
-    "storage_bucket": "gail-officers-association.appspot.com"
+    "project_number": "232180209418",
+    "firebase_url": "https://gail-2ff4f.firebaseio.com",
+    "project_id": "gail-2ff4f",
+    "storage_bucket": "gail-2ff4f.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1062608688710:android:bab666bc298876aebc9c47",
+        "mobilesdk_app_id": "1:232180209418:android:5e1273ef17881c24058cf3",
         "android_client_info": {
           "package_name": "com.aaxena.gailofficersassociation"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1062608688710-v9l7sv2pq1qhec4m58207j0r4r296iep.apps.googleusercontent.com",
+          "client_id": "232180209418-minhkbgei168bs5tj5o7joi61prc33bk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.aaxena.gailofficersassociation",
+            "certificate_hash": "efb361a294e48b4696e8b9731559f16df5465f39"
+          }
+        },
+        {
+          "client_id": "232180209418-tqce67ceuo40vl0cnfj5lnavia4jb41u.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyA6EM5RQ8BbcCeHJja3S6nCgkLjFb28-WA"
+          "current_key": "AIzaSyC7A-ci8NZQSS0uoiH_d_RnXIoSKbMJdQQ"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1062608688710-v9l7sv2pq1qhec4m58207j0r4r296iep.apps.googleusercontent.com",
+              "client_id": "232180209418-tqce67ceuo40vl0cnfj5lnavia4jb41u.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
