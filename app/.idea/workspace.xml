@@ -19,7 +19,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="4ad0ed2f7d14" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="192.168.225.128:5555" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -78,6 +78,7 @@
   <component name="ProjectId" id="1azwfY0FmQyfm1ZaAo5L6sGzBIE" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="AnalyzeApkAction.lastApkPath" value="$USER_HOME$/Desktop/app-release.apk" />
     <property name="ApkExportedModule" value="app" />
     <property name="ExportApk.ApkPath" value="C:\Users\raffl\Documents\Final\app" />
     <property name="ExportApk.BuildVariants" value="release" />
@@ -85,7 +86,7 @@
     <property name="ExportApk.SignV2" value="true" />
     <property name="android.recentlyUsedThemes" value="Theme.AppCompat.DayNight" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../GitHub/GAIL C/codelab-friendlychat-android-master/grow-android-start/app/src/main/java/com/google/firebase/codelab/friendlychat/MainActivity.java" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../GitHub/GAIL C/codelab-friendlychat-android-master" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">

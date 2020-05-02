@@ -1,11 +1,8 @@
 package com.aaxena.gailofficersassociation;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.text.TextUtils;
@@ -14,6 +11,8 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import static com.aaxena.gailofficersassociation.Email.EMAIL;
 import static com.aaxena.gailofficersassociation.Getter.SHARED_PREFS;

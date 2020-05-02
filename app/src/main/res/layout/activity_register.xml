@@ -8,6 +8,18 @@
     android:background="@drawable/animation_list_starting"
     tools:context="com.aaxena.gailofficersassociation.RegisterActivity">
 
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="219dp"
+        android:layout_height="199dp"
+        android:contentDescription="@string/bagpack"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.89"
+        app:srcCompat="@drawable/onboard" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -27,7 +39,7 @@
     <EditText
         android:id="@+id/editEmail"
         android:layout_width="389dp"
-        android:layout_height="41dp"
+        android:layout_height="wrap_content"
         android:ems="10"
         android:gravity="center"
         android:hint="@string/enter_your_gail_email"
@@ -39,7 +51,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.38" />
+        app:layout_constraintVertical_bias="0.3" />
 
     <EditText
         android:id="@+id/editPassword"
@@ -68,12 +80,12 @@
         android:fontFamily="@font/productsans"
         android:text="@string/register"
         android:textAlignment="center"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.73" />
+        app:layout_constraintVertical_bias="0.58000004" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

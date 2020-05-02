@@ -7,6 +7,16 @@
     android:background="@drawable/color2"
     tools:context=".MainServices">
 
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="220dp"
+        android:layout_height="195dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.96"
+        app:srcCompat="@drawable/ender" />
     <Spinner
         android:id="@+id/spinAbout"
         android:layout_width="317dp"

@@ -28,10 +28,10 @@
         android:autofillHints=""
         android:ems="10"
         android:fontFamily="monospace"
-        android:text="@string/dev_email"
+        android:text="@string/tryemail"
         android:textAlignment="center"
         android:textColor="@color/intro_description_color"
-        android:textSize="16sp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -69,12 +69,13 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.55" />
 
     <EditText
         android:id="@+id/edit_text_message"
-        android:layout_width="324dp"
-        android:layout_height="203dp"
+        android:layout_width="311dp"
+        android:layout_height="169dp"
         android:ems="10"
         android:fontFamily="serif-monospace"
         android:hint="@string/enter_your_message"
@@ -115,7 +116,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.39" />
+        app:layout_constraintVertical_bias="0.47000003" />
 
     <EditText
         android:id="@+id/edit_text_name"

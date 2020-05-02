@@ -87,7 +87,7 @@
         android:fontFamily="@font/light"
         android:text="@string/_2020_c_gail_officer_s_association"
         android:textAlignment="center"
-        android:textColor="@color/Yellow"
+        android:textColor="@color/gradient_start_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -24,6 +24,7 @@ public class Checker extends AppCompatActivity {
             }
         else {
             startActivity(new Intent(this, Dashboard.class));
+            finish();
         }
 
     }

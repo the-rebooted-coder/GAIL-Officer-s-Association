@@ -26,7 +26,7 @@
     <EditText
         android:id="@+id/editEmail"
         android:layout_width="343dp"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:ems="10"
         android:fontFamily="@font/productsans"
         android:gravity="center"
@@ -34,7 +34,7 @@
         android:importantForAutofill="no"
         android:inputType="textEmailAddress"
         android:textColor="#000"
-        android:textColorHint="@color/colorAccent"
+        android:textColorHint="@color/common_google_signin_btn_text_dark_pressed"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,7 +44,7 @@
     <EditText
         android:id="@+id/editPassword"
         android:layout_width="339dp"
-        android:layout_height="47dp"
+        android:layout_height="wrap_content"
         android:ems="10"
         android:fontFamily="@font/productsans"
         android:gravity="center"
@@ -52,7 +52,7 @@
         android:importantForAutofill="no"
         android:inputType="textPassword"
         android:textColor="#000"
-        android:textColorHint="@color/colorAccent"
+        android:textColorHint="@color/cardview_light_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -66,7 +66,7 @@
         android:background="@drawable/color2"
         android:fontFamily="@font/productsans"
         android:text="@string/log_in"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -86,5 +86,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.88" />
+
+    <Button
+        android:id="@+id/privacy_policy"
+        android:layout_width="wrap_content"
+        android:layout_height="34dp"
+        android:background="@drawable/color2"
+        android:text="@string/about_data_we_collect"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.98" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -30,6 +30,7 @@
     <string name="griviances">Grievances</string>
     <string name="what_if_something_went_wrong_we_are_always_there_for_you">What if Something Went Wrong? We are Always There for You!</string>
     <string name="dev_email">connectwithspandan@gmail.com</string>
+    <string name="tryemail">raman.juet@gmail.com</string>
     <string name="sub">Enter The Subject</string>
     <string name="send">send</string>
     <string name="enter_your_message">Enter your Message</string>
@@ -43,7 +44,7 @@
     <string name="not_log_in_register_from_here">New To This App ? Register From Here</string>
     <string name="enter_email">Enter Your GAIL Officer\'s Association Email</string>
     <string name="enter_password">Enter Your Password</string>
-    <string name="new_user_registration">New User Registration</string>
+    <string name="new_user_registration">New User On Boarding</string>
     <string name="enter_your_gail_email">Enter Your GAIL Email</string>
     <string name="enter_a_password">Enter a Password</string>
     <string name="register">Register</string>
@@ -63,7 +64,7 @@
     <string name="enter_otp">Enter OTP</string>
     <string name="verify_sign_in">Verify and Sign In</string>
     <string name="sign_out">sign out</string>
-    <string name="sensitive">You Don\'t Have the Companion GAIL Chat App\n\nInstall to Continue</string>
+    <string name="sensitive">In Order to Get the Blog Section you have to Install the Gail Chat App</string>
     <string name="now_enter_your_mobile_number">Now Enter Your Mobile Number</string>
     <string name="floop">Continue</string>
     <string name="enter_number_here">Enter Number Here</string>
@@ -72,6 +73,27 @@
     <string name="enter_the_code_you_just_recieved">Enter the Code You Just Received!</string>
     <string name="complete_sign_in">Complete Sign-In</string>
     <string name="enter_verification_code">Enter Verification Code</string>
+    <string name="about_data_we_collect">About Data we Collect</string>
+    <string name="privacy_policy"><b>Privacy Policy</b>\n\n
+Gas Authority of India Limited built the GAIL Officer\'s Association app as a Free app. This SERVICE is provided by Gas Authority of India Limited at no cost and is intended for use as is for the benefit of GAIL Officers.\n\n
+
+This page is used to inform visitors regarding our policies with the collection, use, and disclosure of Personal Information if anyone decided to use our Service.\n
+
+If you choose to use our Service, then you agree to the collection and use of information in relation to this policy. The Personal Information that we collect is stored itself inside your phone and isn\'t shared anywhere.\n We will not use or share your information with anyone.\n
+
+The terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, which is accessible at GAIL Officer\'s Association unless otherwise defined in this Privacy Policy.\n
+
+\n\nInformation Collection and Use:
+
+\nFor a better user authentication, while using our Service, we require you to provide us with certain personally identifiable information, including but not limited to Phone Number and Name (solely for verification). The information that we request will not be retained by us.
+
+The app does use third party services that may collect information used to identify you which is:
+
+Google Analytics and
+Google Authentication
+\n\n
+This policy is effective as of 2020-05-01</string>
+    <string name="bagpack">Bagpack</string>
 
 
     <!--Array for About Us Category-->

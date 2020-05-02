@@ -2,11 +2,14 @@ package com.aaxena.gailofficersassociation;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -37,11 +40,33 @@ public class MainActivity extends AppCompatActivity {
                     editTextMobile.requestFocus();
                     return;
                 }
-                Intent intent = new Intent(MainActivity.this, VerifyPhoneActivity.class);
-                intent.putExtra("mobile", mobile);
-                startActivity(intent);
-                finish();
+                if(haveNetwork()){
+                    Intent intent = new Intent(MainActivity.this, VerifyPhoneActivity.class);
+                    intent.putExtra("mobile", mobile);
+                    startActivity(intent);
+                    finish();
+                }
+                else if(!haveNetwork())
+                {
+                    Toast.makeText(MainActivity.this, "Check Your Internet Connection",Toast.LENGTH_SHORT).show();
+                }
             }
         });
+    }
+    private boolean haveNetwork() {
+        boolean have_WIFI = false;
+        boolean have_MobileData = false;
+
+        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
+        NetworkInfo[] networkInfos = connectivityManager.getAllNetworkInfo();
+        for (NetworkInfo info : networkInfos) {
+            if (info.getTypeName().equalsIgnoreCase("WIFI"))
+                if (info.isConnected())
+                    have_WIFI = true;
+            if (info.getTypeName().equalsIgnoreCase("MOBILE"))
+                if (info.isConnected())
+                    have_MobileData = true;
+        }
+        return have_MobileData||have_WIFI;
     }
 }

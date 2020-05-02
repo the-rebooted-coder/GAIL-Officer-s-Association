@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Checker"></activity>
+        <activity android:name=".PrivacyPolicy"></activity>
+        <activity android:name=".Checker" />
         <activity android:name=".VerifyPhoneActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".ExecBenefits" />

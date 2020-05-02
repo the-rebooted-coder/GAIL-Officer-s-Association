@@ -31,6 +31,7 @@ public class Email extends AppCompatActivity {
     public static final String SHARED_PREFS = "sharedPrefs";
     public static final String EMAIL = "email";
     public static final String UserEmail = "";
+    private Button privacypolicy;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +50,15 @@ public class Email extends AppCompatActivity {
         Password = (EditText)findViewById(R.id.editPassword);
 
         sqLiteHelper = new SQLiteHelper(this);
+
+        privacypolicy = findViewById(R.id.privacy_policy);
+        privacypolicy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Email.this, PrivacyPolicy.class);
+                startActivity(intent);
+            }
+        });
 
         //Adding click listener to log in button.
         LogInButton.setOnClickListener(new View.OnClickListener() {

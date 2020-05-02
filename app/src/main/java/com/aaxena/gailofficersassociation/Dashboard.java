@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.drawable.AnimationDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -12,15 +11,12 @@ import android.os.Vibrator;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.AlphaAnimation;
-import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.ColorInt;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 
 import static com.aaxena.gailofficersassociation.Email.EMAIL;
 import static com.aaxena.gailofficersassociation.Getter.SHARED_PREFS;
@@ -95,7 +91,7 @@ public class Dashboard extends AppCompatActivity {
                                 public void onClick(DialogInterface dialog, int which) {
                                     Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                                     v.vibrate(35);
-                                    Uri uri = Uri.parse("https://drive.google.com/open?id=1MlyczdcSDiangY6LYhmJaMoSk46Ib9Uq");
+                                    Uri uri = Uri.parse("https://drive.google.com/open?id=12DkyGeDEn3W5wUkLhN04kulTY0FIXN1C");
                                     Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                                     startActivity(intent);
 
