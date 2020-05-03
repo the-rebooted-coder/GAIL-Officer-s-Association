@@ -1,203 +1,139 @@
 package com.aaxena.gailofficersassociation;
 
-import android.content.Context;
 import android.content.Intent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.graphics.drawable.AnimationDrawable;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    EditText Email, Password;
-    Button Register;
-    String EmailHolder, PasswordHolder;
-    Boolean EditTextEmptyHolder;
-    SQLiteDatabase sqLiteDatabaseObj;
-    String SQLiteDataBaseQueryHolder ;
-    SQLiteHelper sqLiteHelper;
-    Cursor cursor;
-    String F_Result = "Not_Found";
+    private EditText emailTV, passwordTV;
+    private Button regBtn;
+    private ProgressBar progressBar;
 
+    private FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        setContentView(R.layout.activity_register);
 
-        Register = (Button)findViewById(R.id.buttonRegister);
 
-        Email = (EditText)findViewById(R.id.editEmail);
-        Password = (EditText)findViewById(R.id.editPassword);
+        if(!haveNetwork())
+        {
+            Toast.makeText(RegisterActivity.this, "Check Your Internet Connection",Toast.LENGTH_SHORT).show();
+        }
 
-        sqLiteHelper = new SQLiteHelper(this);
+        mAuth = FirebaseAuth.getInstance();
 
-        // Adding click listener to register button.
-        Register.setOnClickListener(new View.OnClickListener() {
+        initializeUI();
+
+        regBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                if(Email.getText().toString().contains("gail.co.in")){
-                    // Creating SQLite database if dose n't exists
-                    SQLiteDataBaseBuild();
-
-                    // Creating SQLite table if dose n't exists.
-                    SQLiteTableBuild();
-
-                    // Checking EditText is empty or Not.
-                    CheckEditTextStatus();
-
-                    // Method to check Email is already exists or not.
-                    CheckingEmailAlreadyExistsOrNot();
-
-                    // Empty EditText After done inserting process.
-                    EmptyEditTextAfterDataInsert();
-
-                }
-                else {
-                    Toast.makeText(RegisterActivity.this, "Enter a VALID Gail Email",Toast.LENGTH_LONG).show();
-                }
+            public void onClick(View v) {
+                registerNewUser();
             }
         });
-
     }
 
-    // SQLite database build method.
-    public void SQLiteDataBaseBuild(){
+    private void registerNewUser() {
+        progressBar.setVisibility(View.VISIBLE);
 
-        sqLiteDatabaseObj = openOrCreateDatabase(SQLiteHelper.DATABASE_NAME, Context.MODE_PRIVATE, null);
+        String email, password;
+        email = emailTV.getText().toString();
+        password = passwordTV.getText().toString();
 
-    }
-
-    // SQLite table build method.
-    public void SQLiteTableBuild() {
-
-        sqLiteDatabaseObj.execSQL("CREATE TABLE IF NOT EXISTS " + SQLiteHelper.TABLE_NAME + "(" + SQLiteHelper.Table_Column_ID + " VARCHAR, " + SQLiteHelper.Table_Column_2_Email + " VARCHAR, " + SQLiteHelper.Table_Column_3_Password + " VARCHAR);");
-
-    }
-
-    // Insert data into SQLite database method.
-    public void InsertDataIntoSQLiteDatabase(){
-
-        // If editText is not empty then this block will executed.
-        if(EditTextEmptyHolder == true)
-        {
-
-            // SQLite query to insert data into table.
-            SQLiteDataBaseQueryHolder = "INSERT INTO "+SQLiteHelper.TABLE_NAME+" (email,password) VALUES('"+EmailHolder+"', '"+PasswordHolder+"');";
-
-            // Executing query.
-            sqLiteDatabaseObj.execSQL(SQLiteDataBaseQueryHolder);
-
-            // Closing SQLite database object.
-            sqLiteDatabaseObj.close();
-
-            // Printing toast message after done inserting.
-            Toast.makeText(RegisterActivity.this,"User Registered Successfully", Toast.LENGTH_LONG).show();
-            Intent i = new Intent(RegisterActivity.this, Email.class);
-            startActivity(i);
-            finish();
+        if (TextUtils.isEmpty(email)) {
+            Toast.makeText(getApplicationContext(), "Please Enter Email...", Toast.LENGTH_LONG).show();
+            return;
         }
-        // This block will execute if any of the registration EditText is empty.
-        else {
-
-            // Printing toast message if any of EditText is empty.
-            Toast.makeText(RegisterActivity.this,"Please Fill All The Required Fields.", Toast.LENGTH_LONG).show();
-
+        if (TextUtils.isEmpty(password)) {
+            Toast.makeText(getApplicationContext(), "Please Enter Password!", Toast.LENGTH_LONG).show();
+            return;
         }
 
+        mAuth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            sendVerificationEmail();
+                            Toast.makeText(getApplicationContext(), "Account Created Successfully, Verify Email to Use the App", Toast.LENGTH_LONG).show();
+                            progressBar.setVisibility(View.GONE);
+                        }
+                        else {
+                            Toast.makeText(getApplicationContext(), "Registration failed! Please Try Again Later", Toast.LENGTH_LONG).show();
+                            progressBar.setVisibility(View.GONE);
+                        }
+                    }
+                });
     }
 
-    // Empty edittext after done inserting process method.
-    public void EmptyEditTextAfterDataInsert(){
-
-        Email.getText().clear();
-
-        Password.getText().clear();
-
+    private void initializeUI() {
+        emailTV = findViewById(R.id.email);
+        passwordTV = findViewById(R.id.password);
+        regBtn = findViewById(R.id.register);
+        progressBar = findViewById(R.id.progressBar);
     }
+    private boolean haveNetwork() {
+        boolean have_WIFI = false;
+        boolean have_MobileData = false;
 
-    // Method to check EditText is empty or Not.
-    public void CheckEditTextStatus(){
-
-        // Getting value from All EditText and storing into String Variables.
-        EmailHolder = Email.getText().toString();
-        PasswordHolder = Password.getText().toString();
-
-        if(TextUtils.isEmpty(EmailHolder) || TextUtils.isEmpty(PasswordHolder)){
-
-            EditTextEmptyHolder = false ;
-
+        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
+        NetworkInfo[] networkInfos = connectivityManager.getAllNetworkInfo();
+        for (NetworkInfo info : networkInfos) {
+            if (info.getTypeName().equalsIgnoreCase("WIFI"))
+                if (info.isConnected())
+                    have_WIFI = true;
+            if (info.getTypeName().equalsIgnoreCase("MOBILE"))
+                if (info.isConnected())
+                    have_MobileData = true;
         }
-        else {
-
-            EditTextEmptyHolder = true ;
-        }
+        return have_MobileData||have_WIFI;
     }
+    private void sendVerificationEmail()
+    {
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
-    // Checking Email is already exists or not.
-    public void CheckingEmailAlreadyExistsOrNot(){
+        user.sendEmailVerification()
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()) {
+                            // email sent
+                            // after email is sent just logout the user and finish this activity
+                            FirebaseAuth.getInstance().signOut();
+                            Toast.makeText(RegisterActivity.this,"Check Your Verification Email",Toast.LENGTH_LONG).show();
+                            startActivity(new Intent(RegisterActivity.this, Email.class));
+                            finish();
+                        }
+                        else
+                        {
+                            // email not sent, so display message and restart the activity or do whatever you wish to do
+                            //restart this activity
+                            overridePendingTransition(0, 0);
+                            finish();
+                            overridePendingTransition(0, 0);
+                            startActivity(getIntent());
 
-        // Opening SQLite database write permission.
-        sqLiteDatabaseObj = sqLiteHelper.getWritableDatabase();
-
-        // Adding search email query to cursor.
-        cursor = sqLiteDatabaseObj.query(SQLiteHelper.TABLE_NAME, null, " " + SQLiteHelper.Table_Column_2_Email + "=?", new String[]{EmailHolder}, null, null, null);
-
-        while (cursor.moveToNext()) {
-
-            if (cursor.isFirst()) {
-
-                cursor.moveToFirst();
-
-                // If Email is already exists then Result variable value set as Email Found.
-                F_Result = "Email Found";
-
-                // Closing cursor.
-                cursor.close();
-            }
-        }
-
-        // Calling method to check final result and insert data into SQLite database.
-        CheckFinalResult();
-
+                        }
+                    }
+                });
     }
-
-
-    // Checking result
-    public void CheckFinalResult(){
-
-        // Checking whether email is already exists or not.
-        if(F_Result.equalsIgnoreCase("Email Found"))
-        {
-
-            // If email is exists then toast msg will display.
-            Toast.makeText(RegisterActivity.this,"Email Already Exists",Toast.LENGTH_LONG).show();
-
-        }
-        else {
-
-            // If email already dose n't exists then user registration details will entered to SQLite database.
-            InsertDataIntoSQLiteDatabase();
-
-        }
-
-        F_Result = "Not_Found" ;
-
-        //Animation
-        ConstraintLayout container = (ConstraintLayout) findViewById(R.id.activity_register);
-        AnimationDrawable anim = (AnimationDrawable) container.getBackground();
-        anim.setEnterFadeDuration(5000);
-        anim.setExitFadeDuration(2000);
-        anim.start();
-    }
-
 }

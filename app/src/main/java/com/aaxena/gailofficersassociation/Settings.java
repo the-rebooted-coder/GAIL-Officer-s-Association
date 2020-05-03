@@ -28,21 +28,12 @@ public class Settings extends AppCompatActivity {
             public void onClick(View v) {
                 Vibrator v6 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                 v6.vibrate(25);
-                Intent i=new Intent(Settings.this,Getter.class);
+                Intent i=new Intent(Settings.this,ChangeName.class);
                 startActivity(i);
+                finish();
             }
         });
 
-        Button chngemail = findViewById(R.id.chngemail);
-        chngemail.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Vibrator v6 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-                v6.vibrate(25);
-                Intent i=new Intent(Settings.this,Email.class);
-                startActivity(i);
-            }
-        });
 
         Button logg = findViewById(R.id.logg);
         logg.setOnClickListener(new View.OnClickListener() {
@@ -54,6 +45,7 @@ public class Settings extends AppCompatActivity {
                 Toast.makeText(Settings.this,"Sign Out Successful",Toast.LENGTH_SHORT).show();
                 Intent i=new Intent(Settings.this,Email.class);
                 startActivity(i);
+                finish();
             }
         });
 

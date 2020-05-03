@@ -19,13 +19,12 @@ public class Checker extends AppCompatActivity {
         mFirebaseUser = mFirebaseAuth.getCurrentUser();
         if (mFirebaseUser == null) {
             // Not signed in, launch the Sign In activity
-            startActivity(new Intent(this, MainActivity.class));
+            startActivity(new Intent(this, Email.class));
             finish();
             }
         else {
             startActivity(new Intent(this, Dashboard.class));
             finish();
         }
-
     }
 }

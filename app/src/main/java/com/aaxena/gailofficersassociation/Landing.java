@@ -58,21 +58,21 @@ public class Landing extends AppCompatActivity {
                     case 1:
                         Vibrator v2 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                         v2.vibrate(33);
-                        Toast.makeText(parent.getContext(), "Loading Executive Bodies", Toast.LENGTH_LONG).show();
+                        Toast.makeText(parent.getContext(), "Loading Executive Bodies", Toast.LENGTH_SHORT).show();
                         Intent i=new Intent(Landing.this, WebPage.class);
                         startActivity(i);
                         break;
                     case 2:
                         Vibrator v3 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                         v3.vibrate(33);
-                        Toast.makeText(parent.getContext(), "Loading Committees", Toast.LENGTH_LONG).show();
+                        Toast.makeText(parent.getContext(), "Loading Committees", Toast.LENGTH_SHORT).show();
                         Intent i4=new Intent(Landing.this, WebPage3.class);
                         startActivity(i4);
                         break;
                     case 3:
                         Vibrator v4 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                         v4.vibrate(33);
-                        Toast.makeText(parent.getContext(), "Loading Sports Coordinators", Toast.LENGTH_LONG).show();
+                        Toast.makeText(parent.getContext(), "Loading Sports Coordinators", Toast.LENGTH_SHORT).show();
                         Intent i2=new Intent(Landing.this,WebPage2.class);
                         startActivity(i2);
                         break;

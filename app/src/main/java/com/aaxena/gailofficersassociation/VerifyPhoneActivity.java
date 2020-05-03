@@ -133,14 +133,13 @@ public class VerifyPhoneActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             //verification successful we will start the profile activity
-                            Toast.makeText(VerifyPhoneActivity.this, "Securely Signing You In",Toast.LENGTH_LONG).show();
-                            Intent intent = new Intent(VerifyPhoneActivity.this, Dashboard.class);
+                            Toast.makeText(VerifyPhoneActivity.this, "Phone Verified",Toast.LENGTH_LONG).show();
+                            Intent intent = new Intent(VerifyPhoneActivity.this, VerifyEmail.class);
                             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                             startActivity(intent);
                             finish();
 
                         } else {
-
                             //verification unsuccessful.. display an error message
 
                             String message = "Somthing is wrong, we will fix it soon...";

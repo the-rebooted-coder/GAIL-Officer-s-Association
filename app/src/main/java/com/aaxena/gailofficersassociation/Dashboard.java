@@ -18,7 +18,9 @@ import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import static com.aaxena.gailofficersassociation.Email.EMAIL;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 import static com.aaxena.gailofficersassociation.Getter.SHARED_PREFS;
 import static com.aaxena.gailofficersassociation.Getter.TEXT;
 
@@ -38,12 +40,21 @@ public class Dashboard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_dashboard);
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
+            String email = user.getEmail();
+            if (email != null) {
+                emaillo = email;
+            } else {
+                Intent i = new Intent(Dashboard.this, Email.class);
+                startActivity(i);
+            }
+        }
         emailhello = findViewById(R.id.emailhello);
         namehello = findViewById(R.id.namehello);
         loadData();
-
-        emailhello.setText("Logged in as: "+emaillo);
-
+        emailhello.setText("Logged in as: " + emaillo);
         emailhello.startAnimation(fadeIn);
         emailhello.startAnimation(fadeOut);
 
@@ -193,6 +204,6 @@ public class Dashboard extends AppCompatActivity {
     public void loadData(){
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         hello = sharedPreferences.getString(TEXT,"");
-        emaillo = sharedPreferences.getString(EMAIL,"");
+        //emaillo = sharedPreferences.getString(EMAIL,"");
     }
 }

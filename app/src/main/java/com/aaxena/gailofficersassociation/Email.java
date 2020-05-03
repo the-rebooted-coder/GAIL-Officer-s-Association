@@ -2,10 +2,6 @@ package com.aaxena.gailofficersassociation;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.text.TextUtils;
@@ -13,182 +9,133 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class Email extends AppCompatActivity {
 
-    Button LogInButton, RegisterButton ;
-    EditText Email, Password ;
-    String EmailHolder, PasswordHolder;
-    Boolean EditTextEmptyHolder;
-    SQLiteDatabase sqLiteDatabaseObj;
-    SQLiteHelper sqLiteHelper;
-    Cursor cursor;
-    String TempPassword = "NOT_FOUND" ;
-    public static final String SHARED_PREFS = "sharedPrefs";
-    public static final String EMAIL = "email";
-    public static final String UserEmail = "";
-    private Button privacypolicy;
-
+    private EditText emailTV, passwordTV;
+    private Button loginBtn;
+    private ProgressBar progressBar;
+    private FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_email);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        setContentView(R.layout.activity_email);
+        Button reset = findViewById(R.id.reset);
+        reset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Vibrator v11 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                v11.vibrate(25);
+                Intent intent = new Intent(Email.this, ResetPassword.class);
+                startActivity(intent);
+            }
+        });
 
-        Vibrator v8 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-        v8.vibrate(26);
-
-        LogInButton = (Button)findViewById(R.id.buttonLogin);
-
-        RegisterButton = (Button)findViewById(R.id.buttonRegister);
-
-        Email = (EditText)findViewById(R.id.editEmail);
-        Password = (EditText)findViewById(R.id.editPassword);
-
-        sqLiteHelper = new SQLiteHelper(this);
-
-        privacypolicy = findViewById(R.id.privacy_policy);
+        Button privacypolicy = findViewById(R.id.privacy_policy);
         privacypolicy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Vibrator v11 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                v11.vibrate(23);
                 Intent intent = new Intent(Email.this, PrivacyPolicy.class);
                 startActivity(intent);
             }
         });
 
-        //Adding click listener to log in button.
-        LogInButton.setOnClickListener(new View.OnClickListener() {
+        Button acc = findViewById(R.id.acc);
+        acc.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-
-                // Calling EditText is empty or no method.
-                CheckEditTextStatus();
-
-                // Calling login method.
-                LoginFunction();
-
-
+            public void onClick(View v) {
+                Intent i=new Intent(Email.this,RegisterActivity.class);
+                startActivity(i);
             }
         });
 
-        // Adding click listener to register button.
-        RegisterButton.setOnClickListener(new View.OnClickListener() {
+        mAuth = FirebaseAuth.getInstance();
+
+        initializeUI();
+
+        loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-
-                // Opening new user registration activity using intent on button click.
-                Intent intent = new Intent(Email.this, RegisterActivity.class);
-                startActivity(intent);
-                finish();
-
+            public void onClick(View v) {
+                loginUserAccount();
             }
         });
-
     }
 
-    // Login function starts from here.
-    public void LoginFunction(){
+    private void loginUserAccount() {
+        progressBar.setVisibility(View.VISIBLE);
 
-        if(EditTextEmptyHolder) {
+        String email, password;
+        email = emailTV.getText().toString();
+        password = passwordTV.getText().toString();
 
-            // Opening SQLite database write permission.
-            sqLiteDatabaseObj = sqLiteHelper.getWritableDatabase();
-
-            // Adding search email query to cursor.
-            cursor = sqLiteDatabaseObj.query(SQLiteHelper.TABLE_NAME, null, " " + SQLiteHelper.Table_Column_2_Email + "=?", new String[]{EmailHolder}, null, null, null);
-
-            while (cursor.moveToNext()) {
-
-                if (cursor.isFirst()) {
-
-                    cursor.moveToFirst();
-
-                    // Storing Password associated with entered email.
-                    TempPassword = cursor.getString(cursor.getColumnIndex(SQLiteHelper.Table_Column_3_Password));
-
-                    // Closing cursor.
-                    cursor.close();
-                }
-            }
-
-            // Calling method to check final result ..
-            CheckFinalResult();
-
+        if (TextUtils.isEmpty(email)) {
+            Toast.makeText(getApplicationContext(), "Please Enter Email...", Toast.LENGTH_LONG).show();
+            return;
         }
-        else {
-
-            //If any of login EditText empty then this block will be executed.
-            Toast.makeText(Email.this,"Please Enter Email or Password.",Toast.LENGTH_LONG).show();
-
+        if (TextUtils.isEmpty(password)) {
+            Toast.makeText(getApplicationContext(), "Please Enter Password!", Toast.LENGTH_LONG).show();
+            return;
         }
 
+        mAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            checkIfEmailVerified();
+                            progressBar.setVisibility(View.GONE);
+
+                        }
+                        else {
+                            Toast.makeText(getApplicationContext(), "Login failed! Please Try Again Later", Toast.LENGTH_LONG).show();
+                            progressBar.setVisibility(View.GONE);
+                        }
+                    }
+                });
     }
 
-    // Checking EditText is empty or not.
-    public void CheckEditTextStatus(){
+    private void initializeUI() {
+        emailTV = findViewById(R.id.email);
+        passwordTV = findViewById(R.id.password);
 
-        // Getting value from All EditText and storing into String Variables.
-        EmailHolder = Email.getText().toString();
-        PasswordHolder = Password.getText().toString();
-
-        // Checking EditText is empty or no using TextUtils.
-        if( TextUtils.isEmpty(EmailHolder) || TextUtils.isEmpty(PasswordHolder)){
-
-            EditTextEmptyHolder = false ;
-
-        }
-        else {
-
-            EditTextEmptyHolder = true ;
-        }
+        loginBtn = findViewById(R.id.login);
+        progressBar = findViewById(R.id.progressBar);
     }
+    private void checkIfEmailVerified()
+    {
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
-    // Checking entered password from SQLite database email associated password.
-    public void CheckFinalResult(){
-        Vibrator v9 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-        v9.vibrate(27);
-
-        if(TempPassword.equalsIgnoreCase(PasswordHolder))
+        if (user.isEmailVerified())
         {
-            Vibrator v0 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-            v0.vibrate(26);
-            saveData();
-            Toast.makeText(Email.this,"Login Successfully",Toast.LENGTH_LONG).show();
-
-            // Going to Dashboard activity after login success message.
+            // user is verified, so you can finish this activity or send user to activity which you want.
+            finish();
+            Toast.makeText(Email.this, "Successfully logged in", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(Email.this, MainActivity.class);
-
-
             startActivity(intent);
             finish();
-
+        }
+        else
+        {
+            // email is not verified, so just prompt the message to the user and restart this activity.
+            // NOTE: don't forget to log out the user.
+            FirebaseAuth.getInstance().signOut();
+            Toast.makeText(Email.this, "Email Not Verified!", Toast.LENGTH_SHORT).show();
+            //restart this activity
 
         }
-        else {
-            Vibrator v0 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-            v0.vibrate(24);
-            Toast.makeText(Email.this,"Email or Password is Wrong, Please Try Again.",Toast.LENGTH_LONG).show();
-
-        }
-        TempPassword = "NOT_FOUND" ;
-
-        //Animation
-        ConstraintLayout container = (ConstraintLayout) findViewById(R.id.activity_main);
-        AnimationDrawable anim = (AnimationDrawable) container.getBackground();
-        anim.setEnterFadeDuration(5000);
-        anim.setExitFadeDuration(2000);
-        anim.start();
-
     }
-    private void saveData() {
-        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString(EMAIL,Email.getText().toString());
-        editor.commit();
-    }
-
 }

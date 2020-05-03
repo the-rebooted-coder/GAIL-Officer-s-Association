@@ -12,7 +12,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PrivacyPolicy"></activity>
+        <activity android:name=".ReVerification"></activity>
+        <activity android:name=".VerifyEmail" />
+        <activity android:name=".ResetPassword" />
+        <activity android:name=".ChangeName" />
+        <activity android:name=".PrivacyPolicy" />
         <activity android:name=".Checker" />
         <activity android:name=".VerifyPhoneActivity" />
         <activity android:name=".MainActivity" />

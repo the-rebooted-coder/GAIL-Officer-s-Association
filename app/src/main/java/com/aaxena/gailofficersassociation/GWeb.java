@@ -24,6 +24,6 @@ public class GWeb extends AppCompatActivity {
         gbm = findViewById(R.id.gbm);
         gbm.setWebViewClient(new WebViewClient());
         gbm.getSettings().setJavaScriptEnabled(true);
-        gbm.loadUrl("https://www.dropbox.com/sh/xh2a51w6m6wm4u6/AAA406frv9ezC0m7y9wcPfnra?dl=0");
+        gbm.loadUrl("https://drive.google.com/open?id=1iXpAt_KUAf9JIsUDQymPNQ7vvLA5oSZg");
     }
 }

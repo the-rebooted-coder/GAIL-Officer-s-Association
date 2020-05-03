@@ -26,16 +26,11 @@ public class Activities extends AppCompatActivity {
         webview.getSettings().setDomStorageEnabled(true);
         webview.setWebViewClient(new WebViewClient() {
         });
-        webview.loadUrl("https://the-rebooted-coder.github.io/news-goa/");
+        webview.loadUrl("https://www.bbc.com/news/world/asia/india");
         webview.measure(100,100);
         webview.getSettings().setUseWideViewPort(true);
         webview.getSettings().setLoadWithOverviewMode(true);
         webview.setVerticalScrollBarEnabled(false);
         webview.setHorizontalScrollBarEnabled(false);
-    }
-    public void onBackPressed() {
-        Intent i=new Intent(Activities.this, Dashboard.class);
-        startActivity(i);
-        finish();
     }
 }

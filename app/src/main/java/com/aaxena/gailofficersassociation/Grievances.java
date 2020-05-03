@@ -14,7 +14,9 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import static com.aaxena.gailofficersassociation.Email.EMAIL;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 import static com.aaxena.gailofficersassociation.Getter.SHARED_PREFS;
 import static com.aaxena.gailofficersassociation.Getter.TEXT;
 
@@ -23,7 +25,7 @@ public class Grievances extends AppCompatActivity {
     private TextView mEditTextTo;
     private EditText mEditTextMessage;
     private EditText mEditTextcpf;
-    private EditText mEditTextFrom;
+    private TextView mEditTextFrom;
     private String name;
     private String emaillo;
     private EditText namee;
@@ -39,9 +41,18 @@ public class Grievances extends AppCompatActivity {
         mEditTextcpf = findViewById(R.id.edit_text_cpf);
         mEditTextFrom = findViewById(R.id.edit_text_from);
         loadData();
-        mEditTextFrom.setText(emaillo);
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
+            String email = user.getEmail();
+            emaillo = email;
+        }
+        else {
+            Intent i=new Intent(Grievances.this,Email.class);
+            startActivity(i);
+        }
         namee = findViewById(R.id.edit_text_name);
         namee.setText(name);
+        mEditTextFrom.setText(emaillo);
 
         Button buttonSend = findViewById(R.id.button_send);
         buttonSend.setOnClickListener(new View.OnClickListener() {
@@ -79,6 +90,5 @@ public class Grievances extends AppCompatActivity {
     public void loadData(){
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         name = sharedPreferences.getString(TEXT,"");
-        emaillo = sharedPreferences.getString(EMAIL,"");
     }
 }

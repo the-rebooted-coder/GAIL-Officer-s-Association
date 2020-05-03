@@ -53,7 +53,7 @@ public class Services extends AppCompatActivity {
                     case 0:
                         Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                         v.vibrate(33);
-                        Toast.makeText(parent.getContext(), "GBM General Body Meeting", Toast.LENGTH_LONG).show();
+                        Toast.makeText(parent.getContext(), "GBM General Body Meeting", Toast.LENGTH_SHORT).show();
                         break;
                     case 1:
                         Vibrator v2 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
