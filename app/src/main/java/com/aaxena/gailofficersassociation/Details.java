@@ -36,7 +36,7 @@ private Button start;
         v6.vibrate(21);
 
         //Android Background Animation
-        ConstraintLayout container = (ConstraintLayout) findViewById(R.id.beginning);
+        ConstraintLayout container = findViewById(R.id.beginning);
         AnimationDrawable anim = (AnimationDrawable) container.getBackground();
         anim.setEnterFadeDuration(6000);
         anim.setExitFadeDuration(2000);

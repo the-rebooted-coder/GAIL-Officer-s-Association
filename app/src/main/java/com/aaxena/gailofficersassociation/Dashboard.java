@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -12,14 +14,21 @@ import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.AlphaAnimation;
 import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.ScrollView;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.content.ContextCompat;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+
+import java.util.Calendar;
 
 import static com.aaxena.gailofficersassociation.Getter.SHARED_PREFS;
 import static com.aaxena.gailofficersassociation.Getter.TEXT;
@@ -29,6 +38,7 @@ public class Dashboard extends AppCompatActivity {
     TextView namehello;
     Button LogOUT ;
     private String emaillo;
+    private Switch dynamic;
     TextView fader;
     private TextView afterfade;
     TextView emailhello;
@@ -40,7 +50,20 @@ public class Dashboard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_dashboard);
+        if (isFirstTime()) {
+            new AlertDialog.Builder(this)
+                    .setTitle("Dynamic Background")
+                    .setMessage(R.string.dd)
+                    // A null listener allows the button to dismiss the dialog and take no further action.
+                    .setNeutralButton("Okay!", null)
+                    .create().show();
+        }
+        //Making Scroll View Off
+        ScrollView scrollView = findViewById(R.id.scrollView1);
+        scrollView.setVerticalScrollBarEnabled(false);
+        scrollView.setHorizontalScrollBarEnabled(false);
 
+//Authentication
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
             String email = user.getEmail();
@@ -68,6 +91,8 @@ public class Dashboard extends AppCompatActivity {
         fadeOut.setStartOffset(3200+fadeIn.getStartOffset());
 
 
+
+
         afterfade = findViewById(R.id.afterfades);
         int splash_screen_time_out = 4000;
         new Handler().postDelayed(new Runnable() {
@@ -85,7 +110,7 @@ public class Dashboard extends AppCompatActivity {
         blog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = getPackageManager().getLaunchIntentForPackage("com.google.firebase.codelab.friendlychat");
+                Intent intent = getPackageManager().getLaunchIntentForPackage("com.wGAILChat_10832717");
                 if (intent != null) {
                     // We found the activity now start the activity
                     Vibrator v11 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
@@ -102,7 +127,7 @@ public class Dashboard extends AppCompatActivity {
                                 public void onClick(DialogInterface dialog, int which) {
                                     Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                                     v.vibrate(35);
-                                    Uri uri = Uri.parse("https://drive.google.com/open?id=12DkyGeDEn3W5wUkLhN04kulTY0FIXN1C");
+                                    Uri uri = Uri.parse("https://drive.google.com/open?id=1z5YCbq8-1ZLmkilXvmvM74kJmqww5pso");
                                     Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                                     startActivity(intent);
 
@@ -169,7 +194,7 @@ public class Dashboard extends AppCompatActivity {
             }
         });
 
-        Button about = findViewById(R.id.about);
+        final Button about = findViewById(R.id.about);
         about.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -184,8 +209,71 @@ public class Dashboard extends AppCompatActivity {
         Vibrator v6 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         v6.vibrate(20);
 
+        //Dynamic Switcher
+        dynamic = findViewById(R.id.dynamic);
+        dynamic.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
 
-        LogOUT = (Button)findViewById(R.id.button1);
+                    SharedPreferences.Editor editor = getSharedPreferences("com.aaxena.gailofficersassociation", MODE_PRIVATE).edit();
+                    editor.putBoolean("isChecked", true);
+                    editor.commit();
+
+                    afterfade.setTextColor(Color.parseColor("#FFFFFF"));
+                    fader.setTextColor(Color.parseColor("#FFFFFF"));
+                    emailhello.setTextColor(Color.parseColor("#FFFFFF"));
+
+                    Calendar c = Calendar.getInstance();
+                    int timeOfDay = c.get(Calendar.HOUR_OF_DAY);
+
+                    if (timeOfDay >= 0 && timeOfDay < 07) {
+                        ConstraintLayout constraintLayout=(ConstraintLayout) findViewById(R.id.myflow);
+                        Drawable drawable= getResources().getDrawable(R.drawable.dyna_three);
+                        constraintLayout.setBackgroundDrawable(drawable);
+                    } else if (timeOfDay >= 07 && timeOfDay < 16) {
+                        ConstraintLayout constraintLayout=(ConstraintLayout) findViewById(R.id.myflow);
+                        Drawable drawable= getResources().getDrawable(R.drawable.dyna_one);
+                        constraintLayout.setBackgroundDrawable(drawable);
+                    } else if (timeOfDay >= 16 && timeOfDay < 18) {
+                        ConstraintLayout constraintLayout=(ConstraintLayout) findViewById(R.id.myflow);
+                        Drawable drawable= getResources().getDrawable(R.drawable.dyna_two);
+                        constraintLayout.setBackgroundDrawable(drawable);
+                    } else if (timeOfDay >= 18 && timeOfDay < 21) {
+                        ConstraintLayout constraintLayout=(ConstraintLayout) findViewById(R.id.myflow);
+                        Drawable drawable= getResources().getDrawable(R.drawable.dyna_five);
+                        constraintLayout.setBackgroundDrawable(drawable);
+                    } else if (timeOfDay >= 21 && timeOfDay < 24) {
+                        ConstraintLayout constraintLayout=(ConstraintLayout) findViewById(R.id.myflow);
+                        Drawable drawable= getResources().getDrawable(R.drawable.dyna_four);
+                        constraintLayout.setBackgroundDrawable(drawable);
+                    }
+                    Drawable back= getResources().getDrawable(R.drawable.white);
+                    dynamic.setBackgroundDrawable(back);
+                    dynamic.setText(R.string.turn_on_dynamic_background);
+                    dynamic.setText(R.string.dynamic_on);
+                } else {
+                    SharedPreferences.Editor editor = getSharedPreferences("com.aaxena.gailofficersassociation", MODE_PRIVATE).edit();
+                    editor.putBoolean("isChecked", false);
+                    editor.commit();
+                    ConstraintLayout constraintLayout=(ConstraintLayout) findViewById(R.id.myflow);
+                    Drawable drawable= getResources().getDrawable(R.drawable.color8);
+                    constraintLayout.setBackgroundDrawable(drawable);
+                    afterfade.setTextColor(Color.parseColor("#0336ff"));
+                    fader.setTextColor(Color.parseColor("#0336ff"));
+                    emailhello.setTextColor(Color.parseColor("#0336ff"));
+                    Drawable back= getResources().getDrawable(R.drawable.color8);
+                    dynamic.setBackgroundDrawable(back);
+                    dynamic.setText(R.string.turn_on_dynamic_background);
+                }
+            }
+        });
+
+        SharedPreferences sharedPrefs = getSharedPreferences("com.aaxena.gailofficersassociation", MODE_PRIVATE);
+        dynamic.setChecked(sharedPrefs.getBoolean("isChecked", false));
+
+
+
+        LogOUT = findViewById(R.id.button1);
 
         // Adding click listener to Log Out button.
         LogOUT.setOnClickListener(new View.OnClickListener() {
@@ -204,6 +292,16 @@ public class Dashboard extends AppCompatActivity {
     public void loadData(){
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         hello = sharedPreferences.getString(TEXT,"");
-        //emaillo = sharedPreferences.getString(EMAIL,"");
+    }
+    private boolean isFirstTime() {
+        SharedPreferences preferences = getPreferences(MODE_PRIVATE);
+        boolean ranBefore = preferences.getBoolean("RanBefore", false);
+        if (!ranBefore) {
+            // first time
+            SharedPreferences.Editor editor = preferences.edit();
+            editor.putBoolean("RanBefore", true);
+            editor.commit();
+        }
+        return !ranBefore;
     }
 }

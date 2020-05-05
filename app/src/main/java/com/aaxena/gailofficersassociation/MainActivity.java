@@ -36,11 +36,15 @@ public class MainActivity extends AppCompatActivity {
                 Vibrator v2 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                 v2.vibrate(27);
                 if(mobile.isEmpty() || mobile.length() < 10){
+                    Vibrator v11 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                    v11.vibrate(30);
                     editTextMobile.setError("Enter a valid mobile number");
                     editTextMobile.requestFocus();
                     return;
                 }
                 if(haveNetwork()){
+                    Vibrator v11 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                    v11.vibrate(23);
                     Intent intent = new Intent(MainActivity.this, VerifyPhoneActivity.class);
                     intent.putExtra("mobile", mobile);
                     startActivity(intent);

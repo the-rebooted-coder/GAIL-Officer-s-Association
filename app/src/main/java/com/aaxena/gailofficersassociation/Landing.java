@@ -36,7 +36,7 @@ public class Landing extends AppCompatActivity {
 
         //Spinner
         final Spinner spinAbout;
-        spinAbout= (Spinner) findViewById(R.id.spinAbout);//fetch the spinner from layout file
+        spinAbout= findViewById(R.id.spinAbout);//fetch the spinner from layout file
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, getResources()
                 .getStringArray(R.array.about_us_array));//setting the country_array to spinner

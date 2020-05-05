@@ -3,6 +3,7 @@ package com.aaxena.gailofficersassociation;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.view.View;
@@ -16,6 +17,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Settings extends AppCompatActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +44,7 @@ public class Settings extends AppCompatActivity {
                 FirebaseAuth.getInstance().signOut();
                 Vibrator v6 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                 v6.vibrate(35);
-                Toast.makeText(Settings.this,"Sign Out Successful",Toast.LENGTH_SHORT).show();
+                Toast.makeText(Settings.this,"Log Out Successful",Toast.LENGTH_SHORT).show();
                 Intent i=new Intent(Settings.this,Email.class);
                 startActivity(i);
                 finish();
@@ -55,7 +57,7 @@ public class Settings extends AppCompatActivity {
         v6.vibrate(19);
 
         //Android Background Animation
-        ConstraintLayout container = (ConstraintLayout) findViewById(R.id.set);
+        ConstraintLayout container = findViewById(R.id.set);
         AnimationDrawable anim = (AnimationDrawable) container.getBackground();
         anim.setEnterFadeDuration(6000);
         anim.setExitFadeDuration(2000);

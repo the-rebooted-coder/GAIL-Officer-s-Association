@@ -68,6 +68,7 @@ public class ReVerification extends AppCompatActivity {
                             Intent intent = new Intent(ReVerification.this, Dashboard.class);
                             startActivity(intent);
                             progressBar.setVisibility(View.GONE);
+                            finish();
 
                         }
                         else {

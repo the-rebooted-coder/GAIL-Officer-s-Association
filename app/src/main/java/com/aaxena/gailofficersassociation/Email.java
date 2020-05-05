@@ -10,6 +10,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -27,11 +28,32 @@ public class Email extends AppCompatActivity {
     private Button loginBtn;
     private ProgressBar progressBar;
     private FirebaseAuth mAuth;
+    private EditText cpf;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_email);
+
+        final TextView textView = findViewById(R.id.greetings_behalf);
+        final int[] array = {R.string.text1, R.string.text2,R.string.text3,R.string.text4,R.string.text5,R.string.text6};
+        textView.post(new Runnable() {
+            int i = 0;
+            @Override
+            public void run() {
+                textView.setText(array[i]);
+                i++;
+                if (i ==5)
+                    i = 0;
+                textView.postDelayed(this, 5000);
+            }
+        });
+
+        cpf = findViewById(R.id.cpf);
+        if(cpf.getText().toString().trim().isEmpty())
+        {
+         cpf.setError("Required");
+        }
         Button reset = findViewById(R.id.reset);
         reset.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,6 +118,8 @@ public class Email extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
+                            Vibrator v11 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                            v11.vibrate(25);
                             checkIfEmailVerified();
                             progressBar.setVisibility(View.GONE);
 
@@ -123,7 +147,7 @@ public class Email extends AppCompatActivity {
         {
             // user is verified, so you can finish this activity or send user to activity which you want.
             finish();
-            Toast.makeText(Email.this, "Successfully logged in", Toast.LENGTH_SHORT).show();
+            Toast.makeText(Email.this, "Successful", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(Email.this, MainActivity.class);
             startActivity(intent);
             finish();

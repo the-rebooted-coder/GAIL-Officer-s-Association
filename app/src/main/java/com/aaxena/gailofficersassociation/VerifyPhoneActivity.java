@@ -1,7 +1,9 @@
 package com.aaxena.gailofficersassociation;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
@@ -58,6 +60,8 @@ public class VerifyPhoneActivity extends AppCompatActivity {
         findViewById(R.id.buttonSignIn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Vibrator v11 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                v11.vibrate(25);
                 String code = editTextCode.getText().toString().trim();
                 if (code.isEmpty() || code.length() < 6) {
                     editTextCode.setError("Enter valid code");
@@ -132,6 +136,8 @@ public class VerifyPhoneActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
+                            Vibrator v11 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                            v11.vibrate(25);
                             //verification successful we will start the profile activity
                             Toast.makeText(VerifyPhoneActivity.this, "Phone Verified",Toast.LENGTH_LONG).show();
                             Intent intent = new Intent(VerifyPhoneActivity.this, VerifyEmail.class);

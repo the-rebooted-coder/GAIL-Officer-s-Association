@@ -21,6 +21,7 @@ public class Getter extends AppCompatActivity {
     LottieAnimationView donee;
     int timeout = 1950;
     EditText name;
+    int vib=500;
     public static final String SHARED_PREFS = "sharedPrefs";
     public static final String TEXT = "text";
 
@@ -38,13 +39,20 @@ public class Getter extends AppCompatActivity {
         begin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Vibrator v9 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                v9.vibrate(24);
                 if (!isAnimated) {
                     donee.playAnimation();
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            Vibrator v9 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-                            v9.vibrate(27);
+                            new Handler().postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    Vibrator v9 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                                    v9.vibrate(27);
+                                }
+                            }, vib);
                             saveData();
                         Intent i = new Intent(Getter.this, Email.class);
                         startActivity(i);
@@ -56,7 +64,7 @@ public class Getter extends AppCompatActivity {
         });
 
         //Animation
-        ConstraintLayout container = (ConstraintLayout) findViewById(R.id.getter);
+        ConstraintLayout container = findViewById(R.id.getter);
         AnimationDrawable anim = (AnimationDrawable) container.getBackground();
         anim.setEnterFadeDuration(5000);
         anim.setExitFadeDuration(2000);
