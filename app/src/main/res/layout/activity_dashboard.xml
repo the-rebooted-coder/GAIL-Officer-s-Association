@@ -8,22 +8,6 @@
     android:background="@drawable/color8"
     android:keepScreenOn="true"
     tools:context=".Dashboard">
-    <!--
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/productsansitalic"
-        android:text="@string/navigate_to"
-        android:textAlignment="center"
-        android:textColor="@color/intro_title_color"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.39" />
-        -->
 
 
     <ScrollView
@@ -46,7 +30,7 @@
             android:verticalScrollbarPosition="left">
 
             <Button
-                android:id="@+id/about"
+                android:id="@+id/bbc"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:background="@drawable/color10"
@@ -140,6 +124,24 @@
                 android:elevation="20dp"
                 android:fontFamily="@font/productsans"
                 android:text="@string/news"
+                android:textColor="@color/texter"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.049"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.65" />
+
+            <Button
+                android:id="@+id/news_india"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/color10"
+                android:elevation="20dp"
+                android:fontFamily="@font/productsans"
+                android:text="@string/indian_news_bulletin"
                 android:textColor="@color/texter"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"

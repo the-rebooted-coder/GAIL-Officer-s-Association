@@ -1,7 +1,5 @@
 package com.aaxena.gailofficersassociation;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -14,6 +12,8 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class ChangeName extends AppCompatActivity {
     public static final String SHARED_PREFS = "sharedPrefs";

@@ -75,7 +75,7 @@
     <EditText
         android:id="@+id/edit_text_message"
         android:layout_width="311dp"
-        android:layout_height="169dp"
+        android:layout_height="wrap_content"
         android:ems="10"
         android:fontFamily="serif-monospace"
         android:hint="@string/enter_your_message"
@@ -104,18 +104,19 @@
 
     <TextView
         android:id="@+id/edit_text_from"
-        android:layout_width="285dp"
+        android:layout_width="wrap_content"
         android:layout_height="41dp"
         android:autofillHints=""
         android:ems="10"
         android:fontFamily="@font/productsans"
         android:hint="@string/gail_email"
         android:textColor="@color/intro_title_color"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.47000003" />
+        app:layout_constraintVertical_bias="0.45999998" />
 
     <EditText
         android:id="@+id/edit_text_name"

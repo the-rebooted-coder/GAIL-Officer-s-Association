@@ -125,24 +125,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.98" />
 
-    <EditText
-        android:id="@+id/cpf"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="9dp"
-        android:ems="10"
-        android:fontFamily="@font/productsans"
-        android:hint="@string/enter_your_cpf_number"
-        android:inputType="number"
-        android:textAlignment="center"
-        android:textColor="@android:color/background_light"
-        android:textColorHint="@color/common_google_signin_btn_text_dark_pressed"
-        android:textColorLink="@color/common_google_signin_btn_text_dark_pressed"
-        app:layout_constraintBottom_toTopOf="@+id/password"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email"
-        android:importantForAutofill="no" />
 
     <TextView
         android:id="@+id/greetings_behalf"
@@ -153,7 +135,7 @@
         android:fontFamily="@font/light"
         android:text="@string/hello"
         android:textColor="@color/common_google_signin_btn_text_dark_default"
-        android:textSize="26sp"
+        android:textSize="28sp"
         app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

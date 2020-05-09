@@ -12,7 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ReVerification"></activity>
+        <activity android:name=".BBC"></activity>
+        <activity android:name=".NDTV" />
+        <activity android:name=".IndianNewsLanding" />
+        <activity android:name=".ReVerification" />
         <activity android:name=".VerifyEmail" />
         <activity android:name=".ResetPassword" />
         <activity android:name=".ChangeName" />

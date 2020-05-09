@@ -1,0 +1,44 @@
+package com.aaxena.gailofficersassociation;
+
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.Vibrator;
+import android.view.View;
+import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+public class IndianNewsLanding extends AppCompatActivity {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        setContentView(R.layout.activity_indian_news_landing);
+
+        Button ndtv = findViewById(R.id.ndtv);
+        ndtv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Vibrator v8 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                v8.vibrate(26);
+                Toast.makeText(IndianNewsLanding.this, "Navigating to khabar.ndtv.in", Toast.LENGTH_SHORT).show();
+                Intent i=new Intent(IndianNewsLanding.this,NDTV.class);
+                startActivity(i);
+            }
+        });
+        Button bbc = findViewById(R.id.bbc);
+        bbc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Vibrator v8 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                v8.vibrate(26);
+                Toast.makeText(IndianNewsLanding.this, "Navigating to bbc/news", Toast.LENGTH_SHORT).show();
+                Intent i=new Intent(IndianNewsLanding.this,BBC.class);
+                startActivity(i);
+            }
+        });
+    }
+}

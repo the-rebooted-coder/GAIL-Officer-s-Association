@@ -28,7 +28,6 @@ public class Email extends AppCompatActivity {
     private Button loginBtn;
     private ProgressBar progressBar;
     private FirebaseAuth mAuth;
-    private EditText cpf;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,11 +48,6 @@ public class Email extends AppCompatActivity {
             }
         });
 
-        cpf = findViewById(R.id.cpf);
-        if(cpf.getText().toString().trim().isEmpty())
-        {
-         cpf.setError("Required");
-        }
         Button reset = findViewById(R.id.reset);
         reset.setOnClickListener(new View.OnClickListener() {
             @Override

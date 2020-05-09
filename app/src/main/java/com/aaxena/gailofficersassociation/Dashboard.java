@@ -23,7 +23,6 @@ import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.core.content.ContextCompat;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -106,7 +105,7 @@ public class Dashboard extends AppCompatActivity {
         }, splash_screen_time_out);
 
 
-        Button blog = findViewById(R.id.blog);
+        final Button blog = findViewById(R.id.blog);
         blog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -122,12 +121,12 @@ public class Dashboard extends AppCompatActivity {
                     new AlertDialog.Builder(Dashboard.this)
                             .setTitle("Companion App Not Installed!")
                             .setMessage(R.string.sensitive)
-                            .setPositiveButton("Get GAIL Chat", new DialogInterface.OnClickListener() {
+                            .setPositiveButton("Get GOA Chat", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
                                     Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                                     v.vibrate(35);
-                                    Uri uri = Uri.parse("https://drive.google.com/open?id=1z5YCbq8-1ZLmkilXvmvM74kJmqww5pso");
+                                    Uri uri = Uri.parse("https://drive.google.com/open?id=1LLVPtBqIZ6x9YbTmnExV6mJItt2XmHWI");
                                     Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                                     startActivity(intent);
 
@@ -145,7 +144,7 @@ public class Dashboard extends AppCompatActivity {
             }
         });
 
-        Button services = findViewById(R.id.services);
+        final Button services = findViewById(R.id.services);
         services.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -157,8 +156,19 @@ public class Dashboard extends AppCompatActivity {
             }
         });
 
+        final Button indian_news = findViewById(R.id.news_india);
+        indian_news.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Vibrator v8 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                v8.vibrate(26);
+                Toast.makeText(Dashboard.this, "Navigating to Bulletin", Toast.LENGTH_SHORT).show();
+                Intent i=new Intent(Dashboard.this,IndianNewsLanding.class);
+                startActivity(i);
+            }
+        });
 
-        Button main_services = findViewById(R.id.services_main);
+        final Button main_services = findViewById(R.id.services_main);
         main_services.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -170,7 +180,7 @@ public class Dashboard extends AppCompatActivity {
             }
         });
 
-        Button grievances = findViewById(R.id.grievances);
+        final Button grievances = findViewById(R.id.grievances);
         grievances.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -182,7 +192,7 @@ public class Dashboard extends AppCompatActivity {
             }
         });
 
-        Button activities = findViewById(R.id.activities);
+        final Button activities = findViewById(R.id.activities);
         activities.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -194,7 +204,7 @@ public class Dashboard extends AppCompatActivity {
             }
         });
 
-        final Button about = findViewById(R.id.about);
+        final Button about = findViewById(R.id.bbc);
         about.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -230,22 +240,60 @@ public class Dashboard extends AppCompatActivity {
                         ConstraintLayout constraintLayout=(ConstraintLayout) findViewById(R.id.myflow);
                         Drawable drawable= getResources().getDrawable(R.drawable.dyna_three);
                         constraintLayout.setBackgroundDrawable(drawable);
+                        about.setBackgroundColor(Color.parseColor("#B70682EF"));
+                        services.setBackgroundColor(Color.parseColor("#B70682EF"));
+                        blog.setBackgroundColor(Color.parseColor("#B70682EF"));
+                        activities.setBackgroundColor(Color.parseColor("#B70682EF"));
+                        grievances.setBackgroundColor(Color.parseColor("#B70682EF"));
+                        main_services.setBackgroundColor(Color.parseColor("#B70682EF"));
+                        indian_news.setBackgroundColor(Color.parseColor("#B70682EF"));
                     } else if (timeOfDay >= 07 && timeOfDay < 16) {
                         ConstraintLayout constraintLayout=(ConstraintLayout) findViewById(R.id.myflow);
                         Drawable drawable= getResources().getDrawable(R.drawable.dyna_one);
                         constraintLayout.setBackgroundDrawable(drawable);
+                        about.setBackgroundColor(Color.parseColor("#B70682EF"));
+                        services.setBackgroundColor(Color.parseColor("#B70682EF"));
+                        blog.setBackgroundColor(Color.parseColor("#B70682EF"));
+                        activities.setBackgroundColor(Color.parseColor("#B70682EF"));
+                        grievances.setBackgroundColor(Color.parseColor("#B70682EF"));
+                        main_services.setBackgroundColor(Color.parseColor("#B70682EF"));
+                        indian_news.setBackgroundColor(Color.parseColor("#B70682EF"));
                     } else if (timeOfDay >= 16 && timeOfDay < 18) {
                         ConstraintLayout constraintLayout=(ConstraintLayout) findViewById(R.id.myflow);
                         Drawable drawable= getResources().getDrawable(R.drawable.dyna_two);
                         constraintLayout.setBackgroundDrawable(drawable);
+                        about.setBackgroundColor(Color.parseColor("#B70682EF"));
+                        services.setBackgroundColor(Color.parseColor("#B70682EF"));
+                        blog.setBackgroundColor(Color.parseColor("#B70682EF"));
+                        activities.setBackgroundColor(Color.parseColor("#B70682EF"));
+                        grievances.setBackgroundColor(Color.parseColor("#B70682EF"));
+                        main_services.setBackgroundColor(Color.parseColor("#B70682EF"));
+                        indian_news.setBackgroundColor(Color.parseColor("#B70682EF"));
                     } else if (timeOfDay >= 18 && timeOfDay < 21) {
                         ConstraintLayout constraintLayout=(ConstraintLayout) findViewById(R.id.myflow);
                         Drawable drawable= getResources().getDrawable(R.drawable.dyna_five);
+                        afterfade.setTextColor(Color.parseColor("#0682EF"));
+                        fader.setTextColor(Color.parseColor("#0682EF"));
+                        emailhello.setTextColor(Color.parseColor("#0682EF"));
+                        about.setBackgroundColor(Color.parseColor("#B70682EF"));
+                        services.setBackgroundColor(Color.parseColor("#B70682EF"));
+                        blog.setBackgroundColor(Color.parseColor("#B70682EF"));
+                        activities.setBackgroundColor(Color.parseColor("#B70682EF"));
+                        grievances.setBackgroundColor(Color.parseColor("#B70682EF"));
+                        main_services.setBackgroundColor(Color.parseColor("#B70682EF"));
+                        indian_news.setBackgroundColor(Color.parseColor("#B70682EF"));
                         constraintLayout.setBackgroundDrawable(drawable);
                     } else if (timeOfDay >= 21 && timeOfDay < 24) {
                         ConstraintLayout constraintLayout=(ConstraintLayout) findViewById(R.id.myflow);
                         Drawable drawable= getResources().getDrawable(R.drawable.dyna_four);
                         constraintLayout.setBackgroundDrawable(drawable);
+                        about.setBackgroundColor(Color.parseColor("#B70682EF"));
+                        services.setBackgroundColor(Color.parseColor("#B70682EF"));
+                        blog.setBackgroundColor(Color.parseColor("#B70682EF"));
+                        activities.setBackgroundColor(Color.parseColor("#B70682EF"));
+                        grievances.setBackgroundColor(Color.parseColor("#B70682EF"));
+                        main_services.setBackgroundColor(Color.parseColor("#B70682EF"));
+                        indian_news.setBackgroundColor(Color.parseColor("#B70682EF"));
                     }
                     Drawable back= getResources().getDrawable(R.drawable.white);
                     dynamic.setBackgroundDrawable(back);
@@ -261,6 +309,13 @@ public class Dashboard extends AppCompatActivity {
                     afterfade.setTextColor(Color.parseColor("#0336ff"));
                     fader.setTextColor(Color.parseColor("#0336ff"));
                     emailhello.setTextColor(Color.parseColor("#0336ff"));
+                    about.setBackgroundColor(Color.parseColor("#0336ff"));
+                    services.setBackgroundColor(Color.parseColor("#0336ff"));
+                    blog.setBackgroundColor(Color.parseColor("#0336ff"));
+                    activities.setBackgroundColor(Color.parseColor("#0336ff"));
+                    grievances.setBackgroundColor(Color.parseColor("#0336ff"));
+                    main_services.setBackgroundColor(Color.parseColor("#0336ff"));
+                    indian_news.setBackgroundColor(Color.parseColor("#0336ff"));
                     Drawable back= getResources().getDrawable(R.drawable.color8);
                     dynamic.setBackgroundDrawable(back);
                     dynamic.setText(R.string.turn_on_dynamic_background);

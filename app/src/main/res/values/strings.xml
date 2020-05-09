@@ -25,12 +25,12 @@
     <string name="afternoon">Good Afternoon!</string>
     <string name="evening">Good Evening!</string>
     <string name="night">Sleep Well!</string>
-    <string name="news">News</string>
+    <string name="news">GOA News</string>
     <string name="services">activities</string>
     <string name="griviances">Grievances</string>
     <string name="what_if_something_went_wrong_we_are_always_there_for_you">What if Something Went Wrong? We are Always There for You!</string>
     <string name="dev_email">connectwithspandan@gmail.com</string>
-    <string name="tryemail">raman.juet@gmail.com</string>
+    <string name="tryemail">goa.pataoffice@gmail.com</string>
     <string name="sub">Enter The Subject</string>
     <string name="send">send</string>
     <string name="enter_your_message">Enter your Message</string>
@@ -38,13 +38,13 @@
     <string name="gail_email">GAIL Email</string>
     <string name="enter_your_gail_registred_email">Enter your GAIL Registered Email</string>
     <string name="gail_email_id">GAIL Email ID</string>
-    <string name="sqlite_user_login_screen">Now Enter Your GAIL Credentials</string>
+    <string name="sqlite_user_login_screen">Dear Members enter Your GAIL Credentials</string>
     <string name="log_in">Log IN</string>
     <string name="not_log_in_register_from_here">New To This App ? Register From Here</string>
-    <string name="enter_email">Enter Your GAIL Officer\'s Association Email</string>
-    <string name="enter_password">Enter Your Password</string>
+    <string name="enter_email">GAIL Email</string>
+    <string name="enter_password">Password</string>
     <string name="new_user_registration">New User On Boarding</string>
-    <string name="enter_your_gail_email">Enter Your GAIL Email</string>
+    <string name="enter_your_gail_email">Enter GAIL Email</string>
     <string name="enter_a_password">Enter a Password</string>
     <string name="register">Register</string>
     <string name="logout">Logout</string>
@@ -63,7 +63,7 @@
     <string name="enter_otp">Enter OTP</string>
     <string name="verify_sign_in">Verify and Sign In</string>
     <string name="sign_out">sign out</string>
-    <string name="sensitive">In Order to Get the Blog Section you have to Install the Gail Chat App</string>
+    <string name="sensitive">In Order to Get the Blog Section you have to Install the Gail Chat App\n\nUpon installation and Registration you might get a recommendation to subscribe to certain channels and is purely your wit to either Subscribe or Deny! </string>
     <string name="dd">The dynamic desktop applies a background to the app which changes throughout the day!\n\nScroll to the Bottom to Apply</string>
     <string name="now_enter_your_mobile_number">Enter Your Mobile Number</string>
     <string name="floop">Continue</string>
@@ -124,7 +124,7 @@ contact us at goa.pataoffice@gmail.com.</string>
     <string name="to_reset_password_enter_your_email_press_the_button_and_check_mail_to_follow_instruction">To reset password, enter your email, press the button and check mail to follow instruction.</string>
     <string name="your_email_here">Your email here</string>
     <string name="reset_password">Reset Password</string>
-    <string name="enter_your_cpf_number">Enter Your CPF Number</string>
+    <string name="enter_your_cpf_number">Enter CPF Number</string>
     <string name="_2_step_verification">2 Step Verification</string>
     <string name="we_at_gail_are_commited_towards_your_information_kindly_enter_your_e_mail_for_the_final_verification">We at GAIL are committed towards your information. Enter Your Email Credentials Once Again!</string>
     <string name="enter_your_email_here">Enter Your Email Here</string>
@@ -137,6 +137,10 @@ contact us at goa.pataoffice@gmail.com.</string>
     <string name="text4">Hola!</string>
     <string name="text5">Konnichiwa</string>
     <string name="text6">Olá</string>
+    <string name="indian_news_bulletin">Indian News Bulletin</string>
+    <string name="bbc_india">BBC India | English</string>
+    <string name="ndtv_hindi">NDTV | Hindi</string>
+    <string name="disclaimer">By Navigating to any of the above mentioned sources, you will be taken to khabar.ndtv.com and bbc.com/news/india respectively which is not governed by us or promoted in any manner</string>
 
 
     <!--Array for About Us Category-->
