@@ -33,7 +33,6 @@ public class Getter extends AppCompatActivity {
         donee = findViewById(R.id.animatored3);
 
 
-
         Button begin = findViewById(R.id.begin);
         final boolean isAnimated=false;
         begin.setOnClickListener(new View.OnClickListener() {
@@ -69,7 +68,6 @@ public class Getter extends AppCompatActivity {
         anim.setEnterFadeDuration(5000);
         anim.setExitFadeDuration(2000);
         anim.start();
-
 
     }
 

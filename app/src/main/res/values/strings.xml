@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">GAIL Officers Association</string>
-    <string name="first">GAIL Officer\'s Association</string>
+    <string name="first">GAIL Officer\'s Association\nPATA</string>
     <string name="logo">logo</string>
     <string name="about_us">About Us</string>
     <string name="about_us_txt">GOA (GAIL Officers Association):\n\nA collective forum to protect the rights and interest of executives registered under Societies Act on 13th Feb’ 1987.\n\nFrom more than last three decades GOA had been working with the primary objectives of securing the welfare, rights and monetary benefits for the members.\nAs to the welfare of the officers, GOA had been actively pursuing all the welfare matters in consultation with the Management, many good welfare initiatives were taken, which have proved benevolent for the entire officer community.\n\nGOA’s role in the pay revision, which is hailed to be one of the best in the PSUs, is widely acclaimed by the officers’ community.\n\nIn the organizational matters and business arena, GOA had been playing a very active role by giving very useful feed backs to the Management and many times such inputs were appreciated and executed which resulted in huge saving for the company.\n\nGOA is proud of representing such fine people as members and office bearers, all over the country.</string>
@@ -10,7 +10,7 @@
     <string name="view_pdf">View PDF</string>
     <string name="image_tellin_gscoll_down">image telling to scroll down</string>
     <string name="sports">Sport Coordinator CPF</string>
-    <string name="committees">Committies Link</string>
+    <string name="committees">Committees Link</string>
     <string name="dashboard">Dashboard</string>
     <string name="hi">Hi!</string>
     <string name="before_we_begin_let_s_complete_the_setup">Before We Begin, Let\'s Complete The Setup!</string>
@@ -48,8 +48,8 @@
     <string name="enter_a_password">Enter a Password</string>
     <string name="register">Register</string>
     <string name="logout">Logout</string>
-    <string name="prefrences">Prefrences</string>
-    <string name="chnage_my_name">Chnage My Name</string>
+    <string name="prefrences">Preferences</string>
+    <string name="chnage_my_name">Change My Name</string>
     <string name="change_my_email">Change My Email</string>
     <string name="contact_us">GAIL Officers\' Association-Pata\n\n Address : Estate Office, GAIL Gaon Dibiyapur,\n Uttar Pradesh-206244\n\n Email :goa.pataoffice@gmail.com\n\n HVJ : 35040 (office)</string>
     <string name="_2020_c_gail_officer_s_association">2020 © GAIL Officer\'s Association</string>
@@ -57,13 +57,13 @@
     <string name="gbm_abt">GBM:\n\nGeneral Body Meeting (GBM) of the units should be called by the Executive committee of that unit at least two times in a year.\n\nAnd through it, Executive Body directly interacts with members.\n\nBriefs development on various issues and collect their suggestions and feedback.
 </string>
     <string name="services_msin">Services</string>
-    <string name="blog">Blog</string>
+    <string name="blog">Chat</string>
     <string name="phone_number">Phone Number</string>
     <string name="generate_otp">Generate OTP</string>
     <string name="enter_otp">Enter OTP</string>
     <string name="verify_sign_in">Verify and Sign In</string>
     <string name="sign_out">sign out</string>
-    <string name="sensitive">In Order to Get the Blog Section you have to Install the Gail Chat App\n\nUpon installation and Registration you might get a recommendation to subscribe to certain channels and is purely your wit to either Subscribe or Deny! </string>
+    <string name="sensitive">In Order to Get the Chat Section you have to Install the GOA Chat App\n\nUpon installation and Registration you might get a recommendation to subscribe to certain channels and is purely your wit to either Subscribe or Deny! </string>
     <string name="dd">The dynamic desktop applies a background to the app which changes throughout the day!\n\nScroll to the Bottom to Apply</string>
     <string name="now_enter_your_mobile_number">Enter Your Mobile Number</string>
     <string name="floop">Continue</string>
@@ -140,7 +140,11 @@ contact us at goa.pataoffice@gmail.com.</string>
     <string name="indian_news_bulletin">Indian News Bulletin</string>
     <string name="bbc_india">BBC India | English</string>
     <string name="ndtv_hindi">NDTV | Hindi</string>
-    <string name="disclaimer">By Navigating to any of the above mentioned sources, you will be taken to khabar.ndtv.com and bbc.com/news/india respectively which is not governed by us or promoted in any manner</string>
+    <string name="disclaimer">By Navigating to any of the above mentioned sources, you will be taken to khabar.ndtv.com, bbc.com/news/india, news.google, aajtak.indiatoday which is not governed by us neither promoted in any manner</string>
+    <string name="google_news">Google News</string>
+    <string name="aaj_tak_hindi">Aaj Tak | Hindi</string>
+    <string name="gail_nofficer_s_association_npata">GAIL\nOfficer\'s Association\nPATA</string>
+    <string name="survey">Survey</string>
 
 
     <!--Array for About Us Category-->

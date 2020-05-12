@@ -1,6 +1,7 @@
 package com.aaxena.gailofficersassociation;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -25,8 +26,10 @@ public class RegisterActivity extends AppCompatActivity {
 
     private EditText emailTV, passwordTV;
     private Button regBtn;
+    EditText cpf;
     private ProgressBar progressBar;
-
+    public static final String SHARED_PREFS = "sharedPrefs";
+    public static final String CPF = "cpf";
     private FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +51,7 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 registerNewUser();
+                saveData();
             }
         });
     }
@@ -135,5 +139,12 @@ public class RegisterActivity extends AppCompatActivity {
                         }
                     }
                 });
+    }
+    private void saveData() {
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        cpf = findViewById(R.id.cpf);
+        editor.putString(CPF,cpf.getText().toString());
+        editor.commit();
     }
 }

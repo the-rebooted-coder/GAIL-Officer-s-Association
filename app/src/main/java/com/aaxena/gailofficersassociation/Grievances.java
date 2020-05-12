@@ -19,14 +19,16 @@ import com.google.firebase.auth.FirebaseUser;
 
 import static com.aaxena.gailofficersassociation.Getter.SHARED_PREFS;
 import static com.aaxena.gailofficersassociation.Getter.TEXT;
+import static com.aaxena.gailofficersassociation.RegisterActivity.CPF;
 
 public class Grievances extends AppCompatActivity {
     private EditText mEditTextSubject;
     private TextView mEditTextTo;
     private EditText mEditTextMessage;
-    private EditText mEditTextcpf;
+    private TextView mEditTextcpf;
     private TextView mEditTextFrom;
     private String name;
+    private String cpf;
     private String emaillo;
     private EditText namee;
 
@@ -52,6 +54,7 @@ public class Grievances extends AppCompatActivity {
         }
         namee = findViewById(R.id.edit_text_name);
         namee.setText(name);
+        mEditTextcpf.setText(cpf);
         mEditTextFrom.setText(emaillo);
 
         Button buttonSend = findViewById(R.id.button_send);
@@ -90,5 +93,6 @@ public class Grievances extends AppCompatActivity {
     public void loadData(){
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         name = sharedPreferences.getString(TEXT,"");
+        cpf = sharedPreferences.getString(CPF,"");
     }
 }

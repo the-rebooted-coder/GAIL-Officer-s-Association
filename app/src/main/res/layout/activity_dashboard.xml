@@ -81,6 +81,23 @@
 
 
             <Button
+                android:id="@+id/survey"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/color10"
+                android:fontFamily="@font/productsans"
+                android:text="@string/survey"
+                android:textColor="@color/texter"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.439"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.363" />
+
+            <Button
                 android:id="@+id/grievances"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
@@ -181,12 +198,12 @@
         android:fontFamily="@font/productsansitalic"
         android:textAlignment="center"
         android:textColor="@color/intro_description_color"
-        android:textSize="22sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.22000003" />
+        app:layout_constraintVertical_bias="0.26" />
 
     <TextView
         android:id="@+id/namehello"
@@ -200,14 +217,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.22000003" />
+        app:layout_constraintVertical_bias="0.26" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/productsansbold"
-        android:text="@string/app_name"
+        android:text="@string/first"
         android:textAlignment="center"
         android:textColor="@color/intro_description_color"
         android:textSize="29sp"
@@ -215,7 +232,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.050000012" />
+        app:layout_constraintVertical_bias="0.07999998" />
 
     <TextView
         android:id="@+id/afterfades"
@@ -229,6 +246,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.050000012" />
+        app:layout_constraintVertical_bias="0.07999998" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -40,5 +40,29 @@ public class IndianNewsLanding extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+        Button google_news = findViewById(R.id.google);
+        google_news.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Vibrator v8 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                v8.vibrate(26);
+                Toast.makeText(IndianNewsLanding.this, "Navigating to news.google.com", Toast.LENGTH_SHORT).show();
+                Intent i=new Intent(IndianNewsLanding.this,GoogleNews.class);
+                startActivity(i);
+            }
+        });
+
+        Button aajtak = findViewById(R.id.aajtak);
+        aajtak.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Vibrator v8 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                v8.vibrate(26);
+                Toast.makeText(IndianNewsLanding.this, "Navigating to aajtak.indiatoday", Toast.LENGTH_SHORT).show();
+                Intent i=new Intent(IndianNewsLanding.this,AajTak.class);
+                startActivity(i);
+            }
+        });
     }
 }
