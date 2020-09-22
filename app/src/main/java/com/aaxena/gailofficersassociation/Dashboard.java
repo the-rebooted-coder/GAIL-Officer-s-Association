@@ -662,7 +662,6 @@ public class Dashboard extends AppCompatActivity {
 
                 Vibrator v8 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                 v8.vibrate(27);
-                Toast.makeText(Dashboard.this, "Opening Preferences", Toast.LENGTH_SHORT).show();
                 Intent i=new Intent(Dashboard.this,Settings.class);
                 startActivity(i);
 
