@@ -145,6 +145,9 @@ contact us at goa.pataoffice@gmail.com.</string>
     <string name="aaj_tak_hindi">Aaj Tak | Hindi</string>
     <string name="gail_nofficer_s_association_npata">GAIL\nOfficer\'s Association\nPATA</string>
     <string name="survey">Survey</string>
+    <string name="security_check">Security Check</string>
+    <string name="only_accounts_registered_with_us_will_be_allowed_further">Only accounts registered with us will be allowed further</string>
+    <string name="check">Check</string>
 
 
     <!--Array for About Us Category-->
