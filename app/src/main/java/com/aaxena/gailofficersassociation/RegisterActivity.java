@@ -34,7 +34,6 @@ public class RegisterActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_register);
 
 
@@ -57,36 +56,38 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void registerNewUser() {
-        progressBar.setVisibility(View.VISIBLE);
-
         String email, password;
         email = emailTV.getText().toString();
         password = passwordTV.getText().toString();
+        if (email.endsWith("@gail.co.in")) {
+            progressBar.setVisibility(View.VISIBLE);
+            if (TextUtils.isEmpty(email)) {
+                Toast.makeText(getApplicationContext(), "Please Enter Email!", Toast.LENGTH_LONG).show();
+                return;
+            }
+            if (TextUtils.isEmpty(password)) {
+                Toast.makeText(getApplicationContext(), "Please Enter Password!", Toast.LENGTH_LONG).show();
+                return;
+            }
 
-        if (TextUtils.isEmpty(email)) {
-            Toast.makeText(getApplicationContext(), "Please Enter Email...", Toast.LENGTH_LONG).show();
-            return;
-        }
-        if (TextUtils.isEmpty(password)) {
-            Toast.makeText(getApplicationContext(), "Please Enter Password!", Toast.LENGTH_LONG).show();
-            return;
-        }
-
-        mAuth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            sendVerificationEmail();
-                            Toast.makeText(getApplicationContext(), "Account Created Successfully, Verify Email to Use the App", Toast.LENGTH_LONG).show();
-                            progressBar.setVisibility(View.GONE);
+            mAuth.createUserWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                sendVerificationEmail();
+                                Toast.makeText(getApplicationContext(), "Account Created Successfully, Verify Email to Use the App", Toast.LENGTH_LONG).show();
+                                progressBar.setVisibility(View.GONE);
+                            } else {
+                                Toast.makeText(getApplicationContext(), "Registration failed! Please Try Again Later", Toast.LENGTH_LONG).show();
+                                progressBar.setVisibility(View.GONE);
+                            }
                         }
-                        else {
-                            Toast.makeText(getApplicationContext(), "Registration failed! Please Try Again Later", Toast.LENGTH_LONG).show();
-                            progressBar.setVisibility(View.GONE);
-                        }
-                    }
-                });
+                    });
+        }
+        else {
+            Toast.makeText(this, "Please Enter Valid GAIL Email",Toast.LENGTH_LONG).show();
+        }
     }
 
     private void initializeUI() {

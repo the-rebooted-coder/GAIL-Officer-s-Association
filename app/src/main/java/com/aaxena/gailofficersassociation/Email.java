@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.os.Vibrator;
 import android.text.TextUtils;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -31,7 +30,6 @@ public class Email extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_email);
 
         final TextView textView = findViewById(R.id.greetings_behalf);
@@ -93,38 +91,42 @@ public class Email extends AppCompatActivity {
 
     private void loginUserAccount() {
         progressBar.setVisibility(View.VISIBLE);
-
         String email, password;
         email = emailTV.getText().toString();
         password = passwordTV.getText().toString();
+       if (email.endsWith("@gail.co.in")) {
+            if (TextUtils.isEmpty(email)) {
+                progressBar.setVisibility(View.INVISIBLE);
+                Toast.makeText(getApplicationContext(), "Please Enter Email!", Toast.LENGTH_LONG).show();
+                return;
+            }
+            if (TextUtils.isEmpty(password)) {
+                progressBar.setVisibility(View.INVISIBLE);
+                Toast.makeText(getApplicationContext(), "Please Enter Password!", Toast.LENGTH_LONG).show();
+                return;
+            }
+            mAuth.signInWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                Vibrator v11 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                                v11.vibrate(25);
+                                checkIfEmailVerified();
+                                progressBar.setVisibility(View.GONE);
 
-        if (TextUtils.isEmpty(email)) {
-            Toast.makeText(getApplicationContext(), "Please Enter Email...", Toast.LENGTH_LONG).show();
-            return;
-        }
-        if (TextUtils.isEmpty(password)) {
-            Toast.makeText(getApplicationContext(), "Please Enter Password!", Toast.LENGTH_LONG).show();
-            return;
-        }
-
-        mAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            Vibrator v11 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-                            v11.vibrate(25);
-                            checkIfEmailVerified();
-                            progressBar.setVisibility(View.GONE);
-
+                            } else {
+                                Toast.makeText(getApplicationContext(), "Login failed! Please Try Again Later", Toast.LENGTH_LONG).show();
+                                progressBar.setVisibility(View.GONE);
+                            }
                         }
-                        else {
-                            Toast.makeText(getApplicationContext(), "Login failed! Please Try Again Later", Toast.LENGTH_LONG).show();
-                            progressBar.setVisibility(View.GONE);
-                        }
-                    }
-                });
-    }
+                    });
+        }
+     else {
+           progressBar.setVisibility(View.INVISIBLE);
+           Toast.makeText(this, "Please Enter Valid GAIL Email", Toast.LENGTH_LONG).show();
+       }
+ }
 
     private void initializeUI() {
         emailTV = findViewById(R.id.email);
