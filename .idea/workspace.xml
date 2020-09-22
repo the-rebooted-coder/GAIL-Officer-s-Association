@@ -35,10 +35,10 @@
     </system>
   </component>
   <component name="GenerateSignedApkSettings">
+    <option name="EXPORT_PRIVATE_KEY" value="false" />
     <option name="KEY_STORE_PATH" value="C:\Users\raffl\Documents\GitHub\gotapata.jks" />
     <option name="KEY_ALIAS" value="anshu" />
     <option name="REMEMBER_PASSWORDS" value="true" />
-    <option name="BUILD_TARGET_KEY" value="apk" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -46,10 +46,9 @@
   <component name="ProjectId" id="1bJDyCBnOgB3H9DtbR3PZNXzaim" />
   <component name="PropertiesComponent">
     <property name="ApkExportedModule" value="app" />
+    <property name="BundleExportedModule" value="app" />
     <property name="ExportApk.ApkPath" value="C:\Users\raffl\Documents\Final\app" />
     <property name="ExportApk.BuildVariants" value="release" />
-    <property name="ExportApk.SignV1" value="true" />
-    <property name="ExportApk.SignV2" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
