@@ -4,9 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/color2"
+    android:background="@drawable/grievances_pool"
     tools:context=".Grievances">
-
     <TextView
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
@@ -38,103 +37,144 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.17000002" />
 
-    <EditText
-        android:id="@+id/edit_text_subject"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:fontFamily="@font/productsans"
-        android:hint="@string/sub"
-        android:importantForAutofill="no"
-        android:inputType="textEmailSubject"
-        android:textColor="@color/intro_title_color"
+    <ScrollView
+        android:id="@+id/scrollView3"
+        android:layout_width="354dp"
+        android:layout_height="337dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.24000001" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_to"
+        app:layout_constraintVertical_bias="0.757">
 
-    <EditText
-        android:id="@+id/edit_text_cpf"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:scrollbars="vertical"
+            android:verticalScrollbarPosition="left">
+
+            <EditText
+                android:id="@+id/edit_text_subject"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="10dp"
+                android:ems="10"
+                android:fontFamily="@font/productsans"
+                android:hint="@string/sub"
+                android:importantForAutofill="no"
+                android:inputType="textEmailSubject"
+                android:textColor="@color/intro_title_color"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.24000001" />
+
+            <EditText
+                android:id="@+id/edit_text_cpf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:ems="10"
+                android:focusable="auto"
+                android:focusableInTouchMode="true"
+                android:fontFamily="@font/productsans"
+                android:hint="@string/cpf_number"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:textColor="@color/intro_title_color"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.55" />
+
+            <EditText
+                android:id="@+id/edit_text_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="10dp"
+                android:ems="10"
+                android:fontFamily="@font/productsans"
+                android:hint="@string/enter_your_message"
+                android:importantForAutofill="no"
+                android:inputType="textMultiLine"
+                android:textColor="@color/intro_title_color"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.784" />
+
+            <TextView
+                android:id="@+id/edit_text_from"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="10dp"
+                android:autofillHints=""
+                android:ems="10"
+                android:fontFamily="@font/productsans"
+                android:hint="@string/gail_email"
+                android:textColor="@color/intro_title_color"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.45999998" />
+
+            <EditText
+                android:id="@+id/edit_text_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="10dp"
+                android:ems="10"
+                android:fontFamily="@font/productsans"
+                android:hint="@string/name"
+                android:importantForAutofill="no"
+                android:inputType="textPersonName"
+                android:textColor="@color/intro_title_color"
+                app:layout_constraintBottom_toTopOf="@+id/edit_text_subject"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edit_text_from"
+                app:layout_constraintVertical_bias="0.51" />
+
+            <Button
+                android:id="@+id/button_send"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@android:color/holo_red_light"
+                android:fontFamily="@font/productsans"
+                android:text="@string/send"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.954" />
+        </LinearLayout>
+    </ScrollView>
+
+    <CheckBox
+        android:id="@+id/feedbx"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:focusable="auto"
-        android:focusableInTouchMode="true"
+        android:layout_marginTop="77dp"
         android:fontFamily="@font/productsans"
-        android:hint="@string/cpf_number"
-        android:importantForAutofill="no"
-        android:inputType="number"
-        android:textColor="@color/intro_title_color"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/feedback"
+        android:textColor="@color/textColor"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.55" />
-
-    <EditText
-        android:id="@+id/edit_text_message"
-        android:layout_width="311dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:fontFamily="serif-monospace"
-        android:hint="@string/enter_your_message"
-        android:importantForAutofill="no"
-        android:inputType="textMultiLine"
-        android:textColor="@color/intro_title_color"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.784" />
-
-    <Button
-        android:id="@+id/button_send"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@android:color/holo_red_light"
-        android:fontFamily="@font/productsans"
-        android:text="@string/send"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.954" />
-
-    <TextView
-        android:id="@+id/edit_text_from"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:autofillHints=""
-        android:ems="10"
-        android:fontFamily="@font/productsans"
-        android:hint="@string/gail_email"
-        android:textColor="@color/intro_title_color"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.45999998" />
-
-    <EditText
-        android:id="@+id/edit_text_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="94dp"
-        android:layout_marginTop="13dp"
-        android:layout_marginEnd="104dp"
-        android:layout_marginBottom="23dp"
-        android:ems="10"
-        android:fontFamily="@font/productsans"
-        android:hint="@string/name"
-        android:importantForAutofill="no"
-        android:inputType="textPersonName"
-        android:textColor="@color/intro_title_color"
-        app:layout_constraintBottom_toTopOf="@+id/edit_text_subject"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_text_from"
-        app:layout_constraintVertical_bias="0.51" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_to" />
 </androidx.constraintlayout.widget.ConstraintLayout>

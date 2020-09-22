@@ -659,7 +659,6 @@ public class Dashboard extends AppCompatActivity {
         LogOUT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 Vibrator v8 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                 v8.vibrate(27);
                 Intent i=new Intent(Dashboard.this,Settings.class);

@@ -30,13 +30,13 @@
             android:verticalScrollbarPosition="left">
 
             <Button
-                android:id="@+id/bbc"
+                android:id="@+id/activities"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:background="@drawable/color10"
                 android:elevation="20dp"
                 android:fontFamily="@font/productsans"
-                android:text="@string/about_us"
+                android:text="@string/news"
                 android:textColor="@color/texter"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -133,14 +133,14 @@
                 app:layout_constraintVertical_bias="0.8" />
 
             <Button
-                android:id="@+id/activities"
+                android:id="@+id/bbc"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/color10"
                 android:elevation="20dp"
                 android:fontFamily="@font/productsans"
-                android:text="@string/news"
+                android:text="@string/about_us"
                 android:textColor="@color/texter"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"

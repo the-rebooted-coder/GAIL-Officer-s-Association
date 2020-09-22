@@ -9,6 +9,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -31,13 +32,14 @@ public class Grievances extends AppCompatActivity {
     private String cpf;
     private String emaillo;
     private EditText namee;
-
+    private CheckBox feedback;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_grievances);
         mEditTextTo = findViewById(R.id.edit_text_to);
+        feedback = findViewById(R.id.feedbx);
         mEditTextSubject = findViewById(R.id.edit_text_subject);
         mEditTextMessage = findViewById(R.id.edit_text_message);
         mEditTextcpf = findViewById(R.id.edit_text_cpf);
@@ -79,16 +81,26 @@ public class Grievances extends AppCompatActivity {
     private void sendMail() {
         String recipientList = mEditTextTo.getText().toString();
         String[] recipients = recipientList.split(",");
-
-        String subject = namee.getText().toString()+" | "+mEditTextSubject.getText().toString();
-        String message = "CPF Number: "+ mEditTextcpf.getText().toString()+" "+ "GAIL Email ID:"+mEditTextFrom.getText().toString()+"\n\n"+mEditTextMessage.getText().toString();
-
-        Intent intent = new Intent(Intent.ACTION_SEND);
-        intent.putExtra(Intent.EXTRA_EMAIL, recipients);
-        intent.putExtra(Intent.EXTRA_SUBJECT, subject);
-        intent.putExtra(Intent.EXTRA_TEXT, message);
-        intent.setType("message/rfc822");
-        startActivity(Intent.createChooser(intent, "Choose Your Email App"));
+        if (feedback.isChecked()){
+            String subject = "Feedback from "+namee.getText().toString()+" | "+mEditTextSubject.getText().toString();
+            String message = "CPF Number: "+ mEditTextcpf.getText().toString()+" "+ "GAIL Email ID:"+mEditTextFrom.getText().toString()+"\n\n"+mEditTextMessage.getText().toString();
+            Intent intent = new Intent(Intent.ACTION_SEND);
+            intent.putExtra(Intent.EXTRA_EMAIL, recipients);
+            intent.putExtra(Intent.EXTRA_SUBJECT, subject);
+            intent.putExtra(Intent.EXTRA_TEXT, message);
+            intent.setType("message/rfc822");
+            startActivity(Intent.createChooser(intent, "Choose Your Email App"));
+        }
+        else {
+            String subject = "Grievance from "+namee.getText().toString()+" | "+mEditTextSubject.getText().toString();
+            String message = "CPF Number:"+ mEditTextcpf.getText().toString()+"\n"+ "GAIL Email ID:"+mEditTextFrom.getText().toString()+"\n\n"+mEditTextMessage.getText().toString();
+            Intent intent = new Intent(Intent.ACTION_SEND);
+            intent.putExtra(Intent.EXTRA_EMAIL, recipients);
+            intent.putExtra(Intent.EXTRA_SUBJECT, subject);
+            intent.putExtra(Intent.EXTRA_TEXT, message);
+            intent.setType("message/rfc822");
+            startActivity(Intent.createChooser(intent, "Choose Your Email App"));
+        }
     }
     public void loadData(){
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);

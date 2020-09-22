@@ -5,7 +5,7 @@
     android:id="@+id/getter"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/animation_list_starting"
+    android:background="@drawable/normal_bg"
     tools:context=".ChangeName">
 
     <TextView
@@ -15,7 +15,7 @@
         android:fontFamily="@font/light"
         android:text="@string/enter_the_new_name"
         android:textAlignment="center"
-        android:textColor="@android:color/background_light"
+        android:textColor="@android:color/background_dark"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -33,8 +33,8 @@
         android:hint="@string/name"
         android:importantForAutofill="no"
         android:inputType="textPersonName"
-        android:textColor="@android:color/white"
-        android:textColorHint="@color/common_google_signin_btn_text_dark_pressed"
+        android:textColor="@android:color/widget_edittext_dark"
+        android:textColorHint="@color/common_google_signin_btn_text_dark_focused"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,7 +45,7 @@
         android:id="@+id/begin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/color2"
+        android:background="@drawable/color7"
         android:fontFamily="@font/productsans"
         android:text="@string/change"
         android:textColor="@color/browser_actions_bg_grey"
