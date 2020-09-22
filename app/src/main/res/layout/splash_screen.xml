@@ -9,7 +9,6 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_height="wrap_content"
         android:layout_width="374dp"
         android:layout_height="261dp"
         android:contentDescription="@string/logo"
