@@ -150,7 +150,6 @@ public class Dashboard extends AppCompatActivity {
             public void onClick(View v) {
                 Vibrator v8 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                 v8.vibrate(27);
-                Toast.makeText(Dashboard.this, "Navigating to Activities", Toast.LENGTH_SHORT).show();
                 Intent i=new Intent(Dashboard.this,Services.class);
                 startActivity(i);
             }
@@ -162,7 +161,6 @@ public class Dashboard extends AppCompatActivity {
             public void onClick(View v) {
                 Vibrator v8 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                 v8.vibrate(26);
-                Toast.makeText(Dashboard.this, "Navigating to Bulletin", Toast.LENGTH_SHORT).show();
                 Intent i=new Intent(Dashboard.this,IndianNewsLanding.class);
                 startActivity(i);
             }
@@ -174,7 +172,6 @@ public class Dashboard extends AppCompatActivity {
             public void onClick(View v) {
                 Vibrator v8 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                 v8.vibrate(27);
-                Toast.makeText(Dashboard.this, "Navigating to Services", Toast.LENGTH_SHORT).show();
                 Intent i=new Intent(Dashboard.this,MainServices.class);
                 startActivity(i);
             }
@@ -186,7 +183,6 @@ public class Dashboard extends AppCompatActivity {
             public void onClick(View v) {
                 Vibrator v8 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                 v8.vibrate(27);
-                Toast.makeText(Dashboard.this, "Navigating to Grievances", Toast.LENGTH_SHORT).show();
                 Intent i=new Intent(Dashboard.this,Grievances.class);
                 startActivity(i);
             }
@@ -198,7 +194,7 @@ public class Dashboard extends AppCompatActivity {
             public void onClick(View v) {
                 Vibrator v8 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                 v8.vibrate(27);
-                Toast.makeText(Dashboard.this, "Navigating to News", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Dashboard.this, "Fetching News", Toast.LENGTH_SHORT).show();
                 Intent i=new Intent(Dashboard.this,Activities.class);
                 startActivity(i);
             }
@@ -210,7 +206,6 @@ public class Dashboard extends AppCompatActivity {
             public void onClick(View v) {
                 Vibrator v8 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                 v8.vibrate(27);
-                Toast.makeText(Dashboard.this, "Navigating to About Us", Toast.LENGTH_SHORT).show();
                 Intent i=new Intent(Dashboard.this,Landing.class);
                 startActivity(i);
             }
@@ -222,7 +217,6 @@ public class Dashboard extends AppCompatActivity {
             public void onClick(View v) {
                 Vibrator v8 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                 v8.vibrate(27);
-                Toast.makeText(Dashboard.this, "Navigating to Surveys", Toast.LENGTH_SHORT).show();
                 Intent i=new Intent(Dashboard.this,Survey.class);
                 startActivity(i);
             }

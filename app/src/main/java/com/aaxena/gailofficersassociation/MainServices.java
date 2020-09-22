@@ -54,7 +54,7 @@ public class MainServices extends AppCompatActivity {
                         Vibrator v2 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                         v2.vibrate(33);
                         infol = findViewById(R.id.infos);
-                        infol.setText("Important Contacts Here!");
+                        infol.setText("Important Contacts Coming Here Soon!");
                         break;
                     case 1:
                         Vibrator v8 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);

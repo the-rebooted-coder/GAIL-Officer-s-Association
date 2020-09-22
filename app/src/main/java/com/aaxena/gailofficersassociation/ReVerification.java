@@ -28,7 +28,6 @@ public class ReVerification extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_re_verification);
 
         mAuth = FirebaseAuth.getInstance();
@@ -50,7 +49,7 @@ public class ReVerification extends AppCompatActivity {
         password = passwordTV.getText().toString();
 
         if (TextUtils.isEmpty(email)) {
-            Toast.makeText(getApplicationContext(), "Please Enter Email...", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Please Enter Email!", Toast.LENGTH_LONG).show();
             return;
         }
         if (TextUtils.isEmpty(password)) {
