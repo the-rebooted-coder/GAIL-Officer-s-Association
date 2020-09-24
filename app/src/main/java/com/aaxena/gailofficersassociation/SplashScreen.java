@@ -16,14 +16,20 @@ public class SplashScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.splash_screen);
+
+        fireSplashScreen();
+
+    }
+
+    private void fireSplashScreen() {
         int splash_screen_time_out = 1400;
+        Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        v.vibrate(30);
 
         if (isFirstTime()) {
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-                    v.vibrate(35);
                     Intent i=new Intent(SplashScreen.this,Details.class);
                     startActivity(i);
                     finish();
@@ -33,8 +39,6 @@ public class SplashScreen extends AppCompatActivity {
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-                    v.vibrate(35);
                     Intent i=new Intent(SplashScreen.this,Checker.class);
                     startActivity(i);
                     finish();
@@ -42,7 +46,8 @@ public class SplashScreen extends AppCompatActivity {
             }, splash_screen_time_out);
         }
     }
-//First Time Checker
+
+    //First Time Checker
     private boolean isFirstTime() {
         SharedPreferences preferences = getPreferences(MODE_PRIVATE);
         boolean ranBefore = preferences.getBoolean("RanBefore", false);
