@@ -37,6 +37,13 @@
   <component name="FavoritesManager">
     <favorites_list name="GAIL Officers Association" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="resourceFile" />
+      </list>
+    </option>
+  </component>
   <component name="GenerateSignedApkSettings">
     <option name="EXPORT_PRIVATE_KEY" value="false" />
     <option name="KEY_STORE_PATH" value="C:\Users\raffl\Documents\GitHub\gotapata.jks" />
@@ -52,7 +59,7 @@
     <property name="BundleExportedModule" value="app" />
     <property name="ExportApk.ApkPath" value="C:\Users\raffl\Documents\Final\app" />
     <property name="ExportApk.BuildVariants" value="release" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../GitHub/TakeNotes/app/src/main/java/com/aaxena/takenotes/SplashScreen.java" />
   </component>
   <component name="RecentsManager">
     <key name="android.template.packageName">
