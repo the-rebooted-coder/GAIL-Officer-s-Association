@@ -5,17 +5,17 @@
     android:id="@+id/getter"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/animation_list_starting"
+    android:background="@drawable/activity_getter"
     tools:context=".Getter">
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/light"
+        android:fontFamily="@font/productsans"
         android:text="@string/enter_a_few_details"
         android:textAlignment="center"
-        android:textColor="@android:color/background_light"
+        android:textColor="@android:color/background_dark"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,64 +23,55 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.165" />
 
+
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/animatored3"
-        android:layout_width="195dp"
-        android:layout_height="187dp"
+        android:layout_width="126dp"
+        android:layout_height="126dp"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.616"
+        app:layout_constraintVertical_bias="0.821"
         app:lottie_autoPlay="false"
         app:lottie_fileName="done.json"
         app:lottie_loop="false" />
-
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/productsansbold"
-        android:text="@string/we_hate_paperwork_too"
-        android:textColor="@color/intro_title_color"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.949" />
 
     <EditText
         android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/rounded_edittext"
+        android:elevation="25dp"
         android:ems="10"
         android:fontFamily="@font/productsans"
         android:hint="@string/name"
         android:importantForAutofill="no"
         android:inputType="textPersonName"
-        android:textColor="@android:color/white"
-        android:textColorHint="@color/common_google_signin_btn_text_dark_pressed"
+        android:textColor="@android:color/widget_edittext_dark"
+        android:textColorHint="@android:color/widget_edittext_dark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.381" />
+        app:layout_constraintVertical_bias="0.328" />
 
     <Button
         android:id="@+id/begin"
-        android:layout_width="wrap_content"
+        android:layout_width="109dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/color2"
+        android:layout_marginStart="161dp"
+        android:layout_marginEnd="162dp"
+        android:background="@drawable/default_button"
+        android:elevation="25dp"
         android:fontFamily="@font/productsans"
         android:text="@string/begin"
-        android:textColor="@color/browser_actions_bg_grey"
+        android:textColor="@color/browser_actions_text_color"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name"
-        app:layout_constraintVertical_bias="0.648" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.56" />
 </androidx.constraintlayout.widget.ConstraintLayout>

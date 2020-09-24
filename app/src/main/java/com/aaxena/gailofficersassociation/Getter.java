@@ -3,17 +3,14 @@ package com.aaxena.gailofficersassociation;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Vibrator;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.airbnb.lottie.LottieAnimationView;
 
@@ -28,10 +25,9 @@ public class Getter extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
         setContentView(R.layout.activity_getter);
         donee = findViewById(R.id.animatored3);
-
-
         Button begin = findViewById(R.id.begin);
         final boolean isAnimated=false;
         begin.setOnClickListener(new View.OnClickListener() {
@@ -60,13 +56,6 @@ public class Getter extends AppCompatActivity {
                 }
             }
         });
-
-        //Animation
-        ConstraintLayout container = findViewById(R.id.getter);
-        AnimationDrawable anim = (AnimationDrawable) container.getBackground();
-        anim.setEnterFadeDuration(5000);
-        anim.setExitFadeDuration(2000);
-        anim.start();
 
     }
 
