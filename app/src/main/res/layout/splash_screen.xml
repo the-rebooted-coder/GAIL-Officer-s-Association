@@ -4,26 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/Yellow"
-    tools:context=".SplashScreen" >
+    android:background="@color/common_google_signin_btn_text_dark_default"
+    tools:context=".SplashScreen">
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="374dp"
-        android:layout_height="261dp"
+        android:layout_width="322dp"
+        android:layout_height="272dp"
         android:contentDescription="@string/logo"
         android:src="@drawable/goa"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.565" />
+        app:layout_constraintVertical_bias="0.499" />
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/animatored"
-        android:layout_width="152dp"
-        android:layout_height="134dp"
-
+        android:layout_width="86dp"
+        android:layout_height="94dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,7 +30,7 @@
         app:layout_constraintVertical_bias="0.934"
         app:lottie_autoPlay="true"
         app:lottie_fileName="loader.json"
-        app:lottie_loop="true" />
+        app:lottie_loop="false" />
 
     <TextView
         android:id="@+id/textView"
@@ -40,11 +39,27 @@
         android:fontFamily="@font/productsansbold"
         android:text="@string/gail_nofficer_s_association_npata"
         android:textAlignment="center"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="32sp"
+        android:textColor="@color/intro_title_color"
+        android:textSize="27sp"
         app:layout_constraintBottom_toTopOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.794" />
+        app:layout_constraintVertical_bias="0.77" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="178dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="174dp"
+        android:layout_marginBottom="13dp"
+        android:fontFamily="@font/productsans"
+        android:text="@string/ver_solitaire"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/animatored" />
 </androidx.constraintlayout.widget.ConstraintLayout>

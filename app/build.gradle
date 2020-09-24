@@ -8,8 +8,8 @@ android {
         applicationId "com.aaxena.gailofficersassociation"
         minSdkVersion 23
         targetSdkVersion 29
-        versionCode 20
-        versionName "Lion"
+        versionCode 25
+        versionName "Solitaire"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
