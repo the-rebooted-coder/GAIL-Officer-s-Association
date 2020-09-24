@@ -37,9 +37,8 @@
     <string name="gail_email">GAIL Email</string>
     <string name="enter_your_gail_registred_email">Enter your GAIL Registered Email</string>
     <string name="gail_email_id">GAIL Email ID</string>
-    <string name="sqlite_user_login_screen">Dear Members enter your GAIL Credentials</string>
     <string name="log_in">Log IN</string>
-    <string name="not_log_in_register_from_here">New To This App ? Register From Here</string>
+    <string name="not_log_in_register_from_here"><u>Sign Up</u></string>
     <string name="enter_email">GAIL Email</string>
     <string name="enter_password">Password</string>
     <string name="new_user_registration">New User On Boarding</string>
@@ -117,7 +116,7 @@ contact us at goa.pataoffice@gmail.com.</string>
     <string name="bagpack">Bagpack</string>
     <string name="change">Change</string>
     <string name="enter_the_new_name">Enter The New Name</string>
-    <string name="forgot_password">Forgot Password</string>
+    <string name="forgot_password"><u>Forgot Password</u></string>
     <string name="forgot_your_password">Forgot your password?</string>
     <string name="back">BACK</string>
     <string name="to_reset_password_enter_your_email_press_the_button_and_check_mail_to_follow_instruction">To reset password, enter your email, press the button and check mail to follow instruction.</string>
@@ -149,6 +148,7 @@ contact us at goa.pataoffice@gmail.com.</string>
     <string name="check">Check</string>
     <string name="feedback">Feedback</string>
     <string name="ver_solitaire">Ver: Solitaire</string>
+    <string name="sign_in">Sign In</string>
 
 
     <!--Array for About Us Category-->

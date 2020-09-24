@@ -57,17 +57,6 @@ public class Email extends AppCompatActivity {
             }
         });
 
-        Button privacypolicy = findViewById(R.id.privacy_policy);
-        privacypolicy.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Vibrator v11 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-                v11.vibrate(23);
-                Intent intent = new Intent(Email.this, PrivacyPolicy.class);
-                startActivity(intent);
-            }
-        });
-
         Button acc = findViewById(R.id.acc);
         acc.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,6 +81,8 @@ public class Email extends AppCompatActivity {
     private void loginUserAccount() {
         progressBar.setVisibility(View.VISIBLE);
         String email, password;
+        Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        v.vibrate(28);
         email = emailTV.getText().toString();
         password = passwordTV.getText().toString();
        if (email.endsWith("@gail.co.in")) {
