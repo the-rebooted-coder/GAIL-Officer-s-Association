@@ -62,6 +62,7 @@ public class Email extends AppCompatActivity {
         acc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 Intent i=new Intent(Email.this,RegisterActivity.class);
                 startActivity(i);
             }

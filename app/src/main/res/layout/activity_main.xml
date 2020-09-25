@@ -26,8 +26,8 @@
 
     <EditText
         android:id="@+id/editTextMobile"
-        android:layout_width="293dp"
-        android:layout_height="wrap_content"
+        android:layout_width="204dp"
+        android:layout_height="35dp"
         android:autofillHints="@string/phone_number"
         android:background="@drawable/rounded_edittext"
         android:digits="0123456789"
@@ -45,12 +45,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.72" />
+        app:layout_constraintVertical_bias="0.65999997" />
 
     <Button
         android:id="@+id/buttonContinue"
-        android:layout_width="59dp"
-        android:layout_height="62dp"
+        android:layout_width="54dp"
+        android:layout_height="55dp"
         android:background="@drawable/circle"
         android:elevation="25dp"
         android:fontFamily="@font/productsansbold"
@@ -62,7 +62,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.85" />
+        app:layout_constraintVertical_bias="0.82" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

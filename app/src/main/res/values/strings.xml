@@ -69,7 +69,6 @@
     <string name="waves_images">Waves Images</string>
     <string name="enter_the_code_you_just_recieved">Enter the Code You Just Received!</string>
     <string name="complete_sign_in">Complete Sign-In</string>
-    <string name="enter_verification_code">Enter Verification Code</string>
     <string name="about_data_we_collect">About Data we Collect</string>
     <string name="privacy_policy">Privacy Policy\n\n
 GOA-PATA built the GAIL Officers Association app as a free app.\nThis service is
@@ -147,6 +146,7 @@ contact us at goa.pataoffice@gmail.com.</string>
     <string name="feedback">Feedback</string>
     <string name="ver_solitaire">Ver: Solitaire</string>
     <string name="sign_in">Sign In</string>
+    <string name="otp">_  _  _  _  _  _</string>
 
 
     <!--Array for About Us Category-->
