@@ -2,16 +2,13 @@ package com.aaxena.gailofficersassociation;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -20,8 +17,17 @@ public class Settings extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
         setContentView(R.layout.activity_settings);
+
+        Button back = findViewById(R.id.btn_back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent back = new Intent(Settings.this, Dashboard.class);
+                startActivity(back);
+            }
+        });
 
         Button chngname = findViewById(R.id.chngname);
         chngname.setOnClickListener(new View.OnClickListener() {
@@ -35,6 +41,15 @@ public class Settings extends AppCompatActivity {
             }
         });
 
+        Button abt_dev = findViewById(R.id.abt);
+        abt_dev.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Vibrator v6 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                v6.vibrate(30);
+                Toast.makeText(Settings.this, R.string.app_developer,Toast.LENGTH_LONG).show();
+            }
+        });
 
         Button logg = findViewById(R.id.logg);
         logg.setOnClickListener(new View.OnClickListener() {
@@ -49,17 +64,7 @@ public class Settings extends AppCompatActivity {
                 finish();
             }
         });
-
-
-
         Vibrator v6 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         v6.vibrate(19);
-
-        //Android Background Animation
-        ConstraintLayout container = findViewById(R.id.set);
-        AnimationDrawable anim = (AnimationDrawable) container.getBackground();
-        anim.setEnterFadeDuration(6000);
-        anim.setExitFadeDuration(2000);
-        anim.start();
     }
 }

@@ -5,15 +5,16 @@
     android:id="@+id/set"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/settings_prefs"
+    android:background="@drawable/activity_prefrences"
     tools:context=".Settings">
 
 
     <Button
         android:id="@+id/chngname"
-        android:layout_width="wrap_content"
+        android:layout_width="143dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/color1"
+        android:background="@drawable/default_button"
+        android:elevation="25dp"
         android:fontFamily="@font/productsans"
         android:text="@string/chnage_my_name"
         android:textColor="@color/intro_title_color"
@@ -21,13 +22,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.25" />
+        app:layout_constraintVertical_bias="0.303" />
 
     <Button
         android:id="@+id/logg"
-        android:layout_width="wrap_content"
+        android:layout_width="143dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/color1"
+        android:background="@drawable/default_button"
+        android:elevation="25dp"
         android:fontFamily="@font/productsans"
         android:text="@string/logout"
         android:textColor="@color/intro_title_color"
@@ -35,21 +37,42 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.36" />
+        app:layout_constraintVertical_bias="0.393" />
 
     <TextView
         android:id="@+id/textView9"
-        android:layout_width="wrap_content"
+        android:layout_width="182dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="57dp"
+        android:layout_marginTop="95dp"
+        android:layout_marginEnd="172dp"
+        android:layout_marginBottom="94dp"
         android:fontFamily="@font/productsansbold"
         android:text="@string/prefrences"
-        android:textColor="@android:color/background_light"
-        android:textSize="29sp"
+        android:textColor="@android:color/black"
+        android:textColorHighlight="@color/common_google_signin_btn_text_dark_pressed"
+        android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.060000002" />
+        app:layout_constraintVertical_bias="0.033" />
+
+    <Button
+        android:id="@+id/btn_back"
+        android:layout_width="45dp"
+        android:layout_height="48dp"
+        android:background="@android:color/transparent"
+        android:elevation="10dp"
+        android:foreground="@drawable/back_button"
+        android:textColor="@color/cardview_light_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.043"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.038" />
 
     <TextView
         android:id="@+id/textView11"
@@ -57,27 +80,40 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/productsans"
         android:text="@string/contact_us"
-        android:textAlignment="viewStart"
-        android:textColor="@android:color/background_light"
-        android:textSize="15sp"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logg"
-        app:layout_constraintVertical_bias="0.281" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.92" />
 
     <TextView
         android:id="@+id/textView12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/light"
+        android:layout_marginStart="101dp"
+        android:layout_marginEnd="101dp"
+        android:fontFamily="@font/productsans"
         android:text="@string/_2020_c_gail_officer_s_association"
         android:textAlignment="center"
-        android:textColor="@color/gradient_start_color"
+        android:textColor="@android:color/darker_gray"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.94" />
+        app:layout_constraintVertical_bias="0.98" />
+
+    <Button
+        android:id="@+id/abt"
+        android:layout_width="87dp"
+        android:layout_height="76dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.6" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
