@@ -28,7 +28,7 @@ public class Getter extends AppCompatActivity {
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
         setContentView(R.layout.activity_getter);
         donee = findViewById(R.id.animatored3);
-        Button begin = findViewById(R.id.begin);
+        final Button begin = findViewById(R.id.begin);
         final boolean isAnimated=false;
         begin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,6 +36,7 @@ public class Getter extends AppCompatActivity {
                 Vibrator v9 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                 v9.vibrate(24);
                 if (!isAnimated) {
+                    begin.setVisibility(View.INVISIBLE);
                     donee.playAnimation();
                     new Handler().postDelayed(new Runnable() {
                         @Override
