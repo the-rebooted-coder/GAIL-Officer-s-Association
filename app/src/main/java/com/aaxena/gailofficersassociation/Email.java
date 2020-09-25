@@ -30,6 +30,7 @@ public class Email extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
         setContentView(R.layout.activity_email);
 
         final TextView textView = findViewById(R.id.greetings_behalf);
@@ -86,7 +87,7 @@ public class Email extends AppCompatActivity {
         v.vibrate(28);
         email = emailTV.getText().toString();
         password = passwordTV.getText().toString();
-       if (email.endsWith("@gail.co.in")) {
+   //    if (email.endsWith("@gail.co.in")) {
             if (TextUtils.isEmpty(email)) {
                 loginBtn.setVisibility(View.VISIBLE);
                 progressBar.setVisibility(View.INVISIBLE);
@@ -112,16 +113,19 @@ public class Email extends AppCompatActivity {
 
                             } else {
                                 loginBtn.setVisibility(View.VISIBLE);
-                                Toast.makeText(getApplicationContext(), "Login failed! Please Try Again Later", Toast.LENGTH_LONG).show();
+                                Toast.makeText(getApplicationContext(), "Login failed! Please Try Again", Toast.LENGTH_LONG).show();
                                 progressBar.setVisibility(View.GONE);
                             }
                         }
                     });
-        }
+      //  }
+  /*
      else {
            progressBar.setVisibility(View.INVISIBLE);
            Toast.makeText(this, "Please Enter Valid GAIL Email", Toast.LENGTH_LONG).show();
        }
+
+   */
  }
 
     private void initializeUI() {
