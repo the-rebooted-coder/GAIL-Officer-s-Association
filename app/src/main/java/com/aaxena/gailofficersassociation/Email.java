@@ -79,6 +79,7 @@ public class Email extends AppCompatActivity {
     }
 
     private void loginUserAccount() {
+        loginBtn.setVisibility(View.INVISIBLE);
         progressBar.setVisibility(View.VISIBLE);
         String email, password;
         Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
@@ -87,11 +88,13 @@ public class Email extends AppCompatActivity {
         password = passwordTV.getText().toString();
        if (email.endsWith("@gail.co.in")) {
             if (TextUtils.isEmpty(email)) {
+                loginBtn.setVisibility(View.VISIBLE);
                 progressBar.setVisibility(View.INVISIBLE);
                 Toast.makeText(getApplicationContext(), "Please Enter Email!", Toast.LENGTH_LONG).show();
                 return;
             }
             if (TextUtils.isEmpty(password)) {
+                loginBtn.setVisibility(View.VISIBLE);
                 progressBar.setVisibility(View.INVISIBLE);
                 Toast.makeText(getApplicationContext(), "Please Enter Password!", Toast.LENGTH_LONG).show();
                 return;
@@ -104,9 +107,11 @@ public class Email extends AppCompatActivity {
                                 Vibrator v11 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                                 v11.vibrate(25);
                                 checkIfEmailVerified();
+                                loginBtn.setVisibility(View.VISIBLE);
                                 progressBar.setVisibility(View.GONE);
 
                             } else {
+                                loginBtn.setVisibility(View.VISIBLE);
                                 Toast.makeText(getApplicationContext(), "Login failed! Please Try Again Later", Toast.LENGTH_LONG).show();
                                 progressBar.setVisibility(View.GONE);
                             }
