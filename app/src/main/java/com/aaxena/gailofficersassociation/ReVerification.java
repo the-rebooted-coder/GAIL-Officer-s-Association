@@ -28,6 +28,7 @@ public class ReVerification extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
         setContentView(R.layout.activity_re_verification);
 
         mAuth = FirebaseAuth.getInstance();
@@ -43,16 +44,18 @@ public class ReVerification extends AppCompatActivity {
     }
     private void loginUserAccount() {
         progressBar.setVisibility(View.VISIBLE);
-
+        loginBtn.setVisibility(View.INVISIBLE);
         String email, password;
         email = emailTV.getText().toString();
         password = passwordTV.getText().toString();
 
         if (TextUtils.isEmpty(email)) {
+            loginBtn.setVisibility(View.VISIBLE);
             Toast.makeText(getApplicationContext(), "Please Enter Email!", Toast.LENGTH_LONG).show();
             return;
         }
         if (TextUtils.isEmpty(password)) {
+            loginBtn.setVisibility(View.VISIBLE);
             Toast.makeText(getApplicationContext(), "Please Enter Password!", Toast.LENGTH_LONG).show();
             return;
         }
@@ -66,13 +69,15 @@ public class ReVerification extends AppCompatActivity {
                             v11.vibrate(23);
                             Intent intent = new Intent(ReVerification.this, Dashboard.class);
                             startActivity(intent);
+                            loginBtn.setVisibility(View.GONE);
                             progressBar.setVisibility(View.GONE);
                             finish();
 
                         }
                         else {
-                            Toast.makeText(getApplicationContext(), "Login failed Check Credentials", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), "Login failed check credentials", Toast.LENGTH_SHORT).show();
                             progressBar.setVisibility(View.GONE);
+                            loginBtn.setVisibility(View.VISIBLE);
                         }
                     }
                 });
