@@ -153,7 +153,7 @@ public class Email extends AppCompatActivity {
             // email is not verified, so just prompt the message to the user and restart this activity.
             // NOTE: don't forget to log out the user.
             FirebaseAuth.getInstance().signOut();
-            Toast.makeText(Email.this, "Email Not Verified!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(Email.this, "Email Not Yet Verified!", Toast.LENGTH_SHORT).show();
             //restart this activity
 
         }

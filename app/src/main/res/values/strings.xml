@@ -117,10 +117,9 @@ contact us at goa.pataoffice@gmail.com.</string>
     <string name="change">Change</string>
     <string name="enter_the_new_name">Enter The New Name</string>
     <string name="forgot_password"><u>Forgot Password</u></string>
-    <string name="forgot_your_password">Forgot your password?</string>
+    <string name="forgot_your_password">Forgot Password?</string>
     <string name="back">BACK</string>
-    <string name="to_reset_password_enter_your_email_press_the_button_and_check_mail_to_follow_instruction">To reset password, enter your email, press the button and check mail to follow instruction.</string>
-    <string name="your_email_here">Your email here</string>
+    <string name="your_email_here">Enter Your Email</string>
     <string name="reset_password">Reset Password</string>
     <string name="enter_your_cpf_number">Enter CPF Number</string>
     <string name="_2_step_verification">2 Step Verification</string>

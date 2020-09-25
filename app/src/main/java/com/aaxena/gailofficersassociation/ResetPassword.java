@@ -1,5 +1,6 @@
 package com.aaxena.gailofficersassociation;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -24,8 +25,8 @@ public class ResetPassword extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
         setContentView(R.layout.activity_reset_password);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         edtEmail = findViewById(R.id.edt_reset_email);
         btnResetPassword = findViewById(R.id.btn_reset_password);
         btnBack = findViewById(R.id.btn_back);
@@ -60,9 +61,17 @@ public class ResetPassword extends AppCompatActivity {
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(ResetPassword.this, Email.class);
+                startActivity(intent);
                 finish();
             }
         });
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(ResetPassword.this, Email.class);
+        startActivity(intent);
+    }
 }
