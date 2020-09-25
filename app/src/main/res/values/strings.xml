@@ -120,8 +120,8 @@ contact us at goa.pataoffice@gmail.com.</string>
     <string name="your_email_here">Enter Your Email</string>
     <string name="reset_password">Reset Password</string>
     <string name="enter_your_cpf_number">Enter CPF Number</string>
-    <string name="_2_step_verification">2 Step Verification</string>
-    <string name="we_at_gail_are_commited_towards_your_information_kindly_enter_your_e_mail_for_the_final_verification">We at GAIL are committed towards your information. Enter Your Email Credentials Once Again!</string>
+    <string name="_2_step_verification">2 Factor Authentication</string>
+    <string name="we_at_gail_are_commited_towards_your_information_kindly_enter_your_e_mail_for_the_final_verification">We at GAIL are committed towards the secrecy of the information you provide. Enter Your Credentials once again to securely sign you in!</string>
     <string name="enter_your_email_here">Enter Your Email Here</string>
     <string name="enter_your_email_again">Enter Your Email Again</string>
     <string name="turn_on_dynamic_background">Turn On Dynamic Background</string>
