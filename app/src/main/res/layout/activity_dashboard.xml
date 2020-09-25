@@ -181,6 +181,7 @@
                 android:id="@+id/dynamic"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
                 android:fontFamily="@font/productsans"
                 android:text="@string/turn_on_dynamic_background"
                 android:textAlignment="center"
