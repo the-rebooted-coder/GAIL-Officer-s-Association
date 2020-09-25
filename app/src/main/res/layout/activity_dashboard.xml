@@ -5,36 +5,33 @@
     android:id="@+id/myflow"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/color8"
+    android:background="@drawable/pure_white"
     android:keepScreenOn="true"
     tools:context=".Dashboard">
 
 
-    <ScrollView
+    <HorizontalScrollView
         android:id="@+id/scrollView1"
-        android:layout_width="325dp"
-        android:layout_height="374dp"
-        android:fadeScrollbars="false"
-        android:scrollbars="none"
+        android:layout_width="300dp"
+        android:layout_height="386dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintVertical_bias="0.86">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:scrollbars="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
             android:verticalScrollbarPosition="left">
 
             <Button
                 android:id="@+id/activities"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
+                android:layout_width="215dp"
+                android:layout_height="match_parent"
                 android:background="@drawable/color10"
-                android:elevation="20dp"
+                android:elevation="40dp"
                 android:fontFamily="@font/productsans"
                 android:text="@string/news"
                 android:textColor="@color/texter"
@@ -47,10 +44,11 @@
 
             <Button
                 android:id="@+id/services"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_marginTop="10dp"
+                android:layout_width="215dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
                 android:background="@drawable/color10"
+                android:elevation="40dp"
                 android:fontFamily="@font/productsans"
                 android:text="@string/services"
                 android:textColor="@color/texter"
@@ -62,12 +60,14 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.336" />
 
+
             <Button
                 android:id="@+id/services_main"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_marginTop="10dp"
+                android:layout_width="215dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
                 android:background="@drawable/color10"
+                android:elevation="40dp"
                 android:fontFamily="@font/productsans"
                 android:text="@string/services_msin"
                 android:textColor="@color/texter"
@@ -79,13 +79,13 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.363" />
 
-
             <Button
                 android:id="@+id/survey"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_marginTop="10dp"
+                android:layout_width="215dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
                 android:background="@drawable/color10"
+                android:elevation="40dp"
                 android:fontFamily="@font/productsans"
                 android:text="@string/survey"
                 android:textColor="@color/texter"
@@ -99,10 +99,11 @@
 
             <Button
                 android:id="@+id/grievances"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_marginTop="10dp"
+                android:layout_width="215dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
                 android:background="@drawable/color10"
+                android:elevation="40dp"
                 android:fontFamily="@font/productsans"
                 android:text="@string/griviances"
                 android:textColor="@color/texter"
@@ -116,11 +117,11 @@
 
             <Button
                 android:id="@+id/blog"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_marginTop="10dp"
+                android:layout_width="215dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
                 android:background="@drawable/color10"
-                android:elevation="20dp"
+                android:elevation="40dp"
                 android:fontFamily="@font/productsans"
                 android:text="@string/blog"
                 android:textColor="@color/texter"
@@ -134,11 +135,11 @@
 
             <Button
                 android:id="@+id/bbc"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_marginTop="10dp"
+                android:layout_width="215dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
                 android:background="@drawable/color10"
-                android:elevation="20dp"
+                android:elevation="40dp"
                 android:fontFamily="@font/productsans"
                 android:text="@string/about_us"
                 android:textColor="@color/texter"
@@ -152,11 +153,11 @@
 
             <Button
                 android:id="@+id/news_india"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_marginTop="10dp"
+                android:layout_width="215dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
                 android:background="@drawable/color10"
-                android:elevation="20dp"
+                android:elevation="40dp"
                 android:fontFamily="@font/productsans"
                 android:text="@string/indian_news_bulletin"
                 android:textColor="@color/texter"
@@ -168,29 +169,30 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.65" />
 
+            <!--
+
+              -->
+
             <Button
                 android:id="@+id/button1"
                 android:layout_width="45dp"
                 android:layout_height="46dp"
-                android:layout_marginTop="8dp"
                 android:background="@drawable/set"
                 android:fontFamily="@font/productsans"
                 android:textSize="16sp" />
 
             <Switch
                 android:id="@+id/dynamic"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
                 android:fontFamily="@font/productsans"
                 android:text="@string/turn_on_dynamic_background"
                 android:textAlignment="center"
                 android:textColor="@color/intro_description_color" />
-
-
         </LinearLayout>
 
-    </ScrollView>
+    </HorizontalScrollView>
 
     <TextView
         android:id="@+id/emailhello"

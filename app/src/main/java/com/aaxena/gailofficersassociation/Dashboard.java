@@ -15,6 +15,7 @@ import android.view.WindowManager;
 import android.view.animation.AlphaAnimation;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.HorizontalScrollView;
 import android.widget.ScrollView;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -58,7 +59,7 @@ public class Dashboard extends AppCompatActivity {
                     .create().show();
         }
         //Making Scroll View Off
-        ScrollView scrollView = findViewById(R.id.scrollView1);
+        HorizontalScrollView scrollView = findViewById(R.id.scrollView1);
         scrollView.setVerticalScrollBarEnabled(false);
         scrollView.setHorizontalScrollBarEnabled(false);
 
@@ -629,7 +630,7 @@ public class Dashboard extends AppCompatActivity {
                     editor.putBoolean("isChecked", false);
                     editor.commit();
                     ConstraintLayout constraintLayout= findViewById(R.id.myflow);
-                    Drawable drawable= getResources().getDrawable(R.drawable.color8);
+                    Drawable drawable= getResources().getDrawable(R.drawable.pure_white);
                     constraintLayout.setBackgroundDrawable(drawable);
                     afterfade.setTextColor(Color.parseColor("#0336ff"));
                     fader.setTextColor(Color.parseColor("#0336ff"));
