@@ -23,8 +23,19 @@ public class ChangeName extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
         setContentView(R.layout.activity_change_name);
+
+
+        Button back = findViewById(R.id.btn_back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent back = new Intent(ChangeName.this, Settings.class);
+                startActivity(back);
+                finish();
+            }
+        });
 
         Button begin = findViewById(R.id.begin);
         begin.setOnClickListener(new View.OnClickListener() {
@@ -38,7 +49,7 @@ public class ChangeName extends AppCompatActivity {
                 int mPendingIntentId = 123456;
                 PendingIntent mPendingIntent = PendingIntent.getActivity(ChangeName.this, mPendingIntentId,    mStartActivity, PendingIntent.FLAG_CANCEL_CURRENT);
                 AlarmManager mgr = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
-                mgr.set(AlarmManager.RTC, System.currentTimeMillis() + 2000, mPendingIntent);
+                mgr.set(AlarmManager.RTC, System.currentTimeMillis() + 1000, mPendingIntent);
                 finishAffinity();
             }
         });
@@ -49,5 +60,12 @@ public class ChangeName extends AppCompatActivity {
         name = findViewById(R.id.name);
         editor.putString(TEXT,name.getText().toString());
         editor.commit();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent go_back = new Intent(ChangeName.this, Settings.class);
+        startActivity(go_back);
     }
 }
