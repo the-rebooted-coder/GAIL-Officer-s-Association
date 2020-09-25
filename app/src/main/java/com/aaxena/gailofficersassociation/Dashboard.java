@@ -163,6 +163,7 @@ public class Dashboard extends AppCompatActivity {
                 v8.vibrate(26);
                 Intent i=new Intent(Dashboard.this,IndianNewsLanding.class);
                 startActivity(i);
+                finish();
             }
         });
 
@@ -663,6 +664,7 @@ public class Dashboard extends AppCompatActivity {
                 v8.vibrate(27);
                 Intent i=new Intent(Dashboard.this,Settings.class);
                 startActivity(i);
+                finish();
 
             }
         });

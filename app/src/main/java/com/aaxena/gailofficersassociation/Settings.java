@@ -26,6 +26,7 @@ public class Settings extends AppCompatActivity {
             public void onClick(View v) {
                 Intent back = new Intent(Settings.this, Dashboard.class);
                 startActivity(back);
+                finish();
             }
         });
 
@@ -66,5 +67,12 @@ public class Settings extends AppCompatActivity {
         });
         Vibrator v6 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         v6.vibrate(19);
+    }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent go_back = new Intent(Settings.this, Dashboard.class);
+        startActivity(go_back);
+        finish();
     }
 }

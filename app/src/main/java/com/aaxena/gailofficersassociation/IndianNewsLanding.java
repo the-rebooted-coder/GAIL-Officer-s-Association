@@ -71,5 +71,6 @@ public class IndianNewsLanding extends AppCompatActivity {
         super.onBackPressed();
         Intent go_back = new Intent(IndianNewsLanding.this, Dashboard.class);
         startActivity(go_back);
+        finish();
     }
 }
