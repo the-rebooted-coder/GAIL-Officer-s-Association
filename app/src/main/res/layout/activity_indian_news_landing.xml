@@ -4,18 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#800080"
+    android:background="@drawable/activity_indian_news_landing"
     tools:context=".IndianNewsLanding">
 
 
     <ScrollView
-        android:layout_width="403dp"
-        android:layout_height="326dp"
+        android:layout_width="305dp"
+        android:layout_height="371dp"
+        android:elevation="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.26999998">
+        app:layout_constraintVertical_bias="0.44">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -24,12 +25,11 @@
 
             <Button
                 android:id="@+id/bbc"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:background="@drawable/color10"
+                android:layout_width="308dp"
+                android:layout_height="170dp"
+                android:background="@drawable/bbc"
                 android:elevation="20dp"
                 android:fontFamily="@font/productsans"
-                android:text="@string/bbc_india"
                 android:textColor="@color/common_google_signin_btn_text_dark_default"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -40,13 +40,12 @@
 
             <Button
                 android:id="@+id/ndtv"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
+                android:layout_width="308dp"
+                android:layout_height="170dp"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/color10"
+                android:background="@drawable/ndtv"
                 android:elevation="20dp"
                 android:fontFamily="@font/productsans"
-                android:text="@string/ndtv_hindi"
                 android:textColor="@color/common_google_signin_btn_text_dark_default"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -57,13 +56,12 @@
 
             <Button
                 android:id="@+id/google"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
+                android:layout_width="308dp"
+                android:layout_height="170dp"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/color10"
+                android:background="@drawable/google"
                 android:elevation="20dp"
                 android:fontFamily="@font/productsans"
-                android:text="@string/google_news"
                 android:textColor="@color/common_google_signin_btn_text_dark_default"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -74,13 +72,12 @@
 
             <Button
                 android:id="@+id/aajtak"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
+                android:layout_width="308dp"
+                android:layout_height="170dp"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/color10"
+                android:background="@drawable/aajtk"
                 android:elevation="20dp"
                 android:fontFamily="@font/productsans"
-                android:text="@string/aaj_tak_hindi"
                 android:textColor="@color/common_google_signin_btn_text_dark_default"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -92,45 +89,18 @@
     </ScrollView>
 
     <TextView
-        android:id="@+id/textView16"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/productsans"
-        android:text="@string/disclaimer"
-        android:textAlignment="center"
-        android:textColor="@color/common_google_signin_btn_text_dark_pressed"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.96" />
-
-    <TextView
         android:id="@+id/textView17"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/productsansbold"
         android:text="@string/indian_news_bulletin"
-        android:textColor="@color/common_google_signin_btn_text_dark_pressed"
+        android:textColor="@android:color/black"
         android:textSize="29sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.060000002" />
-
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/chooser"
-        android:layout_width="154dp"
-        android:layout_height="124dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.81"
-        app:lottie_autoPlay="true"
-        app:lottie_fileName="choose.json"
-        app:lottie_loop="true" />
+        app:layout_constraintVertical_bias="0.06999999" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

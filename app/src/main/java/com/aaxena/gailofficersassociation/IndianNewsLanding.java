@@ -15,7 +15,7 @@ public class IndianNewsLanding extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
         setContentView(R.layout.activity_indian_news_landing);
 
         Button ndtv = findViewById(R.id.ndtv);
@@ -64,5 +64,12 @@ public class IndianNewsLanding extends AppCompatActivity {
                 startActivity(i);
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent go_back = new Intent(IndianNewsLanding.this, Dashboard.class);
+        startActivity(go_back);
     }
 }
