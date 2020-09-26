@@ -59,11 +59,14 @@
     <property name="BundleExportedModule" value="app" />
     <property name="ExportApk.ApkPath" value="C:\Users\raffl\Documents\Final\app" />
     <property name="ExportApk.BuildVariants" value="release" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../GitHub/TakeNotes/app/src/main/java/com/aaxena/takenotes/SplashScreen.java" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable" />
   </component>
   <component name="RecentsManager">
     <key name="android.template.packageName">
       <recent name="com.aaxena.gailofficersassociation" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\raffl\Documents\Final\app\src\main\res\drawable" />
     </key>
   </component>
   <component name="RunDashboard">
