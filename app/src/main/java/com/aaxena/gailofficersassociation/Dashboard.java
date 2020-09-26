@@ -676,10 +676,7 @@ public class Dashboard extends AppCompatActivity {
                         fader.setTextColor(Color.parseColor("#FFFFFFFF"));
                         emailhello.setTextColor(Color.parseColor("#FFFFFFFF"));
                     }
-                    Drawable back= getResources().getDrawable(R.drawable.white);
-                    dynamic.setBackgroundDrawable(back);
-                    dynamic.setText(R.string.turn_on_dynamic_background);
-                    dynamic.setText(R.string.dynamic_on);
+                    dynamic.setBackgroundColor(Color.parseColor("#46FFFFFF"));
                 } else {
                     SharedPreferences.Editor editor = getSharedPreferences("com.aaxena.gailofficersassociation", MODE_PRIVATE).edit();
                     editor.putBoolean("isChecked", false);
@@ -700,9 +697,8 @@ public class Dashboard extends AppCompatActivity {
                     main_services.setBackgroundColor(Color.parseColor("#0336ff"));
                     indian_news.setBackgroundColor(Color.parseColor("#0336ff"));
                     survey.setBackgroundColor(Color.parseColor("#0336ff"));
-                    Drawable back= getResources().getDrawable(R.drawable.color8);
+                    Drawable back= getResources().getDrawable(R.drawable.default_button);
                     dynamic.setBackgroundDrawable(back);
-                    dynamic.setText(R.string.turn_on_dynamic_background);
                 }
             }
         });
