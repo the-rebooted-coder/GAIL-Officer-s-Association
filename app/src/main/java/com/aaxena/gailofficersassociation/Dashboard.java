@@ -111,6 +111,7 @@ public class Dashboard extends AppCompatActivity {
         blog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent intent = getPackageManager().getLaunchIntentForPackage("com.wGOAChat_10893263");
                 if (intent != null) {
                     // We found the activity now start the activity
@@ -120,6 +121,7 @@ public class Dashboard extends AppCompatActivity {
                     startActivity(intent);
                 } else {
                     // Dialog Box
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                     new AlertDialog.Builder(Dashboard.this)
                             .setTitle("Companion App Not Installed!")
                             .setMessage(R.string.sensitive)
@@ -150,6 +152,7 @@ public class Dashboard extends AppCompatActivity {
         services.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 Vibrator v8 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                 v8.vibrate(27);
                 Intent i=new Intent(Dashboard.this,Services.class);
@@ -161,6 +164,7 @@ public class Dashboard extends AppCompatActivity {
         indian_news.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 Vibrator v8 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                 v8.vibrate(26);
                 Intent i=new Intent(Dashboard.this,IndianNewsLanding.class);
@@ -173,6 +177,7 @@ public class Dashboard extends AppCompatActivity {
         main_services.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 Vibrator v8 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                 v8.vibrate(27);
                 Intent i=new Intent(Dashboard.this,MainServices.class);
@@ -184,10 +189,12 @@ public class Dashboard extends AppCompatActivity {
         grievances.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 Vibrator v8 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                 v8.vibrate(27);
                 Intent i=new Intent(Dashboard.this,Grievances.class);
                 startActivity(i);
+                finish();
             }
         });
 
@@ -195,6 +202,7 @@ public class Dashboard extends AppCompatActivity {
         activities.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 Vibrator v8 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                 v8.vibrate(27);
                 Toast.makeText(Dashboard.this, "Fetching News", Toast.LENGTH_SHORT).show();
@@ -207,6 +215,7 @@ public class Dashboard extends AppCompatActivity {
         about.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 Vibrator v8 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                 v8.vibrate(27);
                 Intent i=new Intent(Dashboard.this,Landing.class);
@@ -218,6 +227,7 @@ public class Dashboard extends AppCompatActivity {
         survey.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 Vibrator v8 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                 v8.vibrate(27);
                 Intent i=new Intent(Dashboard.this,Survey.class);
@@ -417,8 +427,8 @@ public class Dashboard extends AppCompatActivity {
         SharedPreferences sharedPrefs = getSharedPreferences("com.aaxena.gailofficersassociation", MODE_PRIVATE);
         dynamic.setChecked(sharedPrefs.getBoolean("isChecked", false));
 
-        LogOUT = findViewById(R.id.button1);
         // Adding click listener to Log Out button.
+        LogOUT = findViewById(R.id.button1);
         LogOUT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
