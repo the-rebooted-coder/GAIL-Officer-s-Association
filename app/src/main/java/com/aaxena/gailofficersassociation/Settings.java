@@ -20,38 +20,15 @@ public class Settings extends AppCompatActivity {
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
         setContentView(R.layout.activity_settings);
 
-        Button back = findViewById(R.id.btn_back);
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent back = new Intent(Settings.this, Dashboard.class);
-                startActivity(back);
-                finish();
-            }
-        });
+        back();
+        changeName();
+        aboutSpandan();
+        logout();
+        logout();
+    }
 
-        Button chngname = findViewById(R.id.chngname);
-        chngname.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Vibrator v6 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-                v6.vibrate(25);
-                Intent i=new Intent(Settings.this,ChangeName.class);
-                startActivity(i);
-                finish();
-            }
-        });
 
-        Button abt_dev = findViewById(R.id.abt);
-        abt_dev.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Vibrator v6 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-                v6.vibrate(30);
-                Toast.makeText(Settings.this, R.string.app_developer,Toast.LENGTH_LONG).show();
-            }
-        });
-
+    private void logout() {
         Button logg = findViewById(R.id.logg);
         logg.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,9 +42,46 @@ public class Settings extends AppCompatActivity {
                 finish();
             }
         });
-        Vibrator v6 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-        v6.vibrate(19);
     }
+
+    private void aboutSpandan() {
+        Button abt_dev = findViewById(R.id.abt);
+        abt_dev.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Vibrator v6 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                v6.vibrate(30);
+                Toast.makeText(Settings.this, R.string.app_developer,Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+
+    private void changeName() {
+        Button chngname = findViewById(R.id.chngname);
+        chngname.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Vibrator v6 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                v6.vibrate(25);
+                Intent i=new Intent(Settings.this,ChangeName.class);
+                startActivity(i);
+                finish();
+            }
+        });
+    }
+
+    private void back() {
+        Button back = findViewById(R.id.btn_back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent back = new Intent(Settings.this, Dashboard.class);
+                startActivity(back);
+                finish();
+            }
+        });
+    }
+
     @Override
     public void onBackPressed() {
         super.onBackPressed();

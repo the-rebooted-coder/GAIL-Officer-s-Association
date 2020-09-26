@@ -5,9 +5,11 @@
     <color name="colorAccent">#EACD10</color>
     <color name="gradient_start_color">#4cb4ff</color>
     <color name="intro_title_color">#101820</color>
+    <color name="white">#FFFFFF</color>
     <color name="intro_description_color">#0336ff</color>
     <color name="purple">#9400D3</color>
     <color name="Yellow">#F0DD30</color>
+    <color name="notification_shade_dash">#D9426F</color>
     <color name="theme_color">#C1FFEB3B</color>
     <color name="dialogButtonText">#008577</color>
     <color name="texter">#FFDE03</color>

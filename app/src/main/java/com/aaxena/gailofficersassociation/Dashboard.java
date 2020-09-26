@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Vibrator;
 import android.view.View;
+import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.AlphaAnimation;
 import android.widget.Button;
@@ -48,6 +49,8 @@ public class Dashboard extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Window w = getWindow();
+        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
         setContentView(R.layout.activity_dashboard);
         if (isFirstTime()) {
@@ -58,10 +61,13 @@ public class Dashboard extends AppCompatActivity {
                     .setNeutralButton("Okay!", null)
                     .create().show();
         }
-        //Making Scroll View Off
-        HorizontalScrollView scrollView = findViewById(R.id.scrollView1);
-        scrollView.setVerticalScrollBarEnabled(false);
-        scrollView.setHorizontalScrollBarEnabled(false);
+      //  Making Scroll View Off
+            HorizontalScrollView scrollView = findViewById(R.id.scrollView1);
+            HorizontalScrollView scrollView2 = findViewById(R.id.scrollView2);
+            scrollView.setVerticalScrollBarEnabled(false);
+            scrollView.setHorizontalScrollBarEnabled(false);
+            scrollView2.setVerticalScrollBarEnabled(false);
+            scrollView2.setHorizontalScrollBarEnabled(false);
 
 //Authentication
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
@@ -77,7 +83,7 @@ public class Dashboard extends AppCompatActivity {
         emailhello = findViewById(R.id.emailhello);
         namehello = findViewById(R.id.namehello);
         loadData();
-        emailhello.setText("Logged in as: " + emaillo);
+        emailhello.setText(emaillo);
         emailhello.startAnimation(fadeIn);
         emailhello.startAnimation(fadeOut);
 
@@ -227,6 +233,7 @@ public class Dashboard extends AppCompatActivity {
         Vibrator v6 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         v6.vibrate(20);
 
+
         //Dynamic Switcher
         dynamic = findViewById(R.id.dynamic);
         dynamic.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -242,6 +249,8 @@ public class Dashboard extends AppCompatActivity {
                     int timeOfDay = c.get(Calendar.HOUR_OF_DAY);
 
                     if (timeOfDay >= 0 && timeOfDay < 01) {
+                        Window w = getWindow();
+                        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
                         ConstraintLayout constraintLayout= findViewById(R.id.myflow);
                         Drawable drawable= getResources().getDrawable(R.drawable.one);
                         constraintLayout.setBackgroundDrawable(drawable);
@@ -257,6 +266,8 @@ public class Dashboard extends AppCompatActivity {
                         fader.setTextColor(Color.parseColor("#FFFFFFFF"));
                         emailhello.setTextColor(Color.parseColor("#FFFFFFFF"));
                     } else if (timeOfDay >= 01 && timeOfDay < 02) {
+                        Window w = getWindow();
+                        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
                         ConstraintLayout constraintLayout= findViewById(R.id.myflow);
                         Drawable drawable= getResources().getDrawable(R.drawable.two);
                         constraintLayout.setBackgroundDrawable(drawable);
@@ -272,6 +283,8 @@ public class Dashboard extends AppCompatActivity {
                         fader.setTextColor(Color.parseColor("#FFFFFFFF"));
                         emailhello.setTextColor(Color.parseColor("#FFFFFFFF"));
                     } else if (timeOfDay >= 02 && timeOfDay < 03) {
+                        Window w = getWindow();
+                        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
                         ConstraintLayout constraintLayout= findViewById(R.id.myflow);
                         Drawable drawable= getResources().getDrawable(R.drawable.three);
                         constraintLayout.setBackgroundDrawable(drawable);
@@ -287,6 +300,8 @@ public class Dashboard extends AppCompatActivity {
                         fader.setTextColor(Color.parseColor("#FFFFFFFF"));
                         emailhello.setTextColor(Color.parseColor("#FFFFFFFF"));
                     } else if (timeOfDay >= 03 && timeOfDay < 04) {
+                        Window w = getWindow();
+                        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
                         ConstraintLayout constraintLayout= findViewById(R.id.myflow);
                         Drawable drawable= getResources().getDrawable(R.drawable.four);
                         about.setBackgroundColor(Color.parseColor("#54292929"));
@@ -302,6 +317,8 @@ public class Dashboard extends AppCompatActivity {
                         emailhello.setTextColor(Color.parseColor("#FFFFFFFF"));
                         constraintLayout.setBackgroundDrawable(drawable);
                     } else if (timeOfDay >= 04 && timeOfDay < 05) {
+                        Window w = getWindow();
+                        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
                         ConstraintLayout constraintLayout= findViewById(R.id.myflow);
                         Drawable drawable= getResources().getDrawable(R.drawable.five);
                         constraintLayout.setBackgroundDrawable(drawable);
@@ -318,6 +335,8 @@ public class Dashboard extends AppCompatActivity {
                         emailhello.setTextColor(Color.parseColor("#FFFFFFFF"));
                     }
                     else if (timeOfDay >= 05 && timeOfDay < 06) {
+                        Window w = getWindow();
+                        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
                         ConstraintLayout constraintLayout= findViewById(R.id.myflow);
                         Drawable drawable= getResources().getDrawable(R.drawable.six);
                         constraintLayout.setBackgroundDrawable(drawable);
@@ -334,6 +353,8 @@ public class Dashboard extends AppCompatActivity {
                         emailhello.setTextColor(Color.parseColor("#FFFFFFFF"));
                     }
                     else if (timeOfDay >= 06 && timeOfDay < 07) {
+                        Window w = getWindow();
+                        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
                         ConstraintLayout constraintLayout= findViewById(R.id.myflow);
                         Drawable drawable= getResources().getDrawable(R.drawable.seven);
                         constraintLayout.setBackgroundDrawable(drawable);
@@ -350,6 +371,8 @@ public class Dashboard extends AppCompatActivity {
                         emailhello.setTextColor(Color.parseColor("#FFFFFFFF"));
                     }
                     else if (timeOfDay >= 07 && timeOfDay < 8) {
+                        Window w = getWindow();
+                        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
                         ConstraintLayout constraintLayout= findViewById(R.id.myflow);
                         Drawable drawable= getResources().getDrawable(R.drawable.seven);
                         constraintLayout.setBackgroundDrawable(drawable);
@@ -366,6 +389,8 @@ public class Dashboard extends AppCompatActivity {
                         emailhello.setTextColor(Color.parseColor("#FF297EF6"));
                     }
                     else if (timeOfDay >= 8 && timeOfDay < 9) {
+                        Window w = getWindow();
+                        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
                         ConstraintLayout constraintLayout= findViewById(R.id.myflow);
                         Drawable drawable= getResources().getDrawable(R.drawable.eight);
                         constraintLayout.setBackgroundDrawable(drawable);
@@ -382,6 +407,8 @@ public class Dashboard extends AppCompatActivity {
                         emailhello.setTextColor(Color.parseColor("#FF297EF6"));
                     }
                     else if (timeOfDay >= 9 && timeOfDay < 10) {
+                        Window w = getWindow();
+                        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
                         ConstraintLayout constraintLayout= findViewById(R.id.myflow);
                         Drawable drawable= getResources().getDrawable(R.drawable.nine);
                         constraintLayout.setBackgroundDrawable(drawable);
@@ -398,6 +425,8 @@ public class Dashboard extends AppCompatActivity {
                         emailhello.setTextColor(Color.parseColor("#085FDA"));
                     }
                     else if (timeOfDay >= 10 && timeOfDay < 11) {
+                        Window w = getWindow();
+                        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
                         ConstraintLayout constraintLayout= findViewById(R.id.myflow);
                         Drawable drawable= getResources().getDrawable(R.drawable.ten);
                         constraintLayout.setBackgroundDrawable(drawable);
@@ -414,6 +443,8 @@ public class Dashboard extends AppCompatActivity {
                         emailhello.setTextColor(Color.parseColor("#085FDA"));
                     }
                     else if (timeOfDay >= 11 && timeOfDay < 12) {
+                        Window w = getWindow();
+                        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
                         ConstraintLayout constraintLayout= findViewById(R.id.myflow);
                         Drawable drawable= getResources().getDrawable(R.drawable.ten);
                         constraintLayout.setBackgroundDrawable(drawable);
@@ -430,6 +461,8 @@ public class Dashboard extends AppCompatActivity {
                         emailhello.setTextColor(Color.parseColor("#085FDA"));
                     }
                     else if (timeOfDay >= 12 && timeOfDay < 13) {
+                        Window w = getWindow();
+                        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
                         ConstraintLayout constraintLayout= findViewById(R.id.myflow);
                         Drawable drawable= getResources().getDrawable(R.drawable.eleven);
                         constraintLayout.setBackgroundDrawable(drawable);
@@ -446,6 +479,8 @@ public class Dashboard extends AppCompatActivity {
                         emailhello.setTextColor(Color.parseColor("#085FDA"));
                     }
                     else if (timeOfDay >= 13 && timeOfDay < 14) {
+                        Window w = getWindow();
+                        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
                         ConstraintLayout constraintLayout= findViewById(R.id.myflow);
                         Drawable drawable= getResources().getDrawable(R.drawable.twelve);
                         constraintLayout.setBackgroundDrawable(drawable);
@@ -462,6 +497,8 @@ public class Dashboard extends AppCompatActivity {
                         emailhello.setTextColor(Color.parseColor("#085FDA"));
                     }
                     else if (timeOfDay >= 14 && timeOfDay < 15) {
+                        Window w = getWindow();
+                        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
                         ConstraintLayout constraintLayout= findViewById(R.id.myflow);
                         Drawable drawable= getResources().getDrawable(R.drawable.thirteen);
                         constraintLayout.setBackgroundDrawable(drawable);
@@ -478,6 +515,8 @@ public class Dashboard extends AppCompatActivity {
                         emailhello.setTextColor(Color.parseColor("#085FDA"));
                     }
                     else if (timeOfDay >= 15 && timeOfDay < 16) {
+                        Window w = getWindow();
+                        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
                         ConstraintLayout constraintLayout= findViewById(R.id.myflow);
                         Drawable drawable= getResources().getDrawable(R.drawable.thirteen);
                         constraintLayout.setBackgroundDrawable(drawable);
@@ -494,6 +533,8 @@ public class Dashboard extends AppCompatActivity {
                         emailhello.setTextColor(Color.parseColor("#085FDA"));
                     }
                     else if (timeOfDay >= 16 && timeOfDay < 17) {
+                        Window w = getWindow();
+                        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
                         ConstraintLayout constraintLayout= findViewById(R.id.myflow);
                         Drawable drawable= getResources().getDrawable(R.drawable.fourteen);
                         constraintLayout.setBackgroundDrawable(drawable);
@@ -510,6 +551,8 @@ public class Dashboard extends AppCompatActivity {
                         emailhello.setTextColor(Color.parseColor("#085FDA"));
                     }
                     else if (timeOfDay >= 17 && timeOfDay < 18) {
+                        Window w = getWindow();
+                        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
                         ConstraintLayout constraintLayout= findViewById(R.id.myflow);
                         Drawable drawable= getResources().getDrawable(R.drawable.fifteen);
                         constraintLayout.setBackgroundDrawable(drawable);
@@ -526,6 +569,8 @@ public class Dashboard extends AppCompatActivity {
                         emailhello.setTextColor(Color.parseColor("#085FDA"));
                     }
                     else if (timeOfDay >= 18 && timeOfDay < 19) {
+                        Window w = getWindow();
+                        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
                         ConstraintLayout constraintLayout= findViewById(R.id.myflow);
                         Drawable drawable= getResources().getDrawable(R.drawable.sixteen);
                         constraintLayout.setBackgroundDrawable(drawable);
@@ -542,6 +587,8 @@ public class Dashboard extends AppCompatActivity {
                         emailhello.setTextColor(Color.parseColor("#085FDA"));
                     }
                     else if (timeOfDay >= 19 && timeOfDay < 20) {
+                        Window w = getWindow();
+                        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
                         ConstraintLayout constraintLayout= findViewById(R.id.myflow);
                         Drawable drawable= getResources().getDrawable(R.drawable.four);
                         constraintLayout.setBackgroundDrawable(drawable);
@@ -558,6 +605,8 @@ public class Dashboard extends AppCompatActivity {
                         emailhello.setTextColor(Color.parseColor("#FFFFFFFF"));
                     }
                     else if (timeOfDay >= 20 && timeOfDay < 21) {
+                        Window w = getWindow();
+                        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
                         ConstraintLayout constraintLayout= findViewById(R.id.myflow);
                         Drawable drawable= getResources().getDrawable(R.drawable.three);
                         constraintLayout.setBackgroundDrawable(drawable);
@@ -574,6 +623,8 @@ public class Dashboard extends AppCompatActivity {
                         emailhello.setTextColor(Color.parseColor("#FFFFFFFF"));
                     }
                     else if (timeOfDay >= 21 && timeOfDay < 22) {
+                        Window w = getWindow();
+                        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
                         ConstraintLayout constraintLayout= findViewById(R.id.myflow);
                         Drawable drawable= getResources().getDrawable(R.drawable.two);
                         constraintLayout.setBackgroundDrawable(drawable);
@@ -590,6 +641,8 @@ public class Dashboard extends AppCompatActivity {
                         emailhello.setTextColor(Color.parseColor("#FFFFFFFF"));
                     }
                     else if (timeOfDay >= 22 && timeOfDay < 23) {
+                        Window w = getWindow();
+                        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
                         ConstraintLayout constraintLayout= findViewById(R.id.myflow);
                         Drawable drawable= getResources().getDrawable(R.drawable.one);
                         constraintLayout.setBackgroundDrawable(drawable);
@@ -606,6 +659,8 @@ public class Dashboard extends AppCompatActivity {
                         emailhello.setTextColor(Color.parseColor("#FFFFFFFF"));
                     }
                     else if (timeOfDay >= 23 && timeOfDay < 24) {
+                        Window w = getWindow();
+                        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
                         ConstraintLayout constraintLayout= findViewById(R.id.myflow);
                         Drawable drawable= getResources().getDrawable(R.drawable.one);
                         constraintLayout.setBackgroundDrawable(drawable);
@@ -629,12 +684,14 @@ public class Dashboard extends AppCompatActivity {
                     SharedPreferences.Editor editor = getSharedPreferences("com.aaxena.gailofficersassociation", MODE_PRIVATE).edit();
                     editor.putBoolean("isChecked", false);
                     editor.commit();
+                    Window w = getWindow();
+                    w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
                     ConstraintLayout constraintLayout= findViewById(R.id.myflow);
-                    Drawable drawable= getResources().getDrawable(R.drawable.pure_white);
+                    Drawable drawable= getResources().getDrawable(R.drawable.activity_dashboard);
                     constraintLayout.setBackgroundDrawable(drawable);
                     afterfade.setTextColor(Color.parseColor("#0336ff"));
-                    fader.setTextColor(Color.parseColor("#0336ff"));
-                    emailhello.setTextColor(Color.parseColor("#0336ff"));
+                    fader.setTextColor(Color.parseColor("#FFFFFF"));
+                    emailhello.setTextColor(Color.parseColor("#FFFFFF"));
                     about.setBackgroundColor(Color.parseColor("#0336ff"));
                     services.setBackgroundColor(Color.parseColor("#0336ff"));
                     blog.setBackgroundColor(Color.parseColor("#0336ff"));
@@ -653,10 +710,7 @@ public class Dashboard extends AppCompatActivity {
         SharedPreferences sharedPrefs = getSharedPreferences("com.aaxena.gailofficersassociation", MODE_PRIVATE);
         dynamic.setChecked(sharedPrefs.getBoolean("isChecked", false));
 
-
-
         LogOUT = findViewById(R.id.button1);
-
         // Adding click listener to Log Out button.
         LogOUT.setOnClickListener(new View.OnClickListener() {
             @Override
