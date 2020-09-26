@@ -8,7 +8,6 @@
     tools:context=".ReVerification">
 
     <TextView
-        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/productsansbold"
@@ -45,7 +44,6 @@
 
 
     <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/animatored"
         android:layout_width="234dp"
         android:layout_height="219dp"
         app:layout_constraintBottom_toBottomOf="parent"

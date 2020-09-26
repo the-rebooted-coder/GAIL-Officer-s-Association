@@ -22,7 +22,7 @@ public class SplashScreen extends AppCompatActivity {
     }
 
     private void fireSplashScreen() {
-        int splash_screen_time_out = 1400;
+        int splash_screen_time_out = 1000;
         Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         v.vibrate(30);
 

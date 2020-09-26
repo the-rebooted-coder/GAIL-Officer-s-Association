@@ -1,18 +1,12 @@
 <resources>
     <string name="app_name">GAIL Officers Association</string>
-    <string name="first">GAIL Officer\'s Association\nPATA</string>
     <string name="logo">logo</string>
     <string name="dash">GAIL Officer\'s Association PATA</string>
     <string name="about_us">About Us</string>
     <string name="about_us_txt">GOA (GAIL Officers Association):\n\nA collective forum to protect the rights and interest of executives registered under Societies Act on 13th Feb’ 1987.\n\nFrom more than last three decades GOA had been working with the primary objectives of securing the welfare, rights and monetary benefits for the members.\nAs to the welfare of the officers, GOA had been actively pursuing all the welfare matters in consultation with the Management, many good welfare initiatives were taken, which have proved benevolent for the entire officer community.\n\nGOA’s role in the pay revision, which is hailed to be one of the best in the PSUs, is widely acclaimed by the officers’ community.\n\nIn the organizational matters and business arena, GOA had been playing a very active role by giving very useful feed backs to the Management and many times such inputs were appreciated and executed which resulted in huge saving for the company.\n\nGOA is proud of representing such fine people as members and office bearers, all over the country.</string>
     <string name="con_img">con_img</string>
-    <string name="view_preamble">View Preamble</string>
-    <string name="pdf_view">PDF View</string>
     <string name="view_pdf">View PDF</string>
     <string name="image_tellin_gscoll_down">image telling to scroll down</string>
-    <string name="sports">Sport Coordinator CPF</string>
-    <string name="committees">Committees Link</string>
-    <string name="dashboard">Dashboard</string>
     <string name="hi">Hello!</string>
     <string name="before_we_begin_let_s_complete_the_setup">Before We Begin, Let\'s Complete The Setup!</string>
     <string name="start">Start!</string>
@@ -20,25 +14,15 @@
     <string name="name">Full Name</string>
     <string name="begin">NEXT</string>
     <string name="hello">Hello</string>
-    <string name="navigate_to">Navigate To:</string>
-    <string name="morning">Good Morning!</string>
-    <string name="afternoon">Good Afternoon!</string>
-    <string name="evening">Good Evening!</string>
-    <string name="night">Sleep Well!</string>
     <string name="news">GOA News</string>
     <string name="services">activities</string>
     <string name="griviances">Grievances</string>
-    <string name="what_if_something_went_wrong_we_are_always_there_for_you">What if Something Went Wrong? We are Always There for You!</string>
-    <string name="dev_email">connectwithspandan@gmail.com</string>
     <string name="tryemail">goa.pataoffice@gmail.com</string>
     <string name="sub">Enter The Subject</string>
     <string name="send">send</string>
     <string name="enter_your_message">Enter your Message</string>
     <string name="cpf_number">CPF Number</string>
     <string name="gail_email">GAIL Email</string>
-    <string name="enter_your_gail_registred_email">Enter your GAIL Registered Email</string>
-    <string name="gail_email_id">GAIL Email ID</string>
-    <string name="log_in">Log IN</string>
     <string name="not_log_in_register_from_here"><u>Sign Up</u></string>
     <string name="enter_email">GAIL Email</string>
     <string name="enter_password">Password</string>
@@ -49,28 +33,19 @@
     <string name="logout">Logout</string>
     <string name="prefrences">Preferences</string>
     <string name="chnage_my_name">Change My Name</string>
-    <string name="change_my_email">Change My Email</string>
     <string name="contact_us"> GAIL Officers\' Association-Pata\n\n Address : Estate Office, GAIL Gaon Dibiyapur,\n Uttar Pradesh-206244\n\n Email :goa.pataoffice@gmail.com\n\n HVJ : 35040 (office)</string>
     <string name="_2020_c_gail_officer_s_association">2020 © GAIL Officer\'s Association</string>
-    <string name="activities">Activities</string>
     <string name="gbm_abt">GBM:\n\nGeneral Body Meeting (GBM) of the units should be called by the Executive committee of that unit at least two times in a year.\n\nAnd through it, Executive Body directly interacts with members.\n\nBriefs development on various issues and collect their suggestions and feedback.
 </string>
     <string name="services_msin">Services</string>
     <string name="blog">Chat</string>
     <string name="phone_number">Phone Number</string>
-    <string name="generate_otp">Generate OTP</string>
-    <string name="enter_otp">Enter OTP</string>
-    <string name="verify_sign_in">Verify and Sign In</string>
-    <string name="sign_out">sign out</string>
     <string name="sensitive">In Order to Get the Chat Section you have to Install the GOA Chat App\n\nUpon installation and Registration you might get a recommendation to subscribe to certain channels and is purely your wit to either Subscribe or Deny! </string>
     <string name="dd">The dynamic desktop applies a background to the app which changes throughout the day!\n\nScroll to the Bottom to Apply</string>
     <string name="now_enter_your_mobile_number">Enter Your Mobile Number</string>
-    <string name="floop">Continue</string>
     <string name="enter_number_here">Enter Number Here</string>
-    <string name="waves_images">Waves Images</string>
     <string name="enter_the_code_you_just_recieved">Enter the Code You Just Received!</string>
     <string name="complete_sign_in">Complete Sign-In</string>
-    <string name="about_data_we_collect">About Data we Collect</string>
     <string name="privacy_policy">Privacy Policy\n\n
 GOA-PATA built the GAIL Officers Association app as a free app.\nThis service is
 provided by GOA-PATA at no cost and is intended for use for benefit of members of
@@ -112,18 +87,14 @@ posting the new Privacy Policy on this page. This policy is effective as of 02-0
 \n\nContact Us\n
 If you have any questions or suggestions about our Privacy Policy, do not hesitate to
 contact us at goa.pataoffice@gmail.com.</string>
-    <string name="bagpack">Bagpack</string>
-    <string name="change">Change</string>
     <string name="enter_the_new_name">Enter A Name</string>
     <string name="forgot_password"><u>Forgot Password</u></string>
     <string name="forgot_your_password">Forgot Password?</string>
-    <string name="back">BACK</string>
     <string name="your_email_here">Enter Your Email</string>
     <string name="reset_password">Reset Password</string>
     <string name="enter_your_cpf_number">Enter CPF Number</string>
     <string name="_2_step_verification">2 Factor Authentication</string>
     <string name="we_at_gail_are_commited_towards_your_information_kindly_enter_your_e_mail_for_the_final_verification">We at GAIL are committed towards the secrecy of the information you provide. Enter Your Credentials once again to securely sign you in!</string>
-    <string name="enter_your_email_here">Enter Your Email Here</string>
     <string name="enter_your_email_again">Enter Your Email Again</string>
     <string name="turn_on_dynamic_background">Dynamic Background</string>
     <string name="text1">Hello</string>
@@ -134,15 +105,11 @@ contact us at goa.pataoffice@gmail.com.</string>
     <string name="text6">Olá</string>
     <string name="indian_news_bulletin">Indian News Bulletin</string>
     <string name="survey">Survey</string>
-    <string name="security_check">Security Check</string>
-    <string name="only_accounts_registered_with_us_will_be_allowed_further">Only accounts registered with us will be allowed further</string>
-    <string name="check">Check</string>
     <string name="feedback">Feedback</string>
-    <string name="ver_solitaire">Ver: Solitaire</string>
-    <string name="sign_in">Sign In</string>
     <string name="otp">_  _  _  _  _  _</string>
     <string name="final_begin">Begin</string>
     <string name="app_developer">App Developed By One Silicon Diode ;)</string>
+    <string name="versionel">Version: \</string>
 
 
     <!--Array for About Us Category-->

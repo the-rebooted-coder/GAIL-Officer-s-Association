@@ -2,10 +2,12 @@ package com.aaxena.gailofficersassociation;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +21,10 @@ public class Settings extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
         setContentView(R.layout.activity_settings);
+
+        String version = BuildConfig.VERSION_NAME;
+        TextView versionname = findViewById(R.id.version_indicator);
+        versionname.setText(getString(R.string.versionel)+version);
 
         back();
         changeName();

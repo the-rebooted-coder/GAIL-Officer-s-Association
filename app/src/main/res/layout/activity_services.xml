@@ -70,7 +70,6 @@
     </ScrollView>
 
     <ImageView
-        android:id="@+id/imageView3"
         android:layout_width="13dp"
         android:layout_height="58dp"
         android:contentDescription="@string/image_tellin_gscoll_down"

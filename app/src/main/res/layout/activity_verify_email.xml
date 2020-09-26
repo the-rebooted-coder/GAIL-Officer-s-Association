@@ -8,7 +8,6 @@
     tools:context=".VerifyEmail">
 
     <TextView
-        android:id="@+id/textView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/productsansbold"
@@ -22,7 +21,6 @@
         app:layout_constraintVertical_bias="0.19999999" />
 
     <TextView
-        android:id="@+id/textView15"
         android:layout_width="361dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/productsans"
