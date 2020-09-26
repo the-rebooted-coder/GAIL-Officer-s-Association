@@ -17,7 +17,6 @@ import android.view.animation.AlphaAnimation;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.HorizontalScrollView;
-import android.widget.ScrollView;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -61,7 +60,7 @@ public class Dashboard extends AppCompatActivity {
                     .setNeutralButton("Okay!", null)
                     .create().show();
         }
-      //  Making Scroll View Off
+         //  Making Scroll View Off
             HorizontalScrollView scrollView = findViewById(R.id.scrollView1);
             HorizontalScrollView scrollView2 = findViewById(R.id.scrollView2);
             scrollView.setVerticalScrollBarEnabled(false);
@@ -69,7 +68,7 @@ public class Dashboard extends AppCompatActivity {
             scrollView2.setVerticalScrollBarEnabled(false);
             scrollView2.setHorizontalScrollBarEnabled(false);
 
-//Authentication
+        //Authentication
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
             String email = user.getEmail();
@@ -95,10 +94,6 @@ public class Dashboard extends AppCompatActivity {
         fadeOut.setDuration(600);
         fadeOut.setFillAfter(true);
         fadeOut.setStartOffset(3200+fadeIn.getStartOffset());
-
-
-
-
         afterfade = findViewById(R.id.afterfades);
         int splash_screen_time_out = 4000;
         new Handler().postDelayed(new Runnable() {
@@ -230,451 +225,158 @@ public class Dashboard extends AppCompatActivity {
             }
         });
 
-        Vibrator v6 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-        v6.vibrate(20);
-
 
         //Dynamic Switcher
         dynamic = findViewById(R.id.dynamic);
         dynamic.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-
                     SharedPreferences.Editor editor = getSharedPreferences("com.aaxena.gailofficersassociation", MODE_PRIVATE).edit();
                     editor.putBoolean("isChecked", true);
                     editor.commit();
-
-
                     Calendar c = Calendar.getInstance();
                     int timeOfDay = c.get(Calendar.HOUR_OF_DAY);
 
                     if (timeOfDay >= 0 && timeOfDay < 01) {
-                        Window w = getWindow();
-                        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
                         ConstraintLayout constraintLayout= findViewById(R.id.myflow);
                         Drawable drawable= getResources().getDrawable(R.drawable.one);
                         constraintLayout.setBackgroundDrawable(drawable);
-                        about.setBackgroundColor(Color.parseColor("#54292929"));
-                        services.setBackgroundColor(Color.parseColor("#54292929"));
-                        blog.setBackgroundColor(Color.parseColor("#54292929"));
-                        activities.setBackgroundColor(Color.parseColor("#54292929"));
-                        grievances.setBackgroundColor(Color.parseColor("#54292929"));
-                        main_services.setBackgroundColor(Color.parseColor("#54292929"));
-                        indian_news.setBackgroundColor(Color.parseColor("#54292929"));
-                        survey.setBackgroundColor(Color.parseColor("#54292929"));
-                        afterfade.setTextColor(Color.parseColor("#FFFFFFFF"));
-                        fader.setTextColor(Color.parseColor("#FFFFFFFF"));
-                        emailhello.setTextColor(Color.parseColor("#FFFFFFFF"));
+                        setButtons();
                     } else if (timeOfDay >= 01 && timeOfDay < 02) {
-                        Window w = getWindow();
-                        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
                         ConstraintLayout constraintLayout= findViewById(R.id.myflow);
                         Drawable drawable= getResources().getDrawable(R.drawable.two);
                         constraintLayout.setBackgroundDrawable(drawable);
-                        about.setBackgroundColor(Color.parseColor("#54292929"));
-                        services.setBackgroundColor(Color.parseColor("#54292929"));
-                        blog.setBackgroundColor(Color.parseColor("#54292929"));
-                        activities.setBackgroundColor(Color.parseColor("#54292929"));
-                        grievances.setBackgroundColor(Color.parseColor("#54292929"));
-                        main_services.setBackgroundColor(Color.parseColor("#54292929"));
-                        indian_news.setBackgroundColor(Color.parseColor("#54292929"));
-                        survey.setBackgroundColor(Color.parseColor("#54292929"));
-                        afterfade.setTextColor(Color.parseColor("#FFFFFFFF"));
-                        fader.setTextColor(Color.parseColor("#FFFFFFFF"));
-                        emailhello.setTextColor(Color.parseColor("#FFFFFFFF"));
+                        setButtons();
                     } else if (timeOfDay >= 02 && timeOfDay < 03) {
-                        Window w = getWindow();
-                        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
                         ConstraintLayout constraintLayout= findViewById(R.id.myflow);
                         Drawable drawable= getResources().getDrawable(R.drawable.three);
                         constraintLayout.setBackgroundDrawable(drawable);
-                        about.setBackgroundColor(Color.parseColor("#54292929"));
-                        services.setBackgroundColor(Color.parseColor("#54292929"));
-                        blog.setBackgroundColor(Color.parseColor("#54292929"));
-                        activities.setBackgroundColor(Color.parseColor("#54292929"));
-                        grievances.setBackgroundColor(Color.parseColor("#54292929"));
-                        main_services.setBackgroundColor(Color.parseColor("#54292929"));
-                        indian_news.setBackgroundColor(Color.parseColor("#54292929"));
-                        survey.setBackgroundColor(Color.parseColor("#54292929"));
-                        afterfade.setTextColor(Color.parseColor("#FFFFFFFF"));
-                        fader.setTextColor(Color.parseColor("#FFFFFFFF"));
-                        emailhello.setTextColor(Color.parseColor("#FFFFFFFF"));
+                        setButtons();
                     } else if (timeOfDay >= 03 && timeOfDay < 04) {
-                        Window w = getWindow();
-                        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
                         ConstraintLayout constraintLayout= findViewById(R.id.myflow);
                         Drawable drawable= getResources().getDrawable(R.drawable.four);
-                        about.setBackgroundColor(Color.parseColor("#54292929"));
-                        services.setBackgroundColor(Color.parseColor("#54292929"));
-                        blog.setBackgroundColor(Color.parseColor("#54292929"));
-                        activities.setBackgroundColor(Color.parseColor("#54292929"));
-                        grievances.setBackgroundColor(Color.parseColor("#54292929"));
-                        main_services.setBackgroundColor(Color.parseColor("#54292929"));
-                        indian_news.setBackgroundColor(Color.parseColor("#54292929"));
-                        survey.setBackgroundColor(Color.parseColor("#54292929"));
-                        afterfade.setTextColor(Color.parseColor("#FFFFFFFF"));
-                        fader.setTextColor(Color.parseColor("#FFFFFFFF"));
-                        emailhello.setTextColor(Color.parseColor("#FFFFFFFF"));
+                        setButtons();
                         constraintLayout.setBackgroundDrawable(drawable);
                     } else if (timeOfDay >= 04 && timeOfDay < 05) {
-                        Window w = getWindow();
-                        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
                         ConstraintLayout constraintLayout= findViewById(R.id.myflow);
                         Drawable drawable= getResources().getDrawable(R.drawable.five);
                         constraintLayout.setBackgroundDrawable(drawable);
-                        about.setBackgroundColor(Color.parseColor("#54292929"));
-                        services.setBackgroundColor(Color.parseColor("#54292929"));
-                        blog.setBackgroundColor(Color.parseColor("#54292929"));
-                        activities.setBackgroundColor(Color.parseColor("#54292929"));
-                        grievances.setBackgroundColor(Color.parseColor("#54292929"));
-                        main_services.setBackgroundColor(Color.parseColor("#54292929"));
-                        indian_news.setBackgroundColor(Color.parseColor("#54292929"));
-                        survey.setBackgroundColor(Color.parseColor("#54292929"));
-                        afterfade.setTextColor(Color.parseColor("#FFFFFFFF"));
-                        fader.setTextColor(Color.parseColor("#FFFFFFFF"));
-                        emailhello.setTextColor(Color.parseColor("#FFFFFFFF"));
+                        setButtons();
                     }
                     else if (timeOfDay >= 05 && timeOfDay < 06) {
-                        Window w = getWindow();
-                        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
                         ConstraintLayout constraintLayout= findViewById(R.id.myflow);
                         Drawable drawable= getResources().getDrawable(R.drawable.six);
                         constraintLayout.setBackgroundDrawable(drawable);
-                        about.setBackgroundColor(Color.parseColor("#54292929"));
-                        services.setBackgroundColor(Color.parseColor("#54292929"));
-                        blog.setBackgroundColor(Color.parseColor("#54292929"));
-                        activities.setBackgroundColor(Color.parseColor("#54292929"));
-                        grievances.setBackgroundColor(Color.parseColor("#54292929"));
-                        main_services.setBackgroundColor(Color.parseColor("#54292929"));
-                        indian_news.setBackgroundColor(Color.parseColor("#54292929"));
-                        survey.setBackgroundColor(Color.parseColor("#54292929"));
-                        afterfade.setTextColor(Color.parseColor("#FFFFFFFF"));
-                        fader.setTextColor(Color.parseColor("#FFFFFFFF"));
-                        emailhello.setTextColor(Color.parseColor("#FFFFFFFF"));
+                        setButtons();
                     }
                     else if (timeOfDay >= 06 && timeOfDay < 07) {
-                        Window w = getWindow();
-                        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
                         ConstraintLayout constraintLayout= findViewById(R.id.myflow);
                         Drawable drawable= getResources().getDrawable(R.drawable.seven);
                         constraintLayout.setBackgroundDrawable(drawable);
-                        about.setBackgroundColor(Color.parseColor("#54292929"));
-                        services.setBackgroundColor(Color.parseColor("#54292929"));
-                        blog.setBackgroundColor(Color.parseColor("#54292929"));
-                        activities.setBackgroundColor(Color.parseColor("#54292929"));
-                        grievances.setBackgroundColor(Color.parseColor("#54292929"));
-                        main_services.setBackgroundColor(Color.parseColor("#54292929"));
-                        indian_news.setBackgroundColor(Color.parseColor("#54292929"));
-                        survey.setBackgroundColor(Color.parseColor("#54292929"));
-                        afterfade.setTextColor(Color.parseColor("#FFFFFFFF"));
-                        fader.setTextColor(Color.parseColor("#FFFFFFFF"));
-                        emailhello.setTextColor(Color.parseColor("#FFFFFFFF"));
+                        setButtons();
                     }
                     else if (timeOfDay >= 07 && timeOfDay < 8) {
-                        Window w = getWindow();
-                        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
                         ConstraintLayout constraintLayout= findViewById(R.id.myflow);
                         Drawable drawable= getResources().getDrawable(R.drawable.seven);
                         constraintLayout.setBackgroundDrawable(drawable);
-                        about.setBackgroundColor(Color.parseColor("#6FEDD7FF"));
-                        services.setBackgroundColor(Color.parseColor("#6FEDD7FF"));
-                        blog.setBackgroundColor(Color.parseColor("#6FEDD7FF"));
-                        activities.setBackgroundColor(Color.parseColor("#6FEDD7FF"));
-                        grievances.setBackgroundColor(Color.parseColor("#6FEDD7FF"));
-                        main_services.setBackgroundColor(Color.parseColor("#6FEDD7FF"));
-                        indian_news.setBackgroundColor(Color.parseColor("#6FEDD7FF"));
-                        survey.setBackgroundColor(Color.parseColor("#6FEDD7FF"));
-                        afterfade.setTextColor(Color.parseColor("#FFFFFFFF"));
-                        fader.setTextColor(Color.parseColor("#FFFFFFFF"));
-                        emailhello.setTextColor(Color.parseColor("#FF297EF6"));
+                        setButtons();
                     }
                     else if (timeOfDay >= 8 && timeOfDay < 9) {
-                        Window w = getWindow();
-                        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
                         ConstraintLayout constraintLayout= findViewById(R.id.myflow);
                         Drawable drawable= getResources().getDrawable(R.drawable.eight);
                         constraintLayout.setBackgroundDrawable(drawable);
-                        about.setBackgroundColor(Color.parseColor("#6FEDD7FF"));
-                        services.setBackgroundColor(Color.parseColor("#6FEDD7FF"));
-                        blog.setBackgroundColor(Color.parseColor("#6FEDD7FF"));
-                        activities.setBackgroundColor(Color.parseColor("#6FEDD7FF"));
-                        grievances.setBackgroundColor(Color.parseColor("#6FEDD7FF"));
-                        main_services.setBackgroundColor(Color.parseColor("#6FEDD7FF"));
-                        indian_news.setBackgroundColor(Color.parseColor("#6FEDD7FF"));
-                        survey.setBackgroundColor(Color.parseColor("#6FEDD7FF"));
-                        afterfade.setTextColor(Color.parseColor("#FFFFFFFF"));
-                        fader.setTextColor(Color.parseColor("#FFFFFFFF"));
-                        emailhello.setTextColor(Color.parseColor("#FF297EF6"));
+                        setButtons();
                     }
                     else if (timeOfDay >= 9 && timeOfDay < 10) {
-                        Window w = getWindow();
-                        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
                         ConstraintLayout constraintLayout= findViewById(R.id.myflow);
                         Drawable drawable= getResources().getDrawable(R.drawable.nine);
                         constraintLayout.setBackgroundDrawable(drawable);
-                        about.setBackgroundColor(Color.parseColor("#59EDD7FF"));
-                        services.setBackgroundColor(Color.parseColor("#59EDD7FF"));
-                        blog.setBackgroundColor(Color.parseColor("#59EDD7FF"));
-                        activities.setBackgroundColor(Color.parseColor("#59EDD7FF"));
-                        grievances.setBackgroundColor(Color.parseColor("#59EDD7FF"));
-                        main_services.setBackgroundColor(Color.parseColor("#59EDD7FF"));
-                        indian_news.setBackgroundColor(Color.parseColor("#59EDD7FF"));
-                        survey.setBackgroundColor(Color.parseColor("#59EDD7FF"));
-                        afterfade.setTextColor(Color.parseColor("#FFFFFFFF"));
-                        fader.setTextColor(Color.parseColor("#085FDA"));
-                        emailhello.setTextColor(Color.parseColor("#085FDA"));
+                        setButtons();
                     }
                     else if (timeOfDay >= 10 && timeOfDay < 11) {
-                        Window w = getWindow();
-                        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
                         ConstraintLayout constraintLayout= findViewById(R.id.myflow);
                         Drawable drawable= getResources().getDrawable(R.drawable.ten);
                         constraintLayout.setBackgroundDrawable(drawable);
-                        about.setBackgroundColor(Color.parseColor("#59EDD7FF"));
-                        services.setBackgroundColor(Color.parseColor("#59EDD7FF"));
-                        blog.setBackgroundColor(Color.parseColor("#59EDD7FF"));
-                        activities.setBackgroundColor(Color.parseColor("#59EDD7FF"));
-                        grievances.setBackgroundColor(Color.parseColor("#59EDD7FF"));
-                        main_services.setBackgroundColor(Color.parseColor("#59EDD7FF"));
-                        indian_news.setBackgroundColor(Color.parseColor("#59EDD7FF"));
-                        survey.setBackgroundColor(Color.parseColor("#59EDD7FF"));
-                        afterfade.setTextColor(Color.parseColor("#FFFFFFFF"));
-                        fader.setTextColor(Color.parseColor("#085FDA"));
-                        emailhello.setTextColor(Color.parseColor("#085FDA"));
+                        setButtons();
                     }
                     else if (timeOfDay >= 11 && timeOfDay < 12) {
-                        Window w = getWindow();
-                        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
                         ConstraintLayout constraintLayout= findViewById(R.id.myflow);
                         Drawable drawable= getResources().getDrawable(R.drawable.ten);
                         constraintLayout.setBackgroundDrawable(drawable);
-                        about.setBackgroundColor(Color.parseColor("#59EDD7FF"));
-                        services.setBackgroundColor(Color.parseColor("#59EDD7FF"));
-                        blog.setBackgroundColor(Color.parseColor("#59EDD7FF"));
-                        activities.setBackgroundColor(Color.parseColor("#59EDD7FF"));
-                        grievances.setBackgroundColor(Color.parseColor("#59EDD7FF"));
-                        main_services.setBackgroundColor(Color.parseColor("#59EDD7FF"));
-                        indian_news.setBackgroundColor(Color.parseColor("#59EDD7FF"));
-                        survey.setBackgroundColor(Color.parseColor("#59EDD7FF"));
-                        afterfade.setTextColor(Color.parseColor("#FFFFFFFF"));
-                        fader.setTextColor(Color.parseColor("#085FDA"));
-                        emailhello.setTextColor(Color.parseColor("#085FDA"));
+                        setButtons();
                     }
                     else if (timeOfDay >= 12 && timeOfDay < 13) {
-                        Window w = getWindow();
-                        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
                         ConstraintLayout constraintLayout= findViewById(R.id.myflow);
                         Drawable drawable= getResources().getDrawable(R.drawable.eleven);
                         constraintLayout.setBackgroundDrawable(drawable);
-                        about.setBackgroundColor(Color.parseColor("#72095AD6"));
-                        services.setBackgroundColor(Color.parseColor("#72095AD6"));
-                        blog.setBackgroundColor(Color.parseColor("#72095AD6"));
-                        activities.setBackgroundColor(Color.parseColor("#72095AD6"));
-                        grievances.setBackgroundColor(Color.parseColor("#72095AD6"));
-                        main_services.setBackgroundColor(Color.parseColor("#72095AD6"));
-                        indian_news.setBackgroundColor(Color.parseColor("#72095AD6"));
-                        survey.setBackgroundColor(Color.parseColor("#72095AD6"));
-                        afterfade.setTextColor(Color.parseColor("#FA156EF8"));
-                        fader.setTextColor(Color.parseColor("#FA156EF8"));
-                        emailhello.setTextColor(Color.parseColor("#085FDA"));
+                        setButtons();
                     }
                     else if (timeOfDay >= 13 && timeOfDay < 14) {
-                        Window w = getWindow();
-                        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
                         ConstraintLayout constraintLayout= findViewById(R.id.myflow);
                         Drawable drawable= getResources().getDrawable(R.drawable.twelve);
                         constraintLayout.setBackgroundDrawable(drawable);
-                        about.setBackgroundColor(Color.parseColor("#54095AD6"));
-                        services.setBackgroundColor(Color.parseColor("#54095AD6"));
-                        blog.setBackgroundColor(Color.parseColor("#54095AD6"));
-                        activities.setBackgroundColor(Color.parseColor("#54095AD6"));
-                        grievances.setBackgroundColor(Color.parseColor("#54095AD6"));
-                        main_services.setBackgroundColor(Color.parseColor("#54095AD6"));
-                        indian_news.setBackgroundColor(Color.parseColor("#54095AD6"));
-                        survey.setBackgroundColor(Color.parseColor("#54095AD6"));
-                        afterfade.setTextColor(Color.parseColor("#FA156EF8"));
-                        fader.setTextColor(Color.parseColor("#FA156EF8"));
-                        emailhello.setTextColor(Color.parseColor("#085FDA"));
+                        setButtons();
                     }
                     else if (timeOfDay >= 14 && timeOfDay < 15) {
-                        Window w = getWindow();
-                        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
                         ConstraintLayout constraintLayout= findViewById(R.id.myflow);
                         Drawable drawable= getResources().getDrawable(R.drawable.thirteen);
                         constraintLayout.setBackgroundDrawable(drawable);
-                        about.setBackgroundColor(Color.parseColor("#54095AD6"));
-                        services.setBackgroundColor(Color.parseColor("#54095AD6"));
-                        blog.setBackgroundColor(Color.parseColor("#54095AD6"));
-                        activities.setBackgroundColor(Color.parseColor("#54095AD6"));
-                        grievances.setBackgroundColor(Color.parseColor("#54095AD6"));
-                        main_services.setBackgroundColor(Color.parseColor("#54095AD6"));
-                        indian_news.setBackgroundColor(Color.parseColor("#54095AD6"));
-                        survey.setBackgroundColor(Color.parseColor("#54095AD6"));
-                        afterfade.setTextColor(Color.parseColor("#FA156EF8"));
-                        fader.setTextColor(Color.parseColor("#FA156EF8"));
-                        emailhello.setTextColor(Color.parseColor("#085FDA"));
+                        setButtons();
                     }
                     else if (timeOfDay >= 15 && timeOfDay < 16) {
-                        Window w = getWindow();
-                        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
                         ConstraintLayout constraintLayout= findViewById(R.id.myflow);
                         Drawable drawable= getResources().getDrawable(R.drawable.thirteen);
                         constraintLayout.setBackgroundDrawable(drawable);
-                        about.setBackgroundColor(Color.parseColor("#6F070663"));
-                        services.setBackgroundColor(Color.parseColor("#6F070663"));
-                        blog.setBackgroundColor(Color.parseColor("#6F070663"));
-                        activities.setBackgroundColor(Color.parseColor("#6F070663"));
-                        grievances.setBackgroundColor(Color.parseColor("#6F070663"));
-                        main_services.setBackgroundColor(Color.parseColor("#6F070663"));
-                        indian_news.setBackgroundColor(Color.parseColor("#6F070663"));
-                        survey.setBackgroundColor(Color.parseColor("#6F070663"));
-                        afterfade.setTextColor(Color.parseColor("#FA156EF8"));
-                        fader.setTextColor(Color.parseColor("#FA156EF8"));
-                        emailhello.setTextColor(Color.parseColor("#085FDA"));
+                        setButtons();
                     }
                     else if (timeOfDay >= 16 && timeOfDay < 17) {
-                        Window w = getWindow();
-                        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
                         ConstraintLayout constraintLayout= findViewById(R.id.myflow);
                         Drawable drawable= getResources().getDrawable(R.drawable.fourteen);
                         constraintLayout.setBackgroundDrawable(drawable);
-                        about.setBackgroundColor(Color.parseColor("#6F070663"));
-                        services.setBackgroundColor(Color.parseColor("#6F070663"));
-                        blog.setBackgroundColor(Color.parseColor("#6F070663"));
-                        activities.setBackgroundColor(Color.parseColor("#6F070663"));
-                        grievances.setBackgroundColor(Color.parseColor("#6F070663"));
-                        main_services.setBackgroundColor(Color.parseColor("#6F070663"));
-                        indian_news.setBackgroundColor(Color.parseColor("#6F070663"));
-                        survey.setBackgroundColor(Color.parseColor("#6F070663"));
-                        afterfade.setTextColor(Color.parseColor("#FA156EF8"));
-                        fader.setTextColor(Color.parseColor("#FA156EF8"));
-                        emailhello.setTextColor(Color.parseColor("#085FDA"));
+                        setButtons();
                     }
                     else if (timeOfDay >= 17 && timeOfDay < 18) {
-                        Window w = getWindow();
-                        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
                         ConstraintLayout constraintLayout= findViewById(R.id.myflow);
                         Drawable drawable= getResources().getDrawable(R.drawable.fifteen);
                         constraintLayout.setBackgroundDrawable(drawable);
-                        about.setBackgroundColor(Color.parseColor("#6F070663"));
-                        services.setBackgroundColor(Color.parseColor("#6F070663"));
-                        blog.setBackgroundColor(Color.parseColor("#6F070663"));
-                        activities.setBackgroundColor(Color.parseColor("#6F070663"));
-                        grievances.setBackgroundColor(Color.parseColor("#6F070663"));
-                        main_services.setBackgroundColor(Color.parseColor("#6F070663"));
-                        indian_news.setBackgroundColor(Color.parseColor("#6F070663"));
-                        survey.setBackgroundColor(Color.parseColor("#6F070663"));
-                        afterfade.setTextColor(Color.parseColor("#FA156EF8"));
-                        fader.setTextColor(Color.parseColor("#FA156EF8"));
-                        emailhello.setTextColor(Color.parseColor("#085FDA"));
+                        setButtons();
                     }
                     else if (timeOfDay >= 18 && timeOfDay < 19) {
-                        Window w = getWindow();
-                        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
                         ConstraintLayout constraintLayout= findViewById(R.id.myflow);
                         Drawable drawable= getResources().getDrawable(R.drawable.sixteen);
                         constraintLayout.setBackgroundDrawable(drawable);
-                        about.setBackgroundColor(Color.parseColor("#650A095A"));
-                        services.setBackgroundColor(Color.parseColor("#650A095A"));
-                        blog.setBackgroundColor(Color.parseColor("#650A095A"));
-                        activities.setBackgroundColor(Color.parseColor("#650A095A"));
-                        grievances.setBackgroundColor(Color.parseColor("#650A095A"));
-                        main_services.setBackgroundColor(Color.parseColor("#650A095A"));
-                        indian_news.setBackgroundColor(Color.parseColor("#650A095A"));
-                        survey.setBackgroundColor(Color.parseColor("#650A095A"));
-                        afterfade.setTextColor(Color.parseColor("#FA156EF8"));
-                        fader.setTextColor(Color.parseColor("#FA156EF8"));
-                        emailhello.setTextColor(Color.parseColor("#085FDA"));
+                        setButtons();
+
                     }
                     else if (timeOfDay >= 19 && timeOfDay < 20) {
-                        Window w = getWindow();
-                        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
                         ConstraintLayout constraintLayout= findViewById(R.id.myflow);
                         Drawable drawable= getResources().getDrawable(R.drawable.four);
                         constraintLayout.setBackgroundDrawable(drawable);
-                        about.setBackgroundColor(Color.parseColor("#79474646"));
-                        services.setBackgroundColor(Color.parseColor("#79474646"));
-                        blog.setBackgroundColor(Color.parseColor("#79474646"));
-                        activities.setBackgroundColor(Color.parseColor("#79474646"));
-                        grievances.setBackgroundColor(Color.parseColor("#79474646"));
-                        main_services.setBackgroundColor(Color.parseColor("#79474646"));
-                        indian_news.setBackgroundColor(Color.parseColor("#79474646"));
-                        survey.setBackgroundColor(Color.parseColor("#79474646"));
-                        afterfade.setTextColor(Color.parseColor("#FFFFFFFF"));
-                        fader.setTextColor(Color.parseColor("#FFFFFFFF"));
-                        emailhello.setTextColor(Color.parseColor("#FFFFFFFF"));
+                        setButtons();
                     }
                     else if (timeOfDay >= 20 && timeOfDay < 21) {
-                        Window w = getWindow();
-                        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
                         ConstraintLayout constraintLayout= findViewById(R.id.myflow);
                         Drawable drawable= getResources().getDrawable(R.drawable.three);
                         constraintLayout.setBackgroundDrawable(drawable);
-                        about.setBackgroundColor(Color.parseColor("#79474646"));
-                        services.setBackgroundColor(Color.parseColor("#79474646"));
-                        blog.setBackgroundColor(Color.parseColor("#79474646"));
-                        activities.setBackgroundColor(Color.parseColor("#79474646"));
-                        grievances.setBackgroundColor(Color.parseColor("#79474646"));
-                        main_services.setBackgroundColor(Color.parseColor("#79474646"));
-                        indian_news.setBackgroundColor(Color.parseColor("#79474646"));
-                        survey.setBackgroundColor(Color.parseColor("#79474646"));
-                        afterfade.setTextColor(Color.parseColor("#FFFFFFFF"));
-                        fader.setTextColor(Color.parseColor("#FFFFFFFF"));
-                        emailhello.setTextColor(Color.parseColor("#FFFFFFFF"));
+                        setButtons();
                     }
                     else if (timeOfDay >= 21 && timeOfDay < 22) {
-                        Window w = getWindow();
-                        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
                         ConstraintLayout constraintLayout= findViewById(R.id.myflow);
                         Drawable drawable= getResources().getDrawable(R.drawable.two);
                         constraintLayout.setBackgroundDrawable(drawable);
-                        about.setBackgroundColor(Color.parseColor("#54292929"));
-                        services.setBackgroundColor(Color.parseColor("#54292929"));
-                        blog.setBackgroundColor(Color.parseColor("#54292929"));
-                        activities.setBackgroundColor(Color.parseColor("#54292929"));
-                        grievances.setBackgroundColor(Color.parseColor("#54292929"));
-                        main_services.setBackgroundColor(Color.parseColor("#54292929"));
-                        indian_news.setBackgroundColor(Color.parseColor("#54292929"));
-                        survey.setBackgroundColor(Color.parseColor("#54292929"));
-                        afterfade.setTextColor(Color.parseColor("#FFFFFFFF"));
-                        fader.setTextColor(Color.parseColor("#FFFFFFFF"));
-                        emailhello.setTextColor(Color.parseColor("#FFFFFFFF"));
+                        setButtons();
                     }
                     else if (timeOfDay >= 22 && timeOfDay < 23) {
-                        Window w = getWindow();
-                        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
                         ConstraintLayout constraintLayout= findViewById(R.id.myflow);
                         Drawable drawable= getResources().getDrawable(R.drawable.one);
                         constraintLayout.setBackgroundDrawable(drawable);
-                        about.setBackgroundColor(Color.parseColor("#54292929"));
-                        services.setBackgroundColor(Color.parseColor("#54292929"));
-                        blog.setBackgroundColor(Color.parseColor("#54292929"));
-                        activities.setBackgroundColor(Color.parseColor("#54292929"));
-                        grievances.setBackgroundColor(Color.parseColor("#54292929"));
-                        main_services.setBackgroundColor(Color.parseColor("#54292929"));
-                        indian_news.setBackgroundColor(Color.parseColor("#54292929"));
-                        survey.setBackgroundColor(Color.parseColor("#54292929"));
-                        afterfade.setTextColor(Color.parseColor("#FFFFFFFF"));
-                        fader.setTextColor(Color.parseColor("#FFFFFFFF"));
-                        emailhello.setTextColor(Color.parseColor("#FFFFFFFF"));
+                        setButtons();
                     }
                     else if (timeOfDay >= 23 && timeOfDay < 24) {
-                        Window w = getWindow();
-                        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
                         ConstraintLayout constraintLayout= findViewById(R.id.myflow);
                         Drawable drawable= getResources().getDrawable(R.drawable.one);
                         constraintLayout.setBackgroundDrawable(drawable);
-                        about.setBackgroundColor(Color.parseColor("#54292929"));
-                        services.setBackgroundColor(Color.parseColor("#54292929"));
-                        blog.setBackgroundColor(Color.parseColor("#54292929"));
-                        activities.setBackgroundColor(Color.parseColor("#54292929"));
-                        grievances.setBackgroundColor(Color.parseColor("#54292929"));
-                        main_services.setBackgroundColor(Color.parseColor("#54292929"));
-                        indian_news.setBackgroundColor(Color.parseColor("#54292929"));
-                        survey.setBackgroundColor(Color.parseColor("#54292929"));
-                        afterfade.setTextColor(Color.parseColor("#FFFFFFFF"));
-                        fader.setTextColor(Color.parseColor("#FFFFFFFF"));
-                        emailhello.setTextColor(Color.parseColor("#FFFFFFFF"));
+                        setButtons();
                     }
                     dynamic.setBackgroundColor(Color.parseColor("#46FFFFFF"));
                 } else {
@@ -686,17 +388,25 @@ public class Dashboard extends AppCompatActivity {
                     ConstraintLayout constraintLayout= findViewById(R.id.myflow);
                     Drawable drawable= getResources().getDrawable(R.drawable.activity_dashboard);
                     constraintLayout.setBackgroundDrawable(drawable);
+                    Drawable one = getResources().getDrawable(R.drawable.goa_news);
+                    Drawable two = getResources().getDrawable(R.drawable.button_activities);
+                    Drawable three = getResources().getDrawable(R.drawable.button_bbc);
+                    Drawable four = getResources().getDrawable(R.drawable.button_grievances);
+                    Drawable five = getResources().getDrawable(R.drawable.button_india);
+                    Drawable six = getResources().getDrawable(R.drawable.button_nlog);
+                    Drawable seven = getResources().getDrawable(R.drawable.button_services);
+                    Drawable eight = getResources().getDrawable(R.drawable.button_sirvey);
                     afterfade.setTextColor(Color.parseColor("#0336ff"));
                     fader.setTextColor(Color.parseColor("#FFFFFF"));
                     emailhello.setTextColor(Color.parseColor("#FFFFFF"));
-                    about.setBackgroundColor(Color.parseColor("#0336ff"));
-                    services.setBackgroundColor(Color.parseColor("#0336ff"));
-                    blog.setBackgroundColor(Color.parseColor("#0336ff"));
-                    activities.setBackgroundColor(Color.parseColor("#0336ff"));
-                    grievances.setBackgroundColor(Color.parseColor("#0336ff"));
-                    main_services.setBackgroundColor(Color.parseColor("#0336ff"));
-                    indian_news.setBackgroundColor(Color.parseColor("#0336ff"));
-                    survey.setBackgroundColor(Color.parseColor("#0336ff"));
+                    about.setBackground(three);
+                    services.setBackground(two);
+                    blog.setBackground(six);
+                    activities.setBackground(one);
+                    grievances.setBackground(four);
+                    main_services.setBackground(seven);
+                    indian_news.setBackground(five);
+                    survey.setBackground(eight);
                     Drawable back= getResources().getDrawable(R.drawable.default_button);
                     dynamic.setBackgroundDrawable(back);
                 }
@@ -720,6 +430,32 @@ public class Dashboard extends AppCompatActivity {
             }
         });
     }
+
+    private void setButtons() {
+        Window w = getWindow();
+        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+        Button blog = findViewById(R.id.blog);
+        Button services = findViewById(R.id.services);
+        Button about = findViewById(R.id.bbc);
+        Button activities = findViewById(R.id.activities);
+        Button grievances = findViewById(R.id.grievances);
+        Button main_services = findViewById(R.id.services_main);
+        Button indian_news = findViewById(R.id.news_india);
+        Button survey = findViewById(R.id.survey);
+        Drawable dynamics = getResources().getDrawable(R.drawable.default_button_dynamic);
+        about.setBackground(dynamics);
+        afterfade.setTextColor(Color.parseColor("#FFFFFFFF"));
+        fader.setTextColor(Color.parseColor("#FFFFFFFF"));
+        emailhello.setTextColor(Color.parseColor("#FFFFFFFF"));
+        services.setBackground(dynamics);
+        blog.setBackground(dynamics);
+        activities.setBackground(dynamics);
+        grievances.setBackground(dynamics);
+        main_services.setBackground(dynamics);
+        indian_news.setBackground(dynamics);
+        survey.setBackground(dynamics);
+    }
+
     public void loadData(){
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         hello = sharedPreferences.getString(TEXT,"");
