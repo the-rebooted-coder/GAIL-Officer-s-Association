@@ -5,35 +5,30 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.view.View;
-import android.view.WindowManager;
-import android.view.animation.AlphaAnimation;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Services extends AppCompatActivity {
-    protected AlphaAnimation fadeIn = new AlphaAnimation(0.0f , 1.0f ) ;
-    protected AlphaAnimation fadeOut = new AlphaAnimation( 1.0f , 0.0f ) ;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
         super.onCreate(savedInstanceState);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_services);
 
-        TextView activities = findViewById(R.id.act);
-        activities.startAnimation(fadeIn);
-        activities.startAnimation(fadeOut);
-        fadeIn.setDuration(1200);
-        fadeIn.setFillAfter(true);
-        fadeOut.setDuration(600);
-        fadeOut.setFillAfter(true);
-        fadeOut.setStartOffset(3200+fadeIn.getStartOffset());
+        Button back = findViewById(R.id.btn_back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
         //Spinner
         final Spinner spinAbout;
@@ -44,26 +39,19 @@ public class Services extends AppCompatActivity {
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinAbout.setAdapter(adapter);
-//if you want to set any action you can do in this listener
+        //if you want to set any action you can do in this listener
         spinAbout.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view,
                                        int position, long id) {
-                switch (position) {
-                    case 0:
-                        Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-                        v.vibrate(33);
-                        Toast.makeText(parent.getContext(), "GBM General Body Meeting", Toast.LENGTH_SHORT).show();
-                        break;
-                    case 1:
-                        Vibrator v2 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-                        v2.vibrate(33);
-                        Toast.makeText(parent.getContext(), "Loading GBM Meetings", Toast.LENGTH_LONG).show();
-                        Intent i=new Intent(Services.this, GWeb.class);
-                        startActivity(i);
-                        break;
-                    default:
-                        Toast.makeText(parent.getContext(), "Hello!", Toast.LENGTH_LONG).show();
+                if (position == 1) {
+                    Vibrator v2 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                    v2.vibrate(30);
+                    Toast.makeText(parent.getContext(), "Loading GBM Meetings", Toast.LENGTH_LONG).show();
+                    Intent i = new Intent(Services.this, GWeb.class);
+                    startActivity(i);
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                    finish();
                 }
             }
 
@@ -71,5 +59,14 @@ public class Services extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> arg0) {
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(Services.this, Dashboard.class);
+        startActivity(intent);
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+        finish();
     }
 }

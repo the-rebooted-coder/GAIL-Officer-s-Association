@@ -2,13 +2,13 @@ package com.aaxena.gailofficersassociation;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.view.View;
-import android.view.WindowManager;
-import android.view.animation.AlphaAnimation;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -16,8 +16,6 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainServices extends AppCompatActivity {
-    protected AlphaAnimation fadeIn = new AlphaAnimation(0.0f , 1.0f ) ;
-    protected AlphaAnimation fadeOut = new AlphaAnimation( 1.0f , 0.0f ) ;
     private TextView infol;
 
     @Override
@@ -26,15 +24,14 @@ public class MainServices extends AppCompatActivity {
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
         setContentView(R.layout.activity_main_services);
 
-        TextView services = findViewById(R.id.services);
-        services.startAnimation(fadeIn);
-        services.startAnimation(fadeOut);
-        fadeIn.setDuration(1200);
-        fadeIn.setFillAfter(true);
-        fadeOut.setDuration(600);
-        fadeOut.setFillAfter(true);
-        fadeOut.setStartOffset(3200+fadeIn.getStartOffset());
 
+        Button back = findViewById(R.id.btn_back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
         //Spinner
         final Spinner spinAbout;
         spinAbout= findViewById(R.id.spinAbout);//fetch the spinner from layout file
@@ -44,15 +41,13 @@ public class MainServices extends AppCompatActivity {
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinAbout.setAdapter(adapter);
-//if you want to set any action you can do in this listener
+        //if you want to set any action you can do in this listener
         spinAbout.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view,
                                        int position, long id) {
                 switch (position) {
                     case 0:
-                        Vibrator v2 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-                        v2.vibrate(33);
                         infol = findViewById(R.id.infos);
                         infol.setText("Important Contacts Coming Here Soon!");
                         break;
@@ -72,5 +67,13 @@ public class MainServices extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> arg0) {
             }
         });
+    }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(MainServices.this, Dashboard.class);
+        startActivity(intent);
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+        finish();
     }
 }

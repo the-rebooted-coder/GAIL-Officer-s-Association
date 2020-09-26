@@ -41,6 +41,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="resourceFile" />
+        <option value="layoutResourceFile" />
       </list>
     </option>
   </component>

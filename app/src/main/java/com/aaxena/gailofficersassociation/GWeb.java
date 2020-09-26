@@ -1,6 +1,7 @@
 package com.aaxena.gailofficersassociation;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.view.WindowManager;
@@ -8,6 +9,8 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.common.annotations.GwtCompatible;
 
 public class GWeb extends AppCompatActivity {
 
@@ -26,5 +29,14 @@ public class GWeb extends AppCompatActivity {
         gbm.setWebViewClient(new WebViewClient());
         gbm.getSettings().setJavaScriptEnabled(true);
         gbm.loadUrl("https://drive.google.com/open?id=1iXpAt_KUAf9JIsUDQymPNQ7vvLA5oSZg");
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent toServices = new Intent(GWeb.this, Services.class);
+        startActivity(toServices);
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+        finish();
     }
 }

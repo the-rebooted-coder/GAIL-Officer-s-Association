@@ -1,6 +1,7 @@
 package com.aaxena.gailofficersassociation;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.WindowManager;
@@ -66,6 +67,9 @@ public class WebPage extends Activity implements OnPageChangeListener, OnLoadCom
         setTitle(String.format("%s %s / %s", pdfFileName, page + 1, pageCount));
     }
     public void onBackPressed() {
+        Intent toLanding = new Intent(WebPage.this, Landing.class);
+        startActivity(toLanding);
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
         finish();
     }
 }

@@ -157,6 +157,7 @@ public class Dashboard extends AppCompatActivity {
                 v8.vibrate(27);
                 Intent i=new Intent(Dashboard.this,Services.class);
                 startActivity(i);
+                finish();
             }
         });
 
@@ -182,6 +183,7 @@ public class Dashboard extends AppCompatActivity {
                 v8.vibrate(27);
                 Intent i=new Intent(Dashboard.this,MainServices.class);
                 startActivity(i);
+                finish();
             }
         });
 
@@ -220,6 +222,7 @@ public class Dashboard extends AppCompatActivity {
                 v8.vibrate(27);
                 Intent i=new Intent(Dashboard.this,Landing.class);
                 startActivity(i);
+                finish();
             }
         });
 
@@ -231,6 +234,7 @@ public class Dashboard extends AppCompatActivity {
                 Vibrator v8 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                 v8.vibrate(27);
                 Intent i=new Intent(Dashboard.this,Survey.class);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 startActivity(i);
             }
         });

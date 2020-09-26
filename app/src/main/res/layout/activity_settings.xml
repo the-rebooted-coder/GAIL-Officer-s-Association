@@ -41,23 +41,18 @@
 
     <TextView
         android:id="@+id/textView9"
-        android:layout_width="182dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="57dp"
-        android:layout_marginTop="95dp"
-        android:layout_marginEnd="172dp"
-        android:layout_marginBottom="94dp"
         android:fontFamily="@font/productsansbold"
         android:text="@string/prefrences"
         android:textColor="@android:color/black"
         android:textColorHighlight="@color/common_google_signin_btn_text_dark_pressed"
-        android:textSize="25sp"
+        android:textSize="29sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.076" />
 
     <Button
         android:id="@+id/btn_back"

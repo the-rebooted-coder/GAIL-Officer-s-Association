@@ -4,32 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/color2"
+    android:background="@drawable/white"
     tools:context=".Services">
-
-    <TextView
-        android:id="@+id/act"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/productsansbold"
-        android:text="@string/activities"
-        android:textColor="@color/intro_title_color"
-        android:textSize="29sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.060000002" />
 
     <Spinner
         android:id="@+id/spinAbout"
         android:layout_width="317dp"
         android:layout_height="37dp"
-        android:background="@drawable/rounded_button"
+        android:background="@drawable/white"
         android:focusableInTouchMode="true"
         android:paddingStart="8dp"
         android:paddingEnd="8dp"
-        android:popupBackground="@color/texter"
+        android:popupBackground="@color/white"
         android:scrollbars="none"
         android:spinnerMode="dropdown"
         android:textAlignment="center"
@@ -37,12 +23,27 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.138" />
+        app:layout_constraintVertical_bias="0.050000012" />
+
+    <Button
+        android:id="@+id/btn_back"
+        android:layout_width="45dp"
+        android:layout_height="48dp"
+        android:background="@android:color/transparent"
+        android:elevation="10dp"
+        android:foreground="@drawable/back_button"
+        android:textColor="@color/cardview_light_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.043"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.038" />
 
     <ScrollView
         android:id="@+id/scrollView2"
-        android:layout_width="331dp"
-        android:layout_height="314dp"
+        android:layout_width="325dp"
+        android:layout_height="407dp"
         android:background="@drawable/box"
         android:paddingLeft="10dp"
         android:paddingTop="10dp"
@@ -78,17 +79,7 @@
         app:layout_constraintHorizontal_bias="0.84"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.120000005"
+        app:layout_constraintVertical_bias="0.04000002"
         app:srcCompat="@android:drawable/arrow_down_float" />
 
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="220dp"
-        android:layout_height="195dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.96"
-        app:srcCompat="@drawable/ender" />
 </androidx.constraintlayout.widget.ConstraintLayout>

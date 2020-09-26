@@ -1,6 +1,7 @@
 package com.aaxena.gailofficersassociation;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.WindowManager;
@@ -68,6 +69,9 @@ public class WebPage2 extends Activity implements OnPageChangeListener, OnLoadCo
     }
 
     public void onBackPressed() {
+        Intent toLanding = new Intent(WebPage2.this, Landing.class);
+        startActivity(toLanding);
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
         finish();
     }
 }

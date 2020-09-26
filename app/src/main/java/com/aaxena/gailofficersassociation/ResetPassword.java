@@ -73,5 +73,6 @@ public class ResetPassword extends AppCompatActivity {
         super.onBackPressed();
         Intent intent = new Intent(ResetPassword.this, Email.class);
         startActivity(intent);
+        finish();
     }
 }
