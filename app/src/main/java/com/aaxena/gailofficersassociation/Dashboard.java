@@ -409,6 +409,7 @@ public class Dashboard extends AppCompatActivity {
                     survey.setBackground(eight);
                     Drawable back= getResources().getDrawable(R.drawable.default_button);
                     dynamic.setBackgroundDrawable(back);
+
                 }
             }
         });
