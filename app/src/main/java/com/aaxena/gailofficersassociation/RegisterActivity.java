@@ -154,5 +154,6 @@ public class RegisterActivity extends AppCompatActivity {
         super.onBackPressed();
         Intent intent = new Intent(RegisterActivity.this, Email.class);
         startActivity(intent);
+        finish();
     }
 }

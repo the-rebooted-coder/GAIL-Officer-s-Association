@@ -23,7 +23,7 @@
     <string name="enter_your_message">Enter your Message</string>
     <string name="cpf_number">CPF Number</string>
     <string name="gail_email">GAIL Email</string>
-    <string name="not_log_in_register_from_here"><u>Sign Up</u></string>
+    <string name="not_log_in_register_from_here">Sign Up</string>
     <string name="enter_email">GAIL Email</string>
     <string name="enter_password">Password</string>
     <string name="new_user_registration">New User On Boarding</string>
@@ -110,6 +110,8 @@ contact us at goa.pataoffice@gmail.com.</string>
     <string name="final_begin">Begin</string>
     <string name="app_developer">App Developed By One Silicon Diode ;)</string>
     <string name="versionel">Version: \</string>
+    <string name="notifications_admin_channel_name">Remote Messaging</string>
+    <string name="notifications_admin_channel_description">Channel for Remote Notification Management</string>
 
 
     <!--Array for About Us Category-->

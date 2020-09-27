@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/myflow"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/activity_dashboard"
+    android:keepScreenOn="false"
+    tools:context=".Dashboard">
+
+
+    <HorizontalScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="368dp"
+        android:layout_height="187dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.35"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.39">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:verticalScrollbarPosition="left">
+
+            <Button
+                android:id="@+id/activities"
+                android:layout_width="187dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/goa_news"
+                android:elevation="40dp"
+                android:fontFamily="@font/productsansbold"
+                android:text="@string/news"
+                android:textColor="@android:color/background_light"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.16"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/services"
+                android:layout_width="187dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/button_activities"
+                android:elevation="40dp"
+                android:fontFamily="@font/productsansbold"
+                android:text="@string/services"
+                android:textColor="@android:color/background_light"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.826"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.336" />
+
+
+            <Button
+                android:id="@+id/services_main"
+                android:layout_width="187dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/button_services"
+                android:elevation="40dp"
+                android:fontFamily="@font/productsansbold"
+                android:scrollbars="none"
+                android:text="@string/services_msin"
+                android:textColor="@android:color/background_light"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.439"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.363" />
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <Switch
+        android:id="@+id/dynamic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/default_button"
+        android:fontFamily="@font/productsans"
+        android:text="@string/turn_on_dynamic_background"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.92" />
+
+    <HorizontalScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="183dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.35"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.78">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:verticalScrollbarPosition="left">
+
+            <Button
+                android:id="@+id/survey"
+                android:layout_width="183dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/button_sirvey"
+                android:elevation="40dp"
+                android:fontFamily="@font/productsansbold"
+                android:text="@string/survey"
+                android:textColor="@android:color/background_light"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.439"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.363" />
+
+            <Button
+                android:id="@+id/grievances"
+                android:layout_width="183dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/button_grievances"
+                android:elevation="40dp"
+                android:fontFamily="@font/productsansbold"
+                android:text="@string/griviances"
+                android:textColor="@android:color/background_light"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.678"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.95" />
+
+            <Button
+                android:id="@+id/blog"
+                android:layout_width="183dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/button_nlog"
+                android:elevation="40dp"
+                android:fontFamily="@font/productsansbold"
+                android:text="@string/blog"
+                android:textColor="@android:color/background_light"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.049"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.8" />
+
+            <Button
+                android:id="@+id/bbc"
+                android:layout_width="183dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/button_bbc"
+                android:elevation="40dp"
+                android:fontFamily="@font/productsansbold"
+                android:text="@string/about_us"
+                android:textColor="@android:color/background_light"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.049"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.65" />
+
+            <Button
+                android:id="@+id/news_india"
+                android:layout_width="183dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/button_india"
+                android:elevation="40dp"
+                android:fontFamily="@font/productsansbold"
+                android:text="@string/indian_news_bulletin"
+                android:textColor="@android:color/background_light"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.049"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.65" />
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="36dp"
+        android:layout_height="35dp"
+        android:background="@drawable/set"
+        android:fontFamily="@font/productsans"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.931"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.07999998" />
+
+    <TextView
+        android:id="@+id/emailhello"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/productsansitalic"
+        android:textAlignment="center"
+        android:textColor="@color/intro_title_color"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.14"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.16000003" />
+
+    <TextView
+        android:id="@+id/namehello"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/productsans"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_light"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.23"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.13999999" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="214dp"
+        android:layout_height="58dp"
+        android:fontFamily="@font/productsansbold"
+        android:text="@string/dash"
+        android:textAlignment="textStart"
+        android:textColor="@android:color/background_light"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.19"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.06999999" />
+
+    <TextView
+        android:id="@+id/afterfades"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/productsansbold"
+        android:textAlignment="center"
+        android:textColor="@color/intro_description_color"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.06999999" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

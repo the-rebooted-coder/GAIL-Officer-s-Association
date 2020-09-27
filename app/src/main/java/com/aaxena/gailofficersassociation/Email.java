@@ -88,7 +88,7 @@ public class Email extends AppCompatActivity {
         v.vibrate(28);
         email = emailTV.getText().toString();
         password = passwordTV.getText().toString();
-        if (email.endsWith("@gail.co.in")) {
+      //  if (email.endsWith("@gail.co.in")) {
             if (TextUtils.isEmpty(email)) {
                 loginBtn.setVisibility(View.VISIBLE);
                 progressBar.setVisibility(View.INVISIBLE);
@@ -119,12 +119,15 @@ public class Email extends AppCompatActivity {
                             }
                         }
                     });
-     }
+  //   }
+  /*
      else {
            progressBar.setVisibility(View.INVISIBLE);
            loginBtn.setVisibility(View.VISIBLE);
            Toast.makeText(this, "Please Enter Valid GAIL Email", Toast.LENGTH_LONG).show();
        }
+
+   */
  }
 
     private void initializeUI() {
