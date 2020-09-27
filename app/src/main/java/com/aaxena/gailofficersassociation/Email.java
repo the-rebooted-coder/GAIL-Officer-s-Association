@@ -119,13 +119,14 @@ public class Email extends AppCompatActivity {
                             }
                         }
                     });
-     }
+    }
 
      else {
            progressBar.setVisibility(View.INVISIBLE);
            loginBtn.setVisibility(View.VISIBLE);
            Toast.makeText(this, "Please Enter Valid GAIL Email", Toast.LENGTH_LONG).show();
        }
+
  }
 
     private void initializeUI() {
