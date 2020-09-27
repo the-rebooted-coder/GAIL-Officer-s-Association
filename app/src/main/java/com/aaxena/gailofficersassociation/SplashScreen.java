@@ -6,7 +6,6 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Vibrator;
-import android.view.WindowManager;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -22,13 +21,12 @@ public class SplashScreen extends AppCompatActivity {
 
     private void fireSplashScreen() {
         int splash_screen_time_out = 1000;
-        Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-        v.vibrate(30);
 
         if (isFirstTime()) {
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
+                    vibrate();
                     Intent i=new Intent(SplashScreen.this,Details.class);
                     startActivity(i);
                     finish();
@@ -38,12 +36,18 @@ public class SplashScreen extends AppCompatActivity {
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
+                    vibrate();
                     Intent i=new Intent(SplashScreen.this,Checker.class);
                     startActivity(i);
                     finish();
                 }
             }, splash_screen_time_out);
         }
+    }
+
+    private void vibrate() {
+        Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        v.vibrate(30);
     }
 
     //First Time Checker

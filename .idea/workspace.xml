@@ -16,7 +16,6 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="192.168.43.40:5555" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -61,7 +60,7 @@
     <property name="BundleExportedModule" value="app" />
     <property name="ExportApk.ApkPath" value="C:\Users\raffl\Documents\Final\app" />
     <property name="ExportApk.BuildVariants" value="release" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../GitHub/TakeNotes/app/src/main/AndroidManifest.xml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../GitHub/TakeNotes" />
   </component>
   <component name="RecentsManager">
     <key name="android.template.packageName">
