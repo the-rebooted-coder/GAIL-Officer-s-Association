@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/services"
+        android:title="Services"
+        android:icon="@drawable/ic_dashboard_black_24dp"/>
+    <item
+        android:id="@+id/survey"
+        android:title="@string/survey"
+        android:icon="@drawable/ic_survey_24dp"/>
+    <item
+        android:id="@+id/grievances"
+        android:title="@string/griviances"
+        android:icon="@drawable/ic_grie_24dp"/>
+
+    <item
+        android:id="@+id/aboutUs"
+        android:title="@string/about_us"
+        android:icon="@drawable/ic_person_24dp"/>
+
+    <item
+        android:id="@+id/more"
+        android:title="More"
+        android:icon="@drawable/ic_more_black_24dp"/>
+
+</menu>
